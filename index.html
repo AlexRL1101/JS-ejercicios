@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios JS</title>
+</head>
+
+<body>
+    <h1>Ejercicios Practicos JS +ES6</h1>
+    <li>Video #34:</li>
+    <ol>
+        <li>
+            <h3>Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.</h3>
+            <pre>
+                export const contar = (cadena) => console.log(cadena.length);
+            </pre>
+        </li>
+        <li>
+            <h3>Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".</h3>
+            <pre>
+                export function getRecortador(cadena) {
+                let cantidad = prompt("Ingrese en Números la cantidad de caracteres a mostrar:", '');
+                let patron = /[0-9]+/;
+            
+                    if (patron.test(cantidad)) {
+                        let cad = cadena.slice(0, cantidad);
+                        console.log(cad);
+                    } else {
+                        sal = alert('Su patron ingresado no es valido!!!');
+                    }
+                }
+            </pre>
+        </li>
+        <li>
+            <h3>Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].</h3>
+            <pre>
+                export function getDividir(cadena) {
+                    let arrayCadenas = cadena.split(" ");
+                
+                    for (let i = 0; i < arrayCadenas.length; i++) {
+                        arrayCadenas[i] + ',';
+                    }
+                    console.log(arrayCadenas);
+                }
+            </pre>
+        </li>
+        <li>
+            <h3>Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.</h3>
+            <pre>
+                export function getRepetir(cadena) {
+                    let cantidad = prompt("Ingrese en Números la cantidad de veces a mostrar la cadena:", '');
+                    let patron = /[0-9]+/;
+                
+                    if (patron.test(cantidad)) {
+                        let espacios = cadena.length;
+                        let cad = cadena.padEnd(espacios + 2, '| ');
+                        console.log(cad.repeat(cantidad));
+                    } else {
+                        sal = alert('Su patron ingresado no es valido!!!');
+                    }
+                }
+            </pre>
+        </li>
+    </ol>
+
+    <script src="js/solucion-ejercicios.js" type="module"></script>
+</body>
+
+</html>
