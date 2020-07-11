@@ -44,11 +44,12 @@ if (cadenaDeTexto != null) {
         }
     }
     if (cadenaDeTexto) {
+        // Seccion 1
         (ejer1()) ? getContar(cadenaDeTexto): division();
         (ejer2()) ? getRecortador(cadenaDeTexto): division();
         (ejer3()) ? getDividir(cadenaDeTexto): division();
         (ejer4()) ? getRepetir(cadenaDeTexto): division();
-
+        // Seccion 2
         (!ejer5()) ? division(): getCadenaDerIzq(cadenaDeTexto);
         (!ejer6()) ? division(): getCantidadVecesRepetidas(cadenaDeTexto, prompt('Ingresa su palabra a buscar:'));
         (!ejer7()) ? division(): getPalabrasIguales(cadenaDeTexto);

@@ -113,5 +113,5 @@ export const getPalabrasIguales = (cadena) => {
 export const getNuevoPatron = (cadena, caracter) => {
     let match = new RegExp(caracter, 'gi');
 
-    console.log(cadena.replace(match, ''))
+    console.log(cadena.replace(match, ''));
 }
