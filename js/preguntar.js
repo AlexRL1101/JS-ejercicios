@@ -18,4 +18,19 @@ export function ejer4() {
     return ejer4;
 }
 
+
+/* ****************************************************************************************************** */
+
+
 export const division = () => console.log('**********************');
+
+
+/* ****************************************************************************************************** */
+
+export const ejer5 = () => confirm('Desea invertir de Derecha a Izquierda su texto?');
+
+export const ejer6 = () => confirm('Desea ver cuantas veces se repiten sus palabras en la cadena?');
+
+export const ejer7 = () => confirm('Desea saber si en su cadena exiten palíndromos?');
+
+export const ejer8 = () => confirm('Desea eliminar algun caracter o palabra de su cadena de texto?');
