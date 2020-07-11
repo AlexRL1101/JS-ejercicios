@@ -29,7 +29,7 @@ if (ejer4() === true) {
     division();
 }
 
-alert("Asta luego!!!") */
+alert("Asta luego!!!"); */
 
 // (!cadenaDeTexto) ? (!confirm('Su cadena de texto esta vacia, desea reintentar?')) ? alert("Asta luego!!!"): getCadena(): console.log('Cadena de texto correcta');
 
