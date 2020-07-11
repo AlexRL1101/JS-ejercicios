@@ -76,7 +76,7 @@ export const getCadenaDerIzq = (cadena) => {
 
 export const getCantidadVecesRepetidas = (cadena, match) => {
     // console.log('Hola mundo que tal mundo'.includes('mundo'));
-    // console.log("Blue Whale".indexOf("Blue")); //Return 0
+    // console.log("Blue Whale ".indexOf("Blue")); //Return 0
     let posicion = 0,
         save = [];
 
