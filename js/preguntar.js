@@ -34,3 +34,13 @@ export const ejer6 = () => confirm('Desea ver cuantas veces se repiten sus palab
 export const ejer7 = () => confirm('Desea saber si en su cadena exiten palíndromos?');
 
 export const ejer8 = () => confirm('Desea eliminar algun caracter o palabra de su cadena de texto?');
+
+
+/* **************************************************************************************************** */
+
+
+export const ejer9 = () => confirm('Desea obtener un numero aleatorio que este entre 501 y 600?');
+
+export const ejer10 = () => confirm('Desea evaluar si un numero es capicúo?');
+
+export const ejer11 = () => confirm('Desea obtener el valor factorial de un número?');

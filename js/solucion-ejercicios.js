@@ -1,5 +1,5 @@
-import { getCadena, getContar, getRecortador, getDividir, getRepetir, getCadenaDerIzq, getCantidadVecesRepetidas, getPalabrasIguales, getNuevoPatron } from "./funciones.js";
-import { ejer1, ejer2, ejer3, ejer4, division, ejer5, ejer6, ejer7, ejer8, } from "./preguntar.js";
+import { getCadena, getContar, getRecortador, getDividir, getRepetir, getCadenaDerIzq, getCantidadVecesRepetidas, getPalabrasIguales, getNuevoPatron, getNumeroIgualDerIzq, getFatorialNumero } from "./funciones.js";
+import { ejer1, ejer2, ejer3, ejer4, division, ejer5, ejer6, ejer7, ejer8, ejer9, ejer10, ejer11 } from "./preguntar.js";
 
 /* if (ejer1() === true) {
     getContar(cadenaDeTexto);
@@ -54,6 +54,10 @@ if (cadenaDeTexto != null) {
         (!ejer6()) ? division(): getCantidadVecesRepetidas(cadenaDeTexto, prompt('Ingresa su palabra a buscar:'));
         (!ejer7()) ? division(): getPalabrasIguales(cadenaDeTexto);
         (!ejer8()) ? division(): getNuevoPatron(cadenaDeTexto, prompt('Ingrese el caracter que desea borrar de su Texto'));
+        // Seccion 3
+        (!ejer9()) ? division(): console.log(` | ${Math.floor(Math.random() * (99)) + 501}`);
+        (!ejer10()) ? division(): getNumeroIgualDerIzq(prompt('Digite su numero a evaluar:'));
+        (!ejer11()) ? division(): getFatorialNumero(prompt('Digite su numero a Factorializar:'));
     }
 }
 

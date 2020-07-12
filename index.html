@@ -134,9 +134,71 @@
         </li>
         <pre>
             export const getNuevoPatron = (cadena, caracter) => {
-                let match = new RegExp(caracter, 'gi');
+                let match = new RegExp(caracter, 'ig');
             
                 console.log(cadena.replace(match, ''));
+            }
+        </pre>
+    </ol>
+
+    <li>Video #36</li>
+
+    <ol>
+        <li value="9">
+            <h3>
+                Programa una función que obtenga un numero aleatorio entre 501 y 600.
+            </h3>
+        </li>
+        <pre>
+            Math.floor(Math.random() * (99)) + 501
+        </pre>
+        <li>
+            <h3>
+                Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.
+            </h3>
+        </li>
+        <pre>
+            export const getNumeroIgualDerIzq = (numero) => {
+                let conver = String(numero),
+                    vuelta = conver.split('').reverse().join('');
+            
+                (conver.length > 1) ?
+                (conver === vuelta) ?
+                console.info(` | Su conjunto de digitos "${numero}" son Capicúos`): console.warn(`Su conjunto de digitos "${numero}" no son Capicúos`): console.warn(`Solo ingreso un digito "${numero}", y por lo tanto es Capicúo`);
+            }
+        </pre>
+        <li>
+            <h3>
+                Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
+            </h3>
+        </li>
+        <pre>
+            export const getFatorialNumero = (numero) => {
+                let numeroNumber = Number(numero),
+                    i = 1,
+                    e = -1,
+                    multiplicador = 1,
+                    multiplicador2 = 1;
+            
+                if ((Math.sign(numeroNumber) === 0) || (Math.sign(numeroNumber) === -0)) {
+                    return console.warn('Su Digito es incongruente o igual a 0')
+                }
+            
+                if (Math.sign(numeroNumber) === -1) {
+                    while (e >= numeroNumber) {
+                        multiplicador2 = e * multiplicador2;
+                        e--
+                    }
+                    return console.log(` | El resultado de su numero Factorial es ${multiplicador2}`);
+                }
+            
+                if (Math.sign(numeroNumber) === 1) {
+                    while (i <= numeroNumber) {
+                        multiplicador = i * multiplicador;
+                        i++
+                    }
+                    return console.log(` | El resultado de su numero Factorial es ${multiplicador}`);
+                }
             }
         </pre>
     </ol>
