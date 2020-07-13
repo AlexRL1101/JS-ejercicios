@@ -1,9 +1,11 @@
-import { division } from "./preguntar.js";
+import { division, cels, fare } from "./preguntar.js";
 
 export function getCadena() {
     let cadena = prompt("Ingrese una cadena de texto:");
-    console.log(cadena);
-    return cadena;
+    if (cadena !== null) {
+        console.log(cadena);
+        return cadena;
+    }
 }
 
 
@@ -71,7 +73,7 @@ export const getCadenaDerIzq = (cadena) => {
     // }
 
     // Solucion de JonMircha
-    console.info(` | ${cadena.split('').reverse().join('')}`)
+    return console.info(` | ${cadena.split('').reverse().join('')}`)
 
     // console.log(` | ${cadenaInvertida}`);
 }
@@ -133,9 +135,13 @@ export const getNumeroIgualDerIzq = (numero) => {
     let conver = String(numero),
         vuelta = conver.split('').reverse().join('');
 
-    (conver.length > 1) ?
-    (conver === vuelta) ?
-    console.info(` | Su conjunto de digitos "${numero}" son Capicúos`): console.warn(`Su conjunto de digitos "${numero}" no son Capicúos`): console.warn(`Solo ingreso un digito "${numero}", y por lo tanto es Capicúo`);
+    if (numero === null) return console.error(`Cancelo su evaluación!!!`)
+
+    if (conver.length > 1) {
+        (conver === vuelta) ? console.info(` | Su conjunto de digitos "${numero}" son Capicúos`): console.warn(`Su conjunto de digitos "${numero}" no son Capicúos`)
+    } else {
+        return console.warn(`Solo ingreso un digito "${numero}", y por lo tanto es Capicúo`);
+    }
 }
 
 
@@ -145,6 +151,8 @@ export const getFatorialNumero = (numero) => {
         e = -1,
         multiplicador = 1,
         multiplicador2 = 1;
+
+    if (numero === null) return console.error(`Cancelo su evaluación!!!`);
 
     if ((Math.sign(numeroNumber) === 0) || (Math.sign(numeroNumber) === -0)) {
         return console.warn('Su Digito es incongruente o igual a 0')
@@ -164,5 +172,66 @@ export const getFatorialNumero = (numero) => {
             i++
         }
         return console.log(` | El resultado de su numero Factorial es ${multiplicador}`);
+    }
+}
+
+
+/* ************************************************************************************************************* */
+// Function exercise video 37
+
+
+export const getNumeroPrimo = (num) => {
+    let numero = Number(num);
+
+    if (num === null) return console.error(`Cancelo su evaluación!!!`);
+
+    if (Math.sign(numero) <= 0) return console.error('Su número ingresado no es congruente, tiene que ser positivo o diferente de 0!!!')
+
+    if (numero === 1) return console.warn(`Recuerde que el número 1 esta excluido`);
+
+    for (let i = 2; i < numero; i++) {
+        if ((numero % i) === 0) {
+            return console.warn(`Su número ${numero} no es Primo`)
+        }
+
+    }
+
+    return console.info(` | El número ${numero} es Primo`);
+}
+
+
+export const getNumeroParImpar = (num) => {
+    let numero = Number(num);
+
+    if (num === null) return console.error(`Cancelo su evaluación!!!`);
+
+    if (Math.sign(numero) === 0) return console.error('Su número ingresado no es congruente, tiene que ser diferente de 0!!!')
+
+    if (numero % 2 === 0) return console.log(` | Su número ${numero} es par`)
+
+    return console.warn(`Su número ${numero} es impar`);
+}
+
+
+export const getConvertirTemperatura = () => {
+    let c = cels();
+    // (0 °C × 9/5) + 32 = 32 °F
+    if (c) {
+        let num = Number(prompt('Ingrese sus grados Celsius:'));
+        if (num === 0) { console.error(`Cancelo su conversión de °C a °F!!!`) } else {
+            console.info(` | Los ${num} Grados Celsius es igual a "${((num * 9/5) + 32).toFixed(1)}" Grados Fahrenheit`);
+        }
+    } else {
+        division();
+    }
+    let f = fare();
+    // (32 °F − 32) × 5/9 = 0 °C
+    if (f) {
+        let num = Number(prompt('Ingrese sus grados Fahrenheit:'));
+        if (num === 0) { console.error(`Cancelo su conversión de °F a °C!!!`) } else {
+            console.info(` | Los ${num} Grados Fahrenheit es igual a "${((num - 32) * 5/9).toFixed(1)}" Grados Celsius`);
+        }
+    } else {
+        division();
     }
 }

@@ -44,3 +44,17 @@ export const ejer9 = () => confirm('Desea obtener un numero aleatorio que este e
 export const ejer10 = () => confirm('Desea evaluar si un numero es capicúo?');
 
 export const ejer11 = () => confirm('Desea obtener el valor factorial de un número?');
+
+
+/* **************************************************************************************************** */
+
+
+export const ejer12 = () => confirm('Desea evaluar si un número es primo?');
+
+export const ejer13 = () => confirm('Desea evaluar si un número par o impar?');
+
+export const ejer14 = () => confirm('Desea convertir grados Celsius a Fahrenheit o viciversa?');
+
+export const cels = () => confirm('Desea convertir de °C a °F?')
+
+export const fare = () => confirm('Desea convertir de °F a °C?')

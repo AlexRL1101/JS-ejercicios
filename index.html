@@ -58,7 +58,8 @@
                         let cad = cadena.padEnd(espacios + 2, '| ');
                         console.log(cad.repeat(cantidad));
                     } else {
-                        sal = alert('Su patron ingresado no es valido!!!');
+                        alert('Su patron ingresado no es valido!!!');
+                        division();
                     }
                 }
             </pre>
@@ -73,18 +74,21 @@
         </li>
         <pre>
             export const getCadenaDerIzq = (cadena) => {
-                let cantidad = cadena.length;
-                let cadenaInvertida = "";
+                // let cantidad = cadena.length;
+                // let cadenaInvertida = "";
             
-                for (let i = cantidad; i >= 0; i--) {
-                    cadenaInvertida += cadena.charAt(i);
-                }
+                // for (let i = cantidad; i >= 0; i--) {
+                //     cadenaInvertida += cadena.charAt(i);
+                // }
                 // while (cantidad >= 0) {
                 //     cadenaInvertida = cadenaInvertida + cadena.charAt(cantidad);
                 //     cantidad--;
                 // }
             
-                console.log(` | ${cadenaInvertida}`);
+                // Solucion de JonMircha
+                return console.info(` | ${cadena.split('').reverse().join('')}`)
+            
+                // console.log(` | ${cadenaInvertida}`);
             }
         </pre>
         <li>
@@ -109,24 +113,29 @@
         </li>
         <pre>
             export const getPalabrasIguales = (cadena) => {
+                // let cadenaMin = cadena.toLowerCase(),
+                //     cadenaArray = cadenaMin.split(""),
+                //     sinEspaciado = '',
+                //     igual = true;
+            
+                // for (const i in cadenaArray) {
+                //     if (cadenaArray[i] != ' ') sinEspaciado += cadenaArray[i]
+                // }
+            
+                // let letras = sinEspaciado.split(''),
+                //     letrasAlreves = sinEspaciado.split('').reverse();
+            
+                // for (const i in letras) {
+                //     if ((letras[i] != letrasAlreves[i])) igual = false;
+                // }
+            
+                // (igual) ?
+                // console.log(' | Su frase/palabra es un Palíndromo!!!'): console.error(' | Su frase/palabra no es un Palíndromo!!!');
+            
                 let cadenaMin = cadena.toLowerCase(),
-                    cadenaArray = cadenaMin.split(""),
-                    sinEspaciado = '',
-                    igual = true;
+                    alreves = cadenaMin.split('').reverse().join(''); //El metodo .join('') convierte a string el array antes convertido
             
-                for (const i in cadenaArray) {
-                    if (cadenaArray[i] != ' ') sinEspaciado += cadenaArray[i]
-                }
-            
-                let letras = sinEspaciado.split(''),
-                    letrasAlreves = sinEspaciado.split('').reverse();
-            
-                for (const i in letras) {
-                    if ((letras[i] != letrasAlreves[i])) igual = false;
-                }
-            
-                (igual) ?
-                console.log(' | Su frase/palabra es un Palíndromo!!!'): console.error(' | Su frase/palabra no es un Palíndromo!!!');
+                (cadenaMin === alreves) ? console.log(' | Su frase es un Palíndromo'): console.warn('Su frase no es un Palíndromo');
             }
         </pre>
         <li>
@@ -136,7 +145,7 @@
             export const getNuevoPatron = (cadena, caracter) => {
                 let match = new RegExp(caracter, 'ig');
             
-                console.log(cadena.replace(match, ''));
+                console.log(` | ${cadena.replace(match, '')}`);
             }
         </pre>
     </ol>
@@ -162,9 +171,13 @@
                 let conver = String(numero),
                     vuelta = conver.split('').reverse().join('');
             
-                (conver.length > 1) ?
-                (conver === vuelta) ?
-                console.info(` | Su conjunto de digitos "${numero}" son Capicúos`): console.warn(`Su conjunto de digitos "${numero}" no son Capicúos`): console.warn(`Solo ingreso un digito "${numero}", y por lo tanto es Capicúo`);
+                if (numero === null) return console.error(`Cancelo su evaluación!!!`)
+            
+                if (conver.length > 1) {
+                    (conver === vuelta) ? console.info(` | Su conjunto de digitos "${numero}" son Capicúos`): console.warn(`Su conjunto de digitos "${numero}" no son Capicúos`)
+                } else {
+                    return console.warn(`Solo ingreso un digito "${numero}", y por lo tanto es Capicúo`);
+                }
             }
         </pre>
         <li>
@@ -179,6 +192,8 @@
                     e = -1,
                     multiplicador = 1,
                     multiplicador2 = 1;
+            
+                if (numero === null) return console.error(`Cancelo su evaluación!!!`);
             
                 if ((Math.sign(numeroNumber) === 0) || (Math.sign(numeroNumber) === -0)) {
                     return console.warn('Su Digito es incongruente o igual a 0')
@@ -203,6 +218,82 @@
         </pre>
     </ol>
 
+    <li>Video #37</li>
+
+    <ol>
+        <li value="12">
+            <h3>
+                Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
+            </h3>
+        </li>
+        <pre>
+            export const getNumeroPrimo = (num) => {
+                let numero = Number(num);
+            
+                if (num === null) return console.error(`Cancelo su evaluación!!!`);
+            
+                if (Math.sign(numero) <= 0) return console.error('Su número ingresado no es congruente, tiene que ser positivo o diferente de 0!!!')
+            
+                if (numero === 1) return console.warn(`Recuerde que el número 1 esta excluido`);
+            
+                for (let i = 2; i < numero; i++) {
+                    if ((numero % i) === 0) {
+                        return console.warn(`Su número ${numero} no es Primo`)
+                    }
+            
+                }
+            
+                return console.info(` | El número ${numero} es Primo`);
+            }
+        </pre>
+        <li>
+            <h3>
+                Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
+            </h3>
+        </li>
+        <pre>
+            export const getNumeroParImpar = (num) => {
+                let numero = Number(num);
+            
+                if (num === null) return console.error(`Cancelo su evaluación!!!`);
+            
+                if (Math.sign(numero) === 0) return console.error('Su número ingresado no es congruente, tiene que ser diferente de 0!!!')
+            
+                if (numero % 2 === 0) return console.log(` | Su número ${numero} es par`)
+            
+                return console.warn(`Su número ${numero} es impar`);
+            }
+        </pre>
+        <li>
+            <h3>
+                Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+            </h3>
+        </li>
+        <pre>
+            export const getConvertirTemperatura = () => {
+                let c = cels();
+                // (0 °C × 9/5) + 32 = 32 °F
+                if (c) {
+                    let num = Number(prompt('Ingrese sus grados Celsius:'));
+                    if (num === 0) { console.error(`Cancelo su conversión de °C a °F!!!`) } else {
+                        console.info(` | Los ${num} Grados Celsius es igual a "${((num * 9/5) + 32).toFixed(1)}" Grados Fahrenheit`);
+                    }
+                } else {
+                    division();
+                }
+                let f = fare();
+                // (32 °F − 32) × 5/9 = 0 °C
+                if (f) {
+                    let num = Number(prompt('Ingrese sus grados Fahrenheit:'));
+                    if (num === 0) { console.error(`Cancelo su conversión de °F a °C!!!`) } else {
+                        console.info(` | Los ${num} Grados Fahrenheit es igual a "${((num - 32) * 5/9).toFixed(1)}" Grados Celsius`);
+                    }
+                } else {
+                    division();
+                }
+            }
+        </pre>
+    </ol>
     <script src="js/solucion-ejercicios.js" type="module"></script>
 </body>
 
