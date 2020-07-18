@@ -58,3 +58,17 @@ export const ejer14 = () => confirm('Desea convertir grados Celsius a Fahrenheit
 export const cels = () => confirm('Desea convertir de °C a °F?')
 
 export const fare = () => confirm('Desea convertir de °F a °C?')
+
+
+/* **************************************************************************************************** */
+
+
+export const ejer15 = () => confirm('Desea convertir números de base Binaria a Decimal y viceversa?');
+
+export const baseBiADecimal = () => confirm('Convertir de Base Binaria a Decimal?')
+
+export const decimalABaseBi = () => confirm('Convertir de Decimal a Base Binaria?')
+
+export const ejer16 = () => confirm('Desea aplicar un descuento a una monto?');
+
+export const ejer17 = () => confirm('Desea observar con una fecha dada cuantos años han pasado hasta el dia de hoy?');

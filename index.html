@@ -294,6 +294,176 @@
             }
         </pre>
     </ol>
+
+    <li>Video #38</li>
+
+    <ol>
+        <li value="15">
+            <h3>
+                Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.
+            </h3>
+        </li>
+        <pre>
+            export const getConvertirBinariaDecimal = () => {
+                if (baseBiADecimal()) {
+                    let numString = prompt('Ingrese los digitos en Base Binaria a convertir:'),
+                        numero = Number(numString),
+                        nu = String(numString).length,
+                        patron = /[0 || 1]+/,
+                        arreglo = [],
+                        binomio = true;
+            
+                    if (numero.toString() === "NaN") {
+                        console.error('Ingreso caracteres, y deben ser números 0 o 1')
+                        binomio = false
+                    } else
+            
+                    if (nu === 0) {
+                        console.error('No ingreso ningun digito')
+                        binomio = false
+                    } else
+            
+                    if (nu > 17) {
+                        console.error('Sus digitos revasan las reglas de los Binomios')
+                        binomio = false
+                    } else
+            
+                    if (numero.toString() === '0') {
+                        console.warn('Cancelo')
+                        binomio = false
+                    } else
+            
+                        for (let i = 0; i < nu; i++) {
+                        if (!patron.test(Number(numString[i]))) {
+                            console.error(`Sus digitos ${numString} son diferentes a las normas 0 y 1 de los números binarios`);
+                            binomio = false;
+                            break;
+                        }
+                        arreglo[i] = [Number(numString[i])];
+                    }
+            
+            
+                    if (binomio === true) {
+                        let vuelta = arreglo.reverse(),
+                            suma = 0;
+            
+                        for (let i = 0; i < nu; i++) {
+                            // console.log(`${i} Vuelta, ${vuelta[i]} = ${Math.pow(2,i)}`);
+                            suma = suma + (Number(vuelta[i]) * Math.pow(2, i))
+                        }
+                        console.log(` | Su número en Binario (${numString}) es igual a "${suma}" en número Decimal`);
+                    }
+                } else {
+                    division();
+                }
+            
+                /* ------------------------------------------------------------------------------------------------------- */
+            
+                if (decimalABaseBi()) {
+                    let numString = prompt('Ingrese los digitos en Decimal a convertir:'),
+                        numero = Number(numString),
+                        decimal = true;
+            
+                    if (numero.toString() === "NaN") {
+                        console.error('Ingreso caracteres, y deben ser solo números')
+                        decimal = false
+                    } else
+            
+                    if (numString === null) {
+                        console.warn('Cancelo')
+                        decimal = false
+                    } else
+            
+                    if (numString.length === 0) {
+                        console.error('No ingreso ningun digito')
+                        decimal = false
+                    } else
+            
+                    if (decimal === true) {
+                        console.log(` | Su número en Decimal (${numero}) es igual a "${numero.toString(2)}" en número Binario`);
+                    }
+                } else {
+                    division();
+                }
+            
+            }
+        </pre>
+        <li>
+            <h3>
+                Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
+            </h3>
+        </li>
+        <pre>
+            export const getDescuentoACantidad = (can, des) => {
+                let cantidad = Number(can),
+                    descuento = Number(des);
+            
+                if (cantidad.toString() === "NaN") {
+                    return console.error('Ingreso caracteres, y deben ser solo números')
+                } else
+            
+                if (can === null) {
+                    return console.warn('Cancelo en Cantidad Total')
+                } else
+            
+                if (can.length === 0) {
+                    return console.error('No ingreso ningun digito en Cantidad Total')
+                } else
+            
+                /* ---------------------------------------------------------------------- */
+            
+                if (descuento.toString() === "NaN") {
+                    return console.error('Ingreso caracteres, y deben ser solo números')
+                } else
+            
+                if (des === null) {
+                    return console.warn('Cancelo en el Descuento')
+                } else
+            
+                if (des.length === 0) {
+                    return console.error('No ingreso ningun digito en el Descuento')
+                } else
+                    return console.log(` | Su total a pagar es ${cantidad-(descuento*cantidad/100)} $`)
+            }
+        </pre>
+        <li>
+            <h3>
+                Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
+            </h3>
+        </li>
+        <pre>
+            export const getAño = (fec) => {
+                let fechaEvaluar = new Date(fec),
+                    fechaActual = new Date(),
+                    patron = /[0-9]/;
+            
+            
+                if (fec === null) {
+                    return console.warn('Cancelo :(')
+                } else
+            
+                if (fec.length === 0) {
+                    return console.error('No ingreso ninguna Fecha a evaluar')
+                } else
+            
+                    for (let i = 0; i < 4; i++) {
+                    if (i === (4 || 6)) {
+                        if (fec[i] !== ",") {
+                            return console.error(`Sus digitos ${fec} deben ir separados por comas y sin espacios en blancos`);
+                        }
+                    } else
+                    if (!patron.test(Number(fec[i]))) {
+                        return console.error(`Sus digitos ${fec} son diferentes al ejemplo o ingreso un caracter`);
+                    }
+                }
+            
+            
+                let resta = fechaActual.getFullYear() - fechaEvaluar.getFullYear()
+                return console.log(resta);
+            
+            }
+        </pre>
+    </ol>
     <script src="js/solucion-ejercicios.js" type="module"></script>
 </body>
 

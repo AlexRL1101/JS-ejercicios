@@ -1,5 +1,5 @@
-import { getCadena, getContar, getRecortador, getDividir, getRepetir, getCadenaDerIzq, getCantidadVecesRepetidas, getPalabrasIguales, getNuevoPatron, getNumeroIgualDerIzq, getFatorialNumero, getNumeroPrimo, getNumeroParImpar, getConvertirTemperatura } from "./funciones.js";
-import { ejer1, ejer2, ejer3, ejer4, division, ejer5, ejer6, ejer7, ejer8, ejer9, ejer10, ejer11, ejer12, ejer13, ejer14 } from "./preguntar.js";
+import { getCadena, getContar, getRecortador, getDividir, getRepetir, getCadenaDerIzq, getCantidadVecesRepetidas, getPalabrasIguales, getNuevoPatron, getNumeroIgualDerIzq, getFatorialNumero, getNumeroPrimo, getNumeroParImpar, getConvertirTemperatura, getConvertirBinariaDecimal, getDescuentoACantidad, getAño } from "./funciones.js";
+import { ejer1, ejer2, ejer3, ejer4, division, ejer5, ejer6, ejer7, ejer8, ejer9, ejer10, ejer11, ejer12, ejer13, ejer14, ejer15, ejer16, ejer17 } from "./preguntar.js";
 
 /* if (ejer1() === true) {
     getContar(cadenaDeTexto);
@@ -68,6 +68,10 @@ if (confirm('Desea ver algunas funciones con numeros?')) {
     (!ejer12()) ? division(): getNumeroPrimo(prompt('Digite su número a evaluar:'));
     (!ejer13()) ? division(): getNumeroParImpar(prompt('Digite su número a evaluar:'));
     (!ejer14()) ? division(): getConvertirTemperatura();
+    // Seccion 5
+    (!ejer15()) ? division(): getConvertirBinariaDecimal();
+    (!ejer16()) ? division(): getDescuentoACantidad(prompt('Ingrese su Cantidad Total:'), prompt('Ingrese el decuento:'));
+    (!ejer17()) ? division(): getAño(prompt('Ingrese su fecha para saber cuantos años han pasado, ej: 1984,4,23:'));
 }
 
 alert("Asta luego!!!");

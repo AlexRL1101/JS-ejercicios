@@ -1,4 +1,4 @@
-import { division, cels, fare } from "./preguntar.js";
+import { division, cels, fare, baseBiADecimal, decimalABaseBi } from "./preguntar.js";
 
 export function getCadena() {
     let cadena = prompt("Ingrese una cadena de texto:");
@@ -135,6 +135,8 @@ export const getNumeroIgualDerIzq = (numero) => {
     let conver = String(numero),
         vuelta = conver.split('').reverse().join('');
 
+    if ((Number(conver).toString()) === "NaN") return console.error('Ingreso un caracter, debe ser un número');
+
     if (numero === null) return console.error(`Cancelo su evaluación!!!`)
 
     if (conver.length > 1) {
@@ -151,6 +153,8 @@ export const getFatorialNumero = (numero) => {
         e = -1,
         multiplicador = 1,
         multiplicador2 = 1;
+
+    if (Number(numero).toString() === "NaN") return console.error('Ingreso un caracter, debe ser un número');
 
     if (numero === null) return console.error(`Cancelo su evaluación!!!`);
 
@@ -181,6 +185,8 @@ export const getFatorialNumero = (numero) => {
 
 
 export const getNumeroPrimo = (num) => {
+    if (Number(num).toString() === "NaN") return console.error('Ingreso un caracter, debe ser un número');
+
     let numero = Number(num);
 
     if (num === null) return console.error(`Cancelo su evaluación!!!`);
@@ -201,6 +207,8 @@ export const getNumeroPrimo = (num) => {
 
 
 export const getNumeroParImpar = (num) => {
+    if (Number(num).toString() === "NaN") return console.error('Ingreso un caracter, debe ser un número');
+
     let numero = Number(num);
 
     if (num === null) return console.error(`Cancelo su evaluación!!!`);
@@ -218,8 +226,12 @@ export const getConvertirTemperatura = () => {
     // (0 °C × 9/5) + 32 = 32 °F
     if (c) {
         let num = Number(prompt('Ingrese sus grados Celsius:'));
-        if (num === 0) { console.error(`Cancelo su conversión de °C a °F!!!`) } else {
-            console.info(` | Los ${num} Grados Celsius es igual a "${((num * 9/5) + 32).toFixed(1)}" Grados Fahrenheit`);
+        if (num.toString() === "NaN") {
+            console.error('Ingreso un caracter, debe ser un número');
+        } else {
+            if (num.toString() === null) { console.error(`Cancelo su conversión de °C a °F!!!`) } else {
+                console.info(` | Los ${num} Grados Celsius es igual a "${((num * 9/5) + 32).toFixed(1)}" Grados Fahrenheit`);
+            }
         }
     } else {
         division();
@@ -228,10 +240,167 @@ export const getConvertirTemperatura = () => {
     // (32 °F − 32) × 5/9 = 0 °C
     if (f) {
         let num = Number(prompt('Ingrese sus grados Fahrenheit:'));
-        if (num === 0) { console.error(`Cancelo su conversión de °F a °C!!!`) } else {
-            console.info(` | Los ${num} Grados Fahrenheit es igual a "${((num - 32) * 5/9).toFixed(1)}" Grados Celsius`);
+        if (num.toString() === "NaN") { console.error('Ingreso un caracter, debe ser un número'); } else {
+            if (num.toString() === null) { console.error(`Cancelo su conversión de °F a °C!!!`) } else {
+                console.info(` | Los ${num} Grados Fahrenheit es igual a "${((num - 32) * 5/9).toFixed(1)}" Grados Celsius`);
+            }
         }
     } else {
         division();
     }
+}
+
+
+/* ************************************************************************************************************* */
+// Function exercise video 37
+
+
+export const getConvertirBinariaDecimal = () => {
+    if (baseBiADecimal()) {
+        let numString = prompt('Ingrese los digitos en Base Binaria a convertir:'),
+            numero = Number(numString),
+            nu = String(numString).length,
+            patron = /[0 || 1]+/,
+            arreglo = [],
+            binomio = true;
+
+        if (numero.toString() === "NaN") {
+            console.error('Ingreso caracteres, y deben ser números 0 o 1')
+            binomio = false
+        } else
+
+        if (nu === 0) {
+            console.error('No ingreso ningun digito')
+            binomio = false
+        } else
+
+        if (nu > 17) {
+            console.error('Sus digitos revasan las reglas de los Binomios')
+            binomio = false
+        } else
+
+        if (numero.toString() === '0') {
+            console.warn('Cancelo')
+            binomio = false
+        } else
+
+            for (let i = 0; i < nu; i++) {
+            if (!patron.test(Number(numString[i]))) {
+                console.error(`Sus digitos ${numString} son diferentes a las normas 0 y 1 de los números binarios`);
+                binomio = false;
+                break;
+            }
+            arreglo[i] = [Number(numString[i])];
+        }
+
+
+        if (binomio === true) {
+            let vuelta = arreglo.reverse(),
+                suma = 0;
+
+            for (let i = 0; i < nu; i++) {
+                // console.log(`${i} Vuelta, ${vuelta[i]} = ${Math.pow(2,i)}`);
+                suma = suma + (Number(vuelta[i]) * Math.pow(2, i))
+            }
+            console.log(` | Su número en Binario (${numString}) es igual a "${suma}" en número Decimal`);
+        }
+    } else {
+        division();
+    }
+
+    /* ------------------------------------------------------------------------------------------------------- */
+
+    if (decimalABaseBi()) {
+        let numString = prompt('Ingrese los digitos en Decimal a convertir:'),
+            numero = Number(numString),
+            decimal = true;
+
+        if (numero.toString() === "NaN") {
+            console.error('Ingreso caracteres, y deben ser solo números')
+            decimal = false
+        } else
+
+        if (numString === null) {
+            console.warn('Cancelo')
+            decimal = false
+        } else
+
+        if (numString.length === 0) {
+            console.error('No ingreso ningun digito')
+            decimal = false
+        } else
+
+        if (decimal === true) {
+            console.log(` | Su número en Decimal (${numero}) es igual a "${numero.toString(2)}" en número Binario`);
+        }
+    } else {
+        division();
+    }
+
+}
+
+
+export const getDescuentoACantidad = (can, des) => {
+    let cantidad = Number(can),
+        descuento = Number(des);
+
+    if (cantidad.toString() === "NaN") {
+        return console.error('Ingreso caracteres, y deben ser solo números')
+    } else
+
+    if (can === null) {
+        return console.warn('Cancelo en Cantidad Total')
+    } else
+
+    if (can.length === 0) {
+        return console.error('No ingreso ningun digito en Cantidad Total')
+    } else
+
+    /* ---------------------------------------------------------------------- */
+
+    if (descuento.toString() === "NaN") {
+        return console.error('Ingreso caracteres, y deben ser solo números')
+    } else
+
+    if (des === null) {
+        return console.warn('Cancelo en el Descuento')
+    } else
+
+    if (des.length === 0) {
+        return console.error('No ingreso ningun digito en el Descuento')
+    } else
+        return console.log(` | Su total a pagar es ${cantidad-(descuento*cantidad/100)} $`)
+}
+
+
+
+export const getAño = (fec) => {
+    let fechaEvaluar = new Date(fec),
+        fechaActual = new Date(),
+        patron = /[0-9]/;
+
+
+    if (fec === null) {
+        return console.warn('Cancelo :(')
+    } else
+
+    if (fec.length === 0) {
+        return console.error('No ingreso ninguna Fecha a evaluar')
+    } else
+
+        for (let i = 0; i < 4; i++) {
+        if (i === (4 || 6)) {
+            if (fec[i] !== ",") {
+                return console.error(`Sus digitos ${fec} deben ir separados por comas y sin espacios en blancos`);
+            }
+        } else
+        if (!patron.test(Number(fec[i]))) {
+            return console.error(`Sus digitos ${fec} son diferentes al ejemplo o ingreso un caracter`);
+        }
+    }
+
+
+    let resta = fechaActual.getFullYear() - fechaEvaluar.getFullYear()
+    return console.log(resta);
+
 }
