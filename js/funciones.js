@@ -404,3 +404,77 @@ export const getAño = (fec) => {
     return console.log(resta);
 
 }
+
+
+
+/* ************************************************************************************************************* */
+// Function exercise video 38
+
+
+export const getVocalesYConsonantes = (cad) => {
+    let patronVocales = /[aeiouAEIOU]/,
+        patronConsonantes = /[a-zA-Z]/,
+        vocales = 0,
+        consonantes = 0,
+        caracter = 0;
+
+    if (cad === null) {
+        return console.warn('Cancelo contar las vocales y consonantes')
+    } else
+
+    if (cad.length === 0) {
+        return console.error('No ingreso ningun texto para ser evaluado')
+    } else
+
+        for (let i = 0; i < cad.length; i++) {
+        (patronVocales.test(cad[i])) ? vocales += 1: (patronConsonantes.test(cad[i])) ? consonantes += 1 : caracter += 1;
+    }
+    console.log(` | Su texto "${cad}" tiene: Vocales = '${vocales}', Consonantes = '${consonantes}', Caracteres = '${caracter}'`)
+}
+
+
+export const getValidarNombre = (nom) => {
+    let patron = /[a-zA-Z]/,
+        espacios = 0,
+        valido = false;
+
+    if (nom === null) {
+        return console.warn(' Cancelo evaluar un nombre')
+    } else
+
+    if (nom.length === 0) {
+        return console.error(' No ingreso ningun texto para ser evaluado')
+    } else
+
+        for (let i = 0; i < nom.length; i++) {
+
+        if (nom[0] === " ") {
+            valido = false
+            break
+        }
+        if (nom[i] === " ") {
+            espacios++
+        }
+        if (espacios > 1) {
+            valido = false
+            break;
+        }
+        if (patron.test(nom[i])) {
+            valido = true
+        } else {
+            valido = false
+        }
+
+    }
+
+    (valido === true) ? console.log(` | Su nombre "${nom}" es valido`): console.warn(` Su nombre "${nom}" es invalido`);
+}
+
+
+export const getValidarMail = (mail) => {
+    if (/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(mail)) {
+        console.log(` | La dirección de email "${mail}" es correcta`);
+    } else {
+        console.warn(` La dirección de email ${mail} es incorrecta`);
+    }
+}

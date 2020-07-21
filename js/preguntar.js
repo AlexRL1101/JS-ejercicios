@@ -72,3 +72,14 @@ export const decimalABaseBi = () => confirm('Convertir de Decimal a Base Binaria
 export const ejer16 = () => confirm('Desea aplicar un descuento a una monto?');
 
 export const ejer17 = () => confirm('Desea observar con una fecha dada cuantos años han pasado hasta el dia de hoy?');
+
+
+
+/* **************************************************************************************************** */
+
+
+export const ejer18 = () => confirm('Desea contar las vocales y consonantes de una cadena de texto?');
+
+export const ejer19 = () => confirm('Desea validar que un nombre sea congruente?');
+
+export const ejer20 = () => confirm('Desea validar un Mail?');

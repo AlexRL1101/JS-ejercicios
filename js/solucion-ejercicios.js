@@ -1,5 +1,5 @@
-import { getCadena, getContar, getRecortador, getDividir, getRepetir, getCadenaDerIzq, getCantidadVecesRepetidas, getPalabrasIguales, getNuevoPatron, getNumeroIgualDerIzq, getFatorialNumero, getNumeroPrimo, getNumeroParImpar, getConvertirTemperatura, getConvertirBinariaDecimal, getDescuentoACantidad, getAño } from "./funciones.js";
-import { ejer1, ejer2, ejer3, ejer4, division, ejer5, ejer6, ejer7, ejer8, ejer9, ejer10, ejer11, ejer12, ejer13, ejer14, ejer15, ejer16, ejer17 } from "./preguntar.js";
+import { getCadena, getContar, getRecortador, getDividir, getRepetir, getCadenaDerIzq, getCantidadVecesRepetidas, getPalabrasIguales, getNuevoPatron, getNumeroIgualDerIzq, getFatorialNumero, getNumeroPrimo, getNumeroParImpar, getConvertirTemperatura, getConvertirBinariaDecimal, getDescuentoACantidad, getAño, getVocalesYConsonantes, getValidarNombre, getValidarMail } from "./funciones.js";
+import { ejer1, ejer2, ejer3, ejer4, division, ejer5, ejer6, ejer7, ejer8, ejer9, ejer10, ejer11, ejer12, ejer13, ejer14, ejer15, ejer16, ejer17, ejer18, ejer19, ejer20 } from "./preguntar.js";
 
 /* if (ejer1() === true) {
     getContar(cadenaDeTexto);
@@ -33,7 +33,7 @@ alert("Asta luego!!!"); */
 
 // (!cadenaDeTexto) ? (!confirm('Su cadena de texto esta vacia, desea reintentar?')) ? alert("Asta luego!!!"): getCadena(): console.log('Cadena de texto correcta');
 
-if (confirm('Desea ver algunas funciones con cadenas de texto?')) {
+if (confirm('Desea ver algunas funciones con una sola cadena de texto?')) {
     let cadenaDeTexto = getCadena();
 
     if (cadenaDeTexto != null) {
@@ -57,6 +57,13 @@ if (confirm('Desea ver algunas funciones con cadenas de texto?')) {
             (!ejer8()) ? division(): getNuevoPatron(cadenaDeTexto, prompt('Ingrese el caracter que desea borrar de su Texto'));
         }
     }
+}
+
+if (confirm('Desea evaluar algunos textos?')) {
+    //Seccion 6
+    (!ejer18()) ? division(): getVocalesYConsonantes(prompt('Ingrese su Texto a evaluar:'));
+    (!ejer19()) ? division(): getValidarNombre(prompt('Inserte el nombre a evaluar:'));
+    (!ejer20()) ? division(): getValidarMail(prompt('Ingrese su mail a evaluar'));
 }
 
 if (confirm('Desea ver algunas funciones con numeros?')) {
