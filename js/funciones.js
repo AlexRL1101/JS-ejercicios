@@ -252,7 +252,7 @@ export const getConvertirTemperatura = () => {
 
 
 /* ************************************************************************************************************* */
-// Function exercise video 37
+// Function exercise video 38
 
 
 export const getConvertirBinariaDecimal = () => {
@@ -408,7 +408,7 @@ export const getAño = (fec) => {
 
 
 /* ************************************************************************************************************* */
-// Function exercise video 38
+// Function exercise video 39
 
 
 export const getVocalesYConsonantes = (cad) => {
@@ -477,4 +477,95 @@ export const getValidarMail = (mail) => {
     } else {
         console.warn(` La dirección de email ${mail} es incorrecta`);
     }
+}
+
+
+
+/* ************************************************************************************************************* */
+// Function exercise video 40
+
+export const postPedirArray = () => prompt('Ingrese sus numeros separados por coma. Ej: 1,2,3,4,5')
+
+
+export const getNumerosAlCuadrado = (arrayNum) => {
+
+    if (arrayNum === null) {
+        return console.warn(' Cancelo elevar numeros al cuadrado')
+    }
+
+    if (arrayNum.length === 0) {
+        return console.error(' No ingreso ningun numero')
+    }
+
+    let arr = arrayNum.split(',' || ' '),
+        nuevo = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = Number(arr[i])
+
+        if (isNaN(arr[i])) return console.warn(` Ingreso algun tipo de caracter en su cadena "${arrayNum}"`)
+
+        nuevo[i] = Math.pow(arr[i], 2);
+    }
+
+    return console.log(` | Su array [${arrayNum}] al cuadrado es = [${nuevo}]`)
+
+}
+
+
+export const getNumeroMayorMenor = (arrayNum) => {
+
+    if (arrayNum === null) {
+        return console.warn(' Cancelo evaluar numero Mayor y Menor')
+    }
+
+    if (arrayNum.length === 0) {
+        return console.error(' No ingreso ningun numero')
+    }
+
+    let arr = arrayNum.split(',' || ' '),
+        may = 0,
+        men = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = Number(arr[i])
+
+        if (isNaN(arr[i])) return console.warn(` Ingreso algun tipo de caracter en su cadena "${arrayNum}"`)
+    }
+
+    return console.log(` | Su número Mayor es "${Math.max(...arr)}" y su número Menor es "${Math.min(...arr)}" de su arreglo [${arrayNum}]`)
+
+}
+
+
+export const getNumerosParesImpares = (arrayNum) => {
+
+    if (arrayNum === null) {
+        return console.warn(' Cancelo evaluar numero Mayor y Menor')
+    }
+
+    if (arrayNum.length === 0) {
+        return console.error(' No ingreso ningun numero')
+    }
+
+
+    let arr = arrayNum.split(',' || ' '),
+        val = 1,
+        par = [],
+        impar = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = Number(arr[i])
+        val = Math.sign(arr[i])
+
+        if (isNaN(arr[i])) return console.warn(` Ingreso algun tipo de caracter en su cadena "${arrayNum}"`)
+
+        if (val === -1) return console.warn(` Ingreso números negativos en su cadena [${arrayNum}]`)
+
+        if (arr[i] % 2 === 0) par.push(arr[i])
+        else impar.push(arr[i]);
+    }
+
+    return console.log(` | De su arreglo [${arrayNum}] los números pares son [${par}] y los impares son [${impar}]`)
+
 }

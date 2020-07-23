@@ -553,6 +553,110 @@
             }
         </pre>
     </ol>
+
+    <li>Video #40</li>
+
+    <ol>
+        <li value="21">
+            <h3>
+                Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25].
+            </h3>
+        </li>
+        <pre>
+            export const getNumerosAlCuadrado = (arrayNum) => {
+
+                if (arrayNum === null) {
+                    return console.warn(' Cancelo elevar numeros al cuadrado')
+                }
+            
+                if (arrayNum.length === 0) {
+                    return console.error(' No ingreso ningun numero')
+                }
+            
+                let arr = arrayNum.split(',' || ' '),
+                    nuevo = [];
+            
+                for (let i = 0; i < arr.length; i++) {
+                    arr[i] = Number(arr[i])
+            
+                    if (isNaN(arr[i])) return console.warn(` Ingreso algun tipo de caracter en su cadena "${arrayNum}"`)
+            
+                    nuevo[i] = Math.pow(arr[i], 2);
+                }
+            
+                return console.log(` | Su array [${arrayNum}] al cuadrado es = [${nuevo}]`)
+                
+            }
+        </pre>
+        <li>
+            <h3>
+                Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
+            </h3>
+        </li>
+        <pre>
+            export const getNumeroMayorMenor = (arrayNum) => {
+    
+                if (arrayNum === null) {
+                    return console.warn(' Cancelo evaluar numero Mayor y Menor')
+                }
+            
+                if (arrayNum.length === 0) {
+                    return console.error(' No ingreso ningun numero')
+                }
+            
+                let arr = arrayNum.split(',' || ' '),
+                    may = 0,
+                    men = 0;
+            
+                for (let i = 0; i < arr.length; i++) {
+                    arr[i] = Number(arr[i])
+            
+                    if (isNaN(arr[i])) return console.warn(` Ingreso algun tipo de caracter en su cadena "${arrayNum}"`)
+                }
+            
+                return console.log(` | Su número Mayor es "${Math.max(...arr)}" y su número Menor es "${Math.min(...arr)}" de su arreglo [${arrayNum}]`)
+            
+            }
+        </pre>
+        <li>
+            <h3>
+                Programa una función que dado un array de números devuelva un objeto con 2 arreglos en el primero almacena los números pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolverá {pares: [2,4,6,8,0], impares: [1,3,5,7,9]}.
+            </h3>
+        </li>
+        <pre>
+            export const getNumerosParesImpares = (arrayNum) => {
+
+                if (arrayNum === null) {
+                    return console.warn(' Cancelo evaluar numero Mayor y Menor')
+                }
+            
+                if (arrayNum.length === 0) {
+                    return console.error(' No ingreso ningun numero')
+                }
+            
+            
+                let arr = arrayNum.split(',' || ' '),
+                    val = 1,
+                    par = [],
+                    impar = [];
+            
+                for (let i = 0; i < arr.length; i++) {
+                    arr[i] = Number(arr[i])
+                    val = Math.sign(arr[i])
+            
+                    if (isNaN(arr[i])) return console.warn(` Ingreso algun tipo de caracter en su cadena "${arrayNum}"`)
+            
+                    if (val === -1) return console.warn(` Ingreso números negativos en su cadena [${arrayNum}]`)
+            
+                    if (arr[i] % 2 === 0) par.push(arr[i])
+                    else impar.push(arr[i]);
+                }
+            
+                return console.log(` | De su arreglo [${arrayNum}] los números pares son [${par}] y los impares son [${impar}]`)
+            
+            }
+        </pre>
+    </ol>
     <script src="js/solucion-ejercicios.js" type="module"></script>
 </body>
 

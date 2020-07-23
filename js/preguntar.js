@@ -1,3 +1,13 @@
+export const division = () => console.log('**********************');
+
+
+
+
+/* ***************************************************************************************************** */
+
+
+
+
 export function ejer1() {
     let ejer1 = confirm('Desea contar caracteres de una cadena de texto?');
     return ejer1;
@@ -19,13 +29,11 @@ export function ejer4() {
 }
 
 
-/* ***************************************************************************************************** */
-
-
-export const division = () => console.log('**********************');
 
 
 /* **************************************************************************************************** */
+
+
 
 export const ejer5 = () => confirm('Desea invertir de Derecha a Izquierda su texto?');
 
@@ -83,3 +91,13 @@ export const ejer18 = () => confirm('Desea contar las vocales y consonantes de u
 export const ejer19 = () => confirm('Desea validar que un nombre sea congruente?');
 
 export const ejer20 = () => confirm('Desea validar un Mail?');
+
+
+/* **************************************************************************************************** */
+
+
+export const ejer21 = () => confirm('Desea elevar los numeros al cuadrado?');
+
+export const ejer22 = () => confirm('Desea saber cual es el numero Mayor y el Menor?');
+
+export const ejer23 = () => confirm('Desea dividir en arrays diferentes los numeros pares e impares?')
