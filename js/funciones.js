@@ -484,6 +484,7 @@ export const getValidarMail = (mail) => {
 /* ************************************************************************************************************* */
 // Function exercise video 40
 
+
 export const postPedirArray = () => prompt('Ingrese sus numeros separados por coma. Ej: 1,2,3,4,5')
 
 
@@ -567,5 +568,79 @@ export const getNumerosParesImpares = (arrayNum) => {
     }
 
     return console.log(` | De su arreglo [${arrayNum}] los números pares son [${par}] y los impares son [${impar}]`)
+
+}
+
+/* ************************************************************************************************************* */
+// Function exercise video 41
+
+
+export const getArregloAscDesc = (arrayNum) => {
+
+    if (arrayNum === null) {
+        return console.warn(' Cancelo ordenar Descendentemente y Ascendentemente')
+    }
+
+    if (arrayNum.length === 0) {
+        return console.error(' No ingreso ningun numero')
+    }
+
+    let arr = arrayNum.split(',' || ' ');
+
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = Number(arr[i])
+
+        if (isNaN(arr[i])) return console.warn(` Ingreso algun tipo de caracter en su cadena [${arrayNum}]`)
+
+    }
+
+    return console.log(` | De su arreglo [${arrayNum}] ordenados Ascendentemente es [${arr.sort()}] y Descendentemente es [${arr.sort().reverse()}]`)
+
+}
+
+
+export const getArregloDuplicados = (arrayNum) => {
+
+    if (arrayNum === null) {
+        return console.warn(' Cancelo evaluar datos duplicados')
+    }
+
+    if (arrayNum.length === 0) {
+        return console.error(' No ingreso ningun numero')
+    }
+
+    let arr = arrayNum.split(/[","][" "]/)
+    const newArr = []
+    const myObj = []
+
+    arr.forEach(el => !(el in myObj) && (myObj[el] = true) && newArr.push(el))
+
+    return console.log(` | De su arreglo [${arrayNum}] se eliminaron los datos duplicados y su nuevo arreglo es [${newArr}]`)
+
+}
+
+
+export const getArregloPromedio = (arrayNum) => {
+
+    if (arrayNum === null) {
+        return console.warn(' Cancelo promediar sus datos númericos')
+    }
+
+    if (arrayNum.length === 0) {
+        return console.error(' No ingreso ningun numero')
+    }
+
+    let arr = arrayNum.split(',' || ' '),
+        suma = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = Number(arr[i])
+
+        if (isNaN(arr[i])) return console.warn(` Ingreso algun tipo de caracter en su cadena [${arrayNum}]`)
+
+        suma += arr[i]
+    }
+
+    return console.log(` | De su arreglo [${arrayNum}] el promedio es "${suma / arr.length}"`)
 
 }

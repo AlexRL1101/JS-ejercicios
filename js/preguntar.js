@@ -101,3 +101,13 @@ export const ejer21 = () => confirm('Desea elevar los numeros al cuadrado?');
 export const ejer22 = () => confirm('Desea saber cual es el numero Mayor y el Menor?');
 
 export const ejer23 = () => confirm('Desea dividir en arrays diferentes los numeros pares e impares?')
+
+
+/* **************************************************************************************************** */
+
+
+export const ejer24 = () => confirm('Desea ordenar un arreglo de forma Ascendente y Descendiente?')
+
+export const ejer25 = () => confirm('Desea eliminar de un arreglo sus posibles duplicados?')
+
+export const ejer26 = () => confirm('Desea saber el promedio de un arreglo de números?')

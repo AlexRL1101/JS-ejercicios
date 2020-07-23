@@ -1,5 +1,5 @@
-import { getCadena, getContar, getRecortador, getDividir, getRepetir, getCadenaDerIzq, getCantidadVecesRepetidas, getPalabrasIguales, getNuevoPatron, getNumeroIgualDerIzq, getFatorialNumero, getNumeroPrimo, getNumeroParImpar, getConvertirTemperatura, getConvertirBinariaDecimal, getDescuentoACantidad, getAño, getVocalesYConsonantes, getValidarNombre, getValidarMail, getNumerosAlCuadrado, getNumeroMayorMenor, getNumerosParesImpares, postPedirArray } from "./funciones.js";
-import { ejer1, ejer2, ejer3, ejer4, division, ejer5, ejer6, ejer7, ejer8, ejer9, ejer10, ejer11, ejer12, ejer13, ejer14, ejer15, ejer16, ejer17, ejer18, ejer19, ejer20, ejer21, ejer22, ejer23 } from "./preguntar.js";
+import { getCadena, getContar, getRecortador, getDividir, getRepetir, getCadenaDerIzq, getCantidadVecesRepetidas, getPalabrasIguales, getNuevoPatron, getNumeroIgualDerIzq, getFatorialNumero, getNumeroPrimo, getNumeroParImpar, getConvertirTemperatura, getConvertirBinariaDecimal, getDescuentoACantidad, getAño, getVocalesYConsonantes, getValidarNombre, getValidarMail, getNumerosAlCuadrado, getNumeroMayorMenor, getNumerosParesImpares, postPedirArray, getArregloAscDesc, getArregloDuplicados, getArregloPromedio } from "./funciones.js";
+import { ejer1, ejer2, ejer3, ejer4, division, ejer5, ejer6, ejer7, ejer8, ejer9, ejer10, ejer11, ejer12, ejer13, ejer14, ejer15, ejer16, ejer17, ejer18, ejer19, ejer20, ejer21, ejer22, ejer23, ejer24, ejer25, ejer26 } from "./preguntar.js";
 
 /* if (ejer1() === true) {
     getContar(cadenaDeTexto);
@@ -86,6 +86,10 @@ if (confirm('Desea ver algunas funciones con Arreglos?')) {
     (!ejer21()) ? division(): getNumerosAlCuadrado(postPedirArray());
     (!ejer22()) ? division(): getNumeroMayorMenor(postPedirArray());
     (!ejer23()) ? division(): getNumerosParesImpares(postPedirArray());
+    // Seccion 8
+    (!ejer24()) ? division(): getArregloAscDesc(postPedirArray());
+    (!ejer25()) ? division(): getArregloDuplicados(prompt('Ingrese sus datos separados por coma. Ej:  true, 2, "hola", "2", 2'));
+    (!ejer26()) ? division(): getArregloPromedio(postPedirArray());
 }
 
 alert("Asta luego!!!");

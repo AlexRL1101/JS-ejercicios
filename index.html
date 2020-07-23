@@ -657,6 +657,98 @@
             }
         </pre>
     </ol>
+
+    <li>Video #41</li>
+
+    <ol>
+        <li value="24">
+            <h3>
+                Programa una función que dado un arreglo de números devuelva un objeto con dos arreglos, el primero tendrá los numeros ordenados en forma ascendente y el segundo de forma descendiente, pe. miFuncion([7, 5,7,8,6]) devolverá { asc: [5,6,7,7,8], desc: [8,7,7,6,5]
+                }.
+            </h3>
+        </li>
+        <pre>
+            export const getArregloAscDesc = (arrayNum) => {
+
+                if (arrayNum === null) {
+                    return console.warn(' Cancelo ordenar Descendentemente y Ascendentemente')
+                }
+            
+                if (arrayNum.length === 0) {
+                    return console.error(' No ingreso ningun numero')
+                }
+            
+                let arr = arrayNum.split(',' || ' ');
+            
+                for (let i = 0; i < arr.length; i++) {
+                    arr[i] = Number(arr[i])
+            
+                    if (isNaN(arr[i])) return console.warn(` Ingreso algun tipo de caracter en su cadena [${arrayNum}]`)
+            
+                }
+            
+                return console.log(` | De su arreglo [${arrayNum}] ordenados Ascendentemente es [${arr.sort()}] y Descendentemente es [${arr.sort().reverse()}]`)
+            
+            }
+        </pre>
+        <li>
+            <h3>
+                Programa una función que dado un arreglo de elementos, elimine los duplicados, pe. miFuncion(["x", 10, "x", 2, "10", 10, true, true]) devolverá ["x", 10, 2, "10", true].
+            </h3>
+        </li>
+        <pre>
+            export const getArregloDuplicados = (arrayNum) => {
+
+                if (arrayNum === null) {
+                    return console.warn(' Cancelo evaluar datos duplicados')
+                }
+            
+                if (arrayNum.length === 0) {
+                    return console.error(' No ingreso ningun numero')
+                }
+            
+                let arr = arrayNum.split(/[","][" "]/)
+                const newArr = []
+                const myObj = []
+            
+                arr.forEach(el => !(el in myObj) && (myObj[el] = true) && newArr.push(el))
+            
+                return console.log(` | De su arreglo [${arrayNum}] se eliminaron los datos duplicados y su nuevo arreglo es [${newArr}]`)
+            
+            }
+        </pre>
+        <li>
+            <h3>
+                Programa una función que dado un arreglo de números obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
+            </h3>
+        </li>
+        <pre>
+            export const getArregloPromedio = (arrayNum) => {
+
+                if (arrayNum === null) {
+                    return console.warn(' Cancelo promediar sus datos númericos')
+                }
+            
+                if (arrayNum.length === 0) {
+                    return console.error(' No ingreso ningun numero')
+                }
+            
+                let arr = arrayNum.split(',' || ' '),
+                    suma = 0;
+            
+                for (let i = 0; i < arr.length; i++) {
+                    arr[i] = Number(arr[i])
+            
+                    if (isNaN(arr[i])) return console.warn(` Ingreso algun tipo de caracter en su cadena [${arrayNum}]`)
+            
+                    suma += arr[i]
+                }
+            
+                return console.log(` | De su arreglo [${arrayNum}] el promedio es "${suma / arr.length}"`)
+            
+            }
+        </pre>
+    </ol>
     <script src="js/solucion-ejercicios.js" type="module"></script>
 </body>
 
