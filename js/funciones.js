@@ -472,6 +472,7 @@ export const getValidarNombre = (nom) => {
 
 
 export const getValidarMail = (mail) => {
+    // /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i
     if (/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(mail)) {
         console.log(` | La dirección de email "${mail}" es correcta`);
     } else {
@@ -508,7 +509,7 @@ export const getNumerosAlCuadrado = (arrayNum) => {
 
         nuevo[i] = Math.pow(arr[i], 2);
     }
-
+    // const newArray = arr.map(el => el * el)
     return console.log(` | Su array [${arrayNum}] al cuadrado es = [${nuevo}]`)
 
 }
@@ -565,6 +566,12 @@ export const getNumerosParesImpares = (arrayNum) => {
 
         if (arr[i] % 2 === 0) par.push(arr[i])
         else impar.push(arr[i]);
+
+        /* return console.info({
+            pares: arr.filter(num => num % 2 === 0),
+            impares : arr.filter(num => num % 2 === 1)
+        }) */
+
     }
 
     return console.log(` | De su arreglo [${arrayNum}] los números pares son [${par}] y los impares son [${impar}]`)
@@ -594,6 +601,12 @@ export const getArregloAscDesc = (arrayNum) => {
 
     }
 
+    /* return console.info({
+        arr,
+            asc: arr.map(el => el).sort(),
+            desc : arr.map(el => el).sort().reverse()
+        }) */
+
     return console.log(` | De su arreglo [${arrayNum}] ordenados Ascendentemente es [${arr.sort()}] y Descendentemente es [${arr.sort().reverse()}]`)
 
 }
@@ -614,6 +627,21 @@ export const getArregloDuplicados = (arrayNum) => {
     const myObj = []
 
     arr.forEach(el => !(el in myObj) && (myObj[el] = true) && newArr.push(el))
+
+    /* return console.info({
+            arr,
+            sinDuplicados : arr.filter((value, index, self) => self.indexOf(value) === index)
+
+            // 1Parametro = valor a evaluar
+            // 2Parametro = posicion
+            // 3Parametro =  mismo arreglo (arr)
+    }) */
+    /* return console.info({
+            arr,
+            sinDuplicados : [... new Set(arr)]
+
+            // Metodo Set formar un objeto el cual sus elementos no tengan duplicaciones
+    }) */
 
     return console.log(` | De su arreglo [${arrayNum}] se eliminaron los datos duplicados y su nuevo arreglo es [${newArr}]`)
 
@@ -639,6 +667,13 @@ export const getArregloPromedio = (arrayNum) => {
         if (isNaN(arr[i])) return console.warn(` Ingreso algun tipo de caracter en su cadena [${arrayNum}]`)
 
         suma += arr[i]
+
+        /* return console.info({
+            arr.reduce((total, num, index, arr) => {
+                total += num;
+                (index === arr.length - 1) ?`El promedio de ${arr.join(' + ')} es ${total/arr.length}: total`
+            })
+    }) */
     }
 
     return console.log(` | De su arreglo [${arrayNum}] el promedio es "${suma / arr.length}"`)
