@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevos Tipos de Datos en JS</title>
+</head>
+
+<body>
+    <h1>Nuevos Tipos de Datos en JS</h1>
+
+    <script>
+        /* *************************************************** */
+        // Video #49 Symbols
+
+
+
+
+        // let id = Symbol('id'),
+        //     id2 = Symbol('id2');
+
+        // console.log(id === id2);
+        // console.log(id, id2);
+        // console.log(typeof id, typeof id2);
+
+        // const NOMBRE = Symbol('nombre'),
+        //     SALUDAR = Symbol();
+
+        // const persona = {
+        //     [NOMBRE]: 'Alex',
+        //     edad: 21
+        // }
+
+        // console.log(persona);
+
+        // persona.NOMBRE = 'Charly';
+        // console.log(persona);
+        // console.log(persona.NOMBRE);
+        // console.log(persona[NOMBRE]);
+
+
+        // persona[SALUDAR] = function() {
+        //     console.log('Hola');
+        // }
+
+        // console.log(persona);
+        // persona[SALUDAR]();
+
+
+        // for (let propiedad in persona) {
+        //     console.log(propiedad);
+        //     console.log(persona[propiedad]);
+        // }
+
+
+        // console.log(Object.getOwnPropertySymbols(persona));
+
+
+
+
+
+        /* ***************************************************** */
+        // Video #50 Sets
+
+        /* const SET = new Set([
+            1, 2, 3, 3, 4, 5, true, false, false, {}, {},
+            'hola', 'HOLA'
+        ])
+        console.log(SET);
+        console.log(SET.size);
+
+
+        const SET2 = new Set();
+
+        SET2.add(1);
+        SET2.add(2);
+        SET2.add(2);
+        SET2.add(3);
+        SET2.add(true);
+        SET2.add(false);
+        SET2.add(true);
+        SET2.add({});
+
+        console.log(SET2);
+        console.log(SET2.size);
+
+        console.log('Recorriendo SET');
+
+        for (item of SET) {
+            console.log(item);
+        }
+
+        console.log('Recorriendo SET2');
+
+        SET2.forEach(item => console.log(item));
+
+        let arr = Array.from(SET);
+
+        console.log(arr[0]);
+        console.log(arr[9]);
+
+
+        SET.delete('HOLA');
+        console.log(SET)
+
+
+        console.log(SET.has('hola'));
+        console.log(SET.has(19));
+
+
+        SET2.clear();
+        console.log(SET2); */
+
+
+
+
+
+
+        /* *************************************************************************************** */
+        // Video #51 Maps
+
+
+        /* const mapa = new Map();
+
+        mapa.set('nombre', 'Alex');
+        mapa.set('apellido', 'Rl');
+        mapa.set('edad', 21);
+
+        console.log(mapa);
+        console.log(mapa.size);
+        console.log(mapa.has('correo'));
+        console.log(mapa.has('nombre'));
+        console.log(mapa.get('nombre'));
+
+        mapa.set('nombre', 'Simon');
+        console.log(mapa.get('nombre'))
+        mapa.delete('apellido');
+
+
+        mapa.set(19, 'diecinueve');
+        mapa.set(false, 'falso');
+        mapa.set({}, {});
+
+        console.log(mapa);
+
+        for (let [key, value] of mapa) {
+            console.log(`Llave: ${key}, Valor: ${value}`);
+        }
+
+
+
+        const mapa2 = new Map([
+            ['nombre', 'Ibrahimovic'],
+            ['edad', 32],
+            ['ser vivo', 'Humano'],
+            [null, 'nulo']
+        ]);
+
+        console.log(mapa2);
+
+        const llavesMapa2 = [...mapa2.keys()],
+            valoresMapa2 = [...mapa2.values()];
+
+        console.log(llavesMapa2);
+        console.log(valoresMapa2); */
+
+
+
+
+
+        /* ************************************************************************ */
+        // Video #52 WeakSets & WeakMaps
+
+        // const ws = new WeakSet([
+        //     1, 2, 3, 3, 4, 5, true, false, false, {}, {},
+        //     'hola', 'HOLA'
+        // ]);
+
+        /* const ws = new WeakSet();
+
+        let valor1 = {
+                'valor': 1
+            },
+            valor2 = {
+                'valor': 2
+            },
+            valor3 = {
+                'valor': 3
+            };
+
+        ws.add(valor1);
+        ws.add(valor2);
+
+        console.log(ws);
+
+        console.log(ws.has(valor1));
+        console.log(ws.has(valor3));
+
+        ws.delete(valor2);
+        console.log(ws);
+
+        ws.add(valor2);
+        ws.add(valor3);
+        console.log(ws);
+
+        setInterval(() => console.log(ws), 1000);
+
+        setTimeout(() => {
+            valor1 = null;
+            valor2 = null;
+            valor3 = null;
+        }, 5000); */
+
+        // const wm = new WeakMap([
+        //     ['nombre', 'Oso'],
+        //     ['edad', 6],
+        //     ['animal', 'perro'],
+        //     [null, 'nulo']
+        // ]);
+
+        // const wm = new WeakMap();
+
+        // let llave1 = {},
+        //     llave2 = {},
+        //     llave3 = {};
+
+        // wm.set(llave1, 1);
+        // wm.set(llave2, 2);
+        // console.log(wm);
+
+        // console.log(wm.has(llave1));
+        // console.log(wm.has(llave3));
+
+        // console.log(wm.get(llave1));
+        // console.log(wm.get(llave2));
+        // console.log(wm.get(llave3));
+
+        // wm.delete(llave2);
+        // console.log(wm);
+
+        // wm.set(llave2, 2);
+        // wm.set(llave3, 3);
+        // console.log(wm);
+
+        // setInterval(() => {
+        //     console.log(wm);
+        // }, 1000);
+
+        // setTimeout(() => {
+        //     llave1 = null;
+        //     llave2 = null;
+        //     llave3 = null;
+        // }, 5000);
+
+
+
+
+
+        /* *********************************************************************** */
+        // Video #53 Iterables & Iterators
+
+        /*  const iterable = [1, 2, 3, 4, 5];
+         // // const iterable = 'Hola Mundo';
+         // // const iterable = new Set([1, 2, 3, 4, 5, 1, 6, 5, 6]);
+         // const iterable = new Map([
+         //     ['nombre', 'Alex'],
+         //     ['edad', 21]
+         // ]);
+
+         // Accedemos al iterador del iterable
+         const iterador = iterable[Symbol.iterator]();
+
+         console.log(iterable);
+         console.log(iterador);
+         // console.log(iterador.next());
+         // console.log(iterador.next());
+         // console.log(iterador.next());
+         // console.log(iterador.next());
+         // console.log(iterador.next());
+         // console.log(iterador.next());
+
+         let next = iterador.next();
+
+         while (!next.done) {
+             console.log(next.value);
+             next = iterador.next();
+         } */
+
+
+
+
+
+
+        /* ************************************************************************* */
+        //  Video #54 Generators
+
+        /* function* iterable() {
+            yield 'hola';
+            console.log('Hola consola');
+            yield 'hola 2';
+            console.log('Seguimos con más instrucciones de nuestro código');
+            yield 'hola 3';
+            yield 'hola 4';
+        }
+
+        let iterador = iterable();
+
+        // console.log(iterador.next());
+        // console.log(iterador.next());
+        // console.log(iterador.next());
+        // console.log(iterador.next());
+        // console.log(iterador.next());
+
+        for (const y of iterador) {
+            console.log(y);
+        }
+
+
+        const arr = [...iterable()];
+        console.log(arr);
+
+
+        function cuadrado(valor) {
+            setTimeout(() => {
+                return console.log({
+                    valor,
+                    resultado: valor * valor
+                })
+            }, Math.random() * 1000);
+        }
+
+
+        function* generador() {
+            console.log('Inicia Generator');
+            yield cuadrado(0);
+            yield cuadrado(1);
+            yield cuadrado(2);
+            yield cuadrado(3);
+            yield cuadrado(4);
+            yield cuadrado(5);
+            console.log('Termina Generator');
+        }
+
+        let gen = generador();
+
+        for (const y of gen) {
+            console.log(y);
+        } */
+
+
+
+
+
+
+
+        /* ********************************************************************* */
+        // Video #55 Proxies
+
+
+        /* const persona = {
+            nombre: '',
+            apellido: '',
+            edad: 0
+        }
+
+        const manejador = {
+            set(obj, prop, valor) {
+                if (Object.keys(obj).indexOf(prop) === -1) {
+                    return console.error(`La propiedad '${prop}' no existe en el objeto persona`);
+                }
+
+                if (
+                    (prop === ('nombre' || 'apellido')) && !(/^[A-Za-zÑñÁáÉéÍíÓóÚú\s]+$/g.test(valor))
+                ) {
+                    return console.error(`La propiedad '${prop}' sólo acepta letras y espacios en blanco`);
+                }
+                obj[prop] = valor;
+            }
+        }
+
+        const alex = new Proxy(persona, manejador);
+
+        alex.nombre = 'Ibrahimovic';
+        alex.apellido = 'Rl';
+        alex.edad = 21;
+        alex.twitter = '@alexRl';
+
+        console.log(alex);
+        console.log(persona); */
+
+
+
+
+
+
+        /* ********************************************************************************************************** */
+        // Video #56 Propiedades Dinámicas
+
+        /* const objUsuarios = {
+            propiedad: 'valor',
+            [`id_${Math.round(Math.random()*100+5)}`]: 'Valor Aleatorio'
+        };
+        console.log(objUsuarios);
+        const usuarios = ['Alex', 'Ibra', 'Simon', 'Char'];
+
+        usuarios.forEach((usuario, index) => objUsuarios[`id_${index}`] = usuario);
+
+        console.log(objUsuarios); */
+    </script>
+</body>
+
+</html>

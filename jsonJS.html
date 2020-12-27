@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON en JS Object Notation</title>
+</head>
+
+<body>
+    <h1>JSON JS Object Notation</h1>
+    <script>
+        // Video #59 JSON
+
+        const json = {
+            cadena: 'Alex',
+            numero: 21,
+            booleano: true,
+            arreglo: ['correr', 'programar', 'basquetbol'],
+            objeto: {
+                facebook: 'Alex Ricardez',
+                mail: 'la.rebel.del.pebetero@gmail.com'
+            },
+            nulo: null
+        }
+
+        console.log(json);
+
+        console.log(JSON);
+        // Convierte String a objeto JS
+        console.log(JSON.parse("{}"));
+        console.log(JSON.parse("[1,2,3]"));
+        console.log(JSON.parse("true"));
+        console.log(JSON.parse("false"));
+        console.log(JSON.parse("19"));
+        // console.log(JSON.parse("'Hola Mundo'"));
+        console.log(JSON.parse("null"));
+        // console.log(JSON.parse("undefined"));
+
+
+        // Convierte objeto JS a String
+        console.log(JSON.stringify({}));
+        console.log(JSON.stringify([1, 2, 3]));
+        console.log(JSON.stringify(true));
+        console.log(JSON.stringify(false));
+        console.log(JSON.stringify(null));
+        console.log(JSON.stringify(undefined));
+        console.log(JSON.stringify({
+            x: 2,
+            y: 3
+        }));
+
+        console.log(JSON.stringify(json));
+        console.log(JSON.parse(
+            '{"cadena": "Alex","numero": 21,"booleano": true,"arreglo": ["correr", "programar", "basquetbol"],"objeto": {"facebook": "Alex Ricardez","mail": "la.rebel.del.pebetero@gmail.com"},"nulo": null}'
+        ));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+{
+    "cadena": "Alex",
+    "numero": 21,
+    "booleano": true,
+    "arreglo": ["correr", "programar", "basquetbol"],
+    "objeto": {
+        "facebook": "Alex Ricardez",
+        "mail": "la.rebel.del.pebetero@gmail.com"
+    },
+    "nulo": null
+}
