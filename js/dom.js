@@ -397,7 +397,7 @@ Posiciones:
     afterend(hermano siguiente)
 */
 
-const $cards = document.querySelector(".cards"),
+/* const $cards = document.querySelector(".cards"),
     $newCard = document.createElement("figure");
 
 let $contentCard = `
@@ -409,9 +409,193 @@ $newCard.classList.add("card");
 
 $newCard.insertAdjacentHTML("beforeend", $contentCard);
 $newCard.querySelector("figcaption").insertAdjacentText("afterbegin", "Any");
-$cards.insertAdjacentElement("afterbegin", $newCard);
+$cards.insertAdjacentElement("afterbegin", $newCard); */
 
 // $cards.prepend($newCard);
 // $cards.before($newCard);
 // $cards.append($newCard);
 // $cards.after($newCard);
+
+
+
+
+
+/* ****************************************************************************** */
+// Video #72. DOM: Manejadores de Eventos
+
+
+
+
+/* function holaMundo() {
+    alert('Hola Mundo');
+    console.log(event);
+}
+
+const $eventoSemantico = document.getElementById("evento-semantico"),
+    $eventoMultiple = document.getElementById("evento-multiple");
+
+$eventoSemantico.onclick = holaMundo;
+$eventoSemantico.onclick = function (e) {
+    alert("Hola Mundo Manejador de Eventos Semántico");
+    console.log(e);
+}
+
+$eventoMultiple.addEventListener("click", holaMundo);
+$eventoMultiple.addEventListener("click", (e) => {
+    alert("Hola Mundo Manejador de Eventos Múltiple");
+    console.log(e);
+    console.log(e.type);
+    console.log(e.target);
+}); */
+
+
+
+
+
+/* ****************************************************************************** */
+// Video #73. DOM: Eventos con Parámetros y Remover Eventos
+
+
+
+
+/* function holaMundo() {
+    alert('Hola Mundo');
+    console.log(event);
+}
+
+function saludar(nombre = "Desconocid@") {
+    alert(`Hola ${nombre}`);
+    console.log(event);
+}
+
+const $eventoSemantico = document.getElementById("evento-semantico"),
+    $eventoMultiple = document.getElementById("evento-multiple"),
+    $eventoRemover = document.getElementById("evento-remover");
+
+$eventoSemantico.onclick = holaMundo;
+$eventoSemantico.onclick = function (e) {
+    alert("Hola Mundo Manejador de Eventos Semántico");
+    console.log(e);
+}
+
+$eventoMultiple.addEventListener("click", holaMundo);
+$eventoMultiple.addEventListener("click", (e) => {
+    alert("Hola Mundo Manejador de Eventos Múltiple");
+    console.log(e);
+    console.log(e.type);
+    console.log(e.target);
+});
+
+$eventoMultiple.addEventListener("click", () => {
+    saludar();
+    saludar('Alex');
+});
+
+const removerDobleClick = (e) => {
+    alert(`Removiendo el evento de tipo ${e.type}`);
+    console.log(e);
+    $eventoRemover.removeEventListener("dblclick", removerDobleClick);
+    $eventoRemover.disabled = true;
+}
+
+$eventoRemover.addEventListener("dblclick", removerDobleClick); */
+
+
+
+
+
+/* ****************************************************************************** */
+// Video #74. DOM: Flujo de Eventos(Burbuja y Captura)
+
+
+
+
+
+/* const $divsEventos = document.querySelectorAll(".eventos-flujo div")
+
+function flujoEventos(e) {
+    console.log(`Hola te saluda ${this.className}, el click lo originó ${e.target.className}`);
+}
+
+console.log($divsEventos);
+
+$divsEventos.forEach(div => {
+    // Fase de Burbuja
+    // div.addEventListener("click", flujoEventos);
+    // ||
+    // div.addEventListener("click", flujoEventos, false);
+    // Fase de captura
+    // div.addEventListener("click", flujoEventos, true);
+    div.addEventListener("click", flujoEventos, {
+        capture: false,
+        once: true,
+    });
+}) */
+
+
+
+
+
+/* ****************************************************************************** */
+// Video #75. DOM: stopPropagation & preventDefault
+
+
+
+
+/* const $divsEventos = document.querySelectorAll(".eventos-flujo div"),
+    $linkEventos = document.querySelector(".eventos-flujo a");
+
+function flujoEventos(e) {
+    console.log(`Hola te saluda ${this.className}, el click lo originó ${e.target.className}`);
+    e.stopPropagation();
+}
+
+console.log($divsEventos);
+
+$divsEventos.forEach(div => {
+    // Fase de Burbuja
+    div.addEventListener("click", flujoEventos);
+    // ||
+    // div.addEventListener("click", flujoEventos, false);
+    // Fase de captura
+    // div.addEventListener("click", flujoEventos, true);
+    // div.addEventListener("click", flujoEventos, {
+    //     capture: false,
+    //     once: true,
+    // });
+})
+
+$linkEventos.addEventListener("click", (e) => {
+    alert("Hola");
+    e.preventDefault();
+    e.stopPropagation();
+}); */
+
+
+
+
+
+
+/* ****************************************************************************** */
+// Video #76. DOM: Delegación de Eventos
+
+
+
+
+
+function flujoEventos(e) {
+    console.log(`Hola te saluda ${this}, el click lo originó ${e.target.className}`);
+}
+
+document.addEventListener("click", (e) => {
+    console.log("Click en ", e.target);
+
+    if(e.target.matches(".eventos-flujo div")) {
+        flujoEventos(e);
+    }
+
+    if(e.target.matches(".eventos-flujo a")) {
+        alert("Hola");
+        e.preventDefault();
+    }
+});
