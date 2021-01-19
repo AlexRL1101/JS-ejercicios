@@ -583,7 +583,7 @@ $linkEventos.addEventListener("click", (e) => {
 
 
 
-function flujoEventos(e) {
+/* function flujoEventos(e) {
     console.log(`Hola te saluda ${this}, el click lo originó ${e.target.className}`);
 }
 
@@ -598,4 +598,133 @@ document.addEventListener("click", (e) => {
         alert("Hola");
         e.preventDefault();
     }
+}); */
+
+
+
+
+
+
+
+/* ****************************************************************************** */
+// Video #77. BOM: Propiedades y Eventos
+
+
+
+
+
+/* window.addEventListener("resize", (e) => {
+    console.clear();
+    console.log("**************** Evento Resize ******************");
+    console.log(window.innerWidth);
+    console.log(window.innerHeight);
+    console.log(window.outerWidth);
+    console.log(window.outerHeight);
+    console.log(window.scrollX);
+    console.log(window.scrollY);
+    console.log(e);
 });
+
+window.addEventListener("scroll", (e) => {
+    console.clear();
+    console.log("**************** Evento Scroll ******************");
+    console.log(window.scrollX);
+    console.log(window.scrollY);
+    console.log(e);
+});
+
+window.addEventListener("load", (e) => {
+    console.log("**************** Evento Load ******************");
+    console.log(window.screenX);
+    console.log(window.screenY);
+    console.log(e);
+});
+
+document.addEventListener("DOMContentLoaded", (e) => {
+    console.log("**************** Evento DOMContentLoaded ******************");
+    console.log(window.screenX);
+    console.log(window.screenY);
+    console.log(e);
+}); */
+
+
+
+
+
+
+
+/* ****************************************************************************** */
+// Video #78. BOM: Métodos
+
+
+
+
+
+// window.alert("Alerta");
+// window.confirm("Confirmación");
+// window.prompt("Aviso");
+// alert("Alex");
+/* const $btnAbrir = document.getElementById("abrir-ventana"),
+    $btnCerrar = document.getElementById("cerrar-ventana"),
+    $btnImprimir = document.getElementById("imprimir-ventana");
+    
+let ventana;
+
+$btnAbrir.addEventListener("click", (e) => {
+    ventana = open("https://jonmircha.com");
+});
+
+$btnAbrir.addEventListener("click", (e) => {
+    // close();
+    ventana.close();
+});
+
+$btnAbrir.addEventListener("click", (e) => {
+    print();
+}); */
+
+
+
+
+
+
+
+/* ****************************************************************************** */
+// Video #79. BOM: Objetos: URL, Historial y Navegador
+
+
+
+
+
+
+// console.log("********************* Objeto URL (location) ******************");
+// console.log(location);
+// console.log(location.origin);
+// console.log(location.protocol);
+// console.log(location.host);
+// console.log(location.hostname);
+// console.log(location.port);
+// console.log(location.href);
+// console.log(location.hash);
+// console.log(location.search);
+// console.log(location.pathname);
+// location.reload();
+
+// console.log("********************* Objeto Historial (history) ******************");
+// console.log(history);
+// console.log(history.length);
+// // console.log(history.back(2));
+// // console.log(history.forward(1));
+// // console.log(history.go(-3)); Pag Adelante
+
+/* console.log("********************* Objeto Navegador (navigator) ******************");
+console.log(navigator);
+console.log(navigator.connection);
+console.log(navigator.geolocation);
+console.log(navigator.mediaDevices);
+console.log(navigator.mimeTypes);
+console.log(navigator.onLine);
+console.log(navigator.serviceWorker);
+console.log(navigator.storage);
+console.log(navigator.usb);
+console.log(navigator.userAgent); */
