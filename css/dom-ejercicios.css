@@ -117,3 +117,19 @@ img {
   color: var(--second-color);
   background-color: var(--main-modal-color);
 }
+
+/* Eventos del Teclado */
+
+.space {
+  display: flex;
+  background-color: var(--second-modal-color);
+  min-height: 50vh;
+}
+
+.ball {
+  margin: auto;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: var(--main-color);
+}
