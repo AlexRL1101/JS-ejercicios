@@ -79,6 +79,7 @@ img {
 .panel.is-active {
   transform: translate(0, 0);
   opacity: 1;
+  visibility: visible;
 }
 
 .panel-btn {
@@ -214,7 +215,7 @@ img {
   font-weight: bold;
   text-align: center;
   background-color: #1b5e20;
-  color: #FFF;
+  color: #fff;
 }
 
 .offline {
@@ -311,4 +312,66 @@ img {
 
 .slider a:hover {
   color: #4d4d4d;
+}
+
+/* ScrollSpy */
+
+@media screen and (min-width: 1024px) {
+  body {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 4rem auto;
+    grid-template-areas:
+      "header header"
+      "main   panel";
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  .header {
+    grid-area: header;
+  }
+
+  .panel {
+    grid-area: panel;
+    align-self: start;
+    position: sticky;
+    top: 4rem;
+    justify-content: flex-start;
+    background-color: var(--second-color);
+    transform: translate(0, 0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .panel-btn {
+    display: none;
+  }
+
+  .menu {
+    justify-content: start;
+    text-align: right;
+  }
+
+  .menu a {
+    font-size: 1rem;
+    padding: .75rem;
+  }
+
+  .menu a:hover,
+  .menu a.active {
+    color: var(--second-color);
+    background-color: var(--main-color)
+  }
+
+  .scroll-btn {
+    right: initial;
+    left: calc(4.25rem + 1vw);
+  }
+}
+
+.video {
+  width: 80%;
 }
