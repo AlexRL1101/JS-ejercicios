@@ -568,6 +568,15 @@
             opacity: 0;
         }
     }
+
+    .scrollable-place {
+        height: 1000px;
+    }
+
+    .remove-scrolling {
+        height: 100%;
+        overflow: hidden;
+    }
 </style>
 <section id="hero-image" class="hero-image">
     <div class="scroll-down"></div>
@@ -648,21 +657,6 @@
         if (!hasClase2) element.classList.add($classname);
     }
 
-    function preventScroll(e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        return false;
-    }
-
-    function disable() {
-        document.querySelector('.hero-image').addEventListener('wheel', preventScroll);
-    }
-
-    function enable() {
-        document.querySelector('.hero-image').removeEventListener('wheel', preventScroll);
-    }
-
     const $sections = d.querySelectorAll("section[data-scroll-spy]");
 
     let oldValue = 0,
@@ -686,6 +680,10 @@
                     claseSection = sectionEle.classList.contains('oculta');
 
                 if (claseSection) {
+                    disableScroll();
+                    setTimeout(() => {
+                        enableScroll();
+                    }, 2000);
                     eliminaClase(sectionEle.id, 'oculta');
 
                     const childrenSinAnimacion = Array.from(sectionEle.querySelectorAll(':scope > img[data-scroll]')),
@@ -708,7 +706,7 @@
                         });
                     }
 
-                        disable();
+                    disable();
 
                     setTimeout(() => {
                         enable();
@@ -736,5 +734,18 @@
     };
 
     w.addEventListener("scroll", myScrollFunc);
+
+    disableScroll();
+        setTimeout(() => {
+            enableScroll();
+        }, 1000);
+
+    function disableScroll() {
+        document.body.classList.add("remove-scrolling");
+    }
+
+    function enableScroll() {
+        document.body.classList.remove("remove-scrolling");
+    }
 
 </script>
