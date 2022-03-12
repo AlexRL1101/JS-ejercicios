@@ -1,0 +1,740 @@
+<style>
+    @media (max-width: 575.98px) {
+        .container {
+            max-width: 100%;
+        }
+
+        .hero-image {
+            margin-left: -163px;
+            margin-right: -120px;
+        }
+
+        #static-animated,
+        img[data-scroll-static] {
+            position: absolute;
+            width: 100%;
+            transition: all 0.8s;
+        }
+
+        .container-iframe {
+            width: 100% !important;
+            padding-top: 0% !important;
+        }
+
+        #hero-image {
+            background-size: 186% 100%;
+        }
+
+        #sloganInicial {
+            width: 90%;
+            height: 20%;
+        }
+
+        #text1-animated {
+            position: absolute;
+            top: 31%;
+            left: 1%;
+            width: 30%;
+        }
+
+        #text2-animated {
+            position: absolute;
+            top: 31.5%;
+            right: 1%;
+            width: 44%;
+        }
+
+        #text3-animated {
+            top: 55%;
+            right: 18%;
+            width: 34%;
+        }
+
+        #text4-animated {
+            position: absolute;
+            top: 46%;
+            left: 3%;
+            width: 37%;
+        }
+
+        #fondo-gif {
+            display: none;
+        }
+
+        #fondo-gif-movil {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    @media (min-width: 576px) {
+        .container {
+            max-width: 100%;
+        }
+
+        .hero-image {
+            margin-left: -163px;
+            margin-right: -120px;
+        }
+
+        #static-animated,
+        img[data-scroll-static] {
+            position: absolute;
+            width: 100%;
+            transition: all 0.8s;
+        }
+
+        .container-iframe {
+            width: 100%;
+        }
+
+        #hero-image {
+            background-size: 186% 100%;
+        }
+
+        #sloganInicial {
+            width: 90%;
+        }
+
+        #text1-animated {
+            position: absolute;
+            top: 29%;
+            left: 1%;
+            width: 30%;
+        }
+
+        #text2-animated {
+            position: absolute;
+            top: 28.5%;
+            right: 1%;
+            width: 44%;
+        }
+
+        #text3-animated {
+            top: 54%;
+            right: 17%;
+            width: 34%;
+        }
+
+        #text4-animated {
+            position: absolute;
+            top: 44%;
+            left: 3%;
+            width: 37%;
+        }
+
+        #fondo-gif {
+            display: none;
+        }
+
+        #fondo-gif-movil {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            max-width: 100%;
+        }
+
+        .hero-image {
+            margin-left: -163px;
+            margin-right: -120px;
+        }
+
+        #static-animated,
+        img[data-scroll-static] {
+            position: absolute;
+            width: 100%;
+            transition: all 0.8s;
+        }
+
+        .container-iframe {
+            width: 100% !important;
+        }
+
+        #hero-image {
+            background-size: 186% 100%;
+        }
+
+        #sloganInicial {
+            width: 98%;
+            height: 50%;
+        }
+
+        #text1-animated {
+            position: absolute;
+            top: 25%;
+            left: 1%;
+            width: 30%;
+        }
+
+        #text2-animated {
+            position: absolute;
+            top: 25.5%;
+            right: 1%;
+            width: 44%;
+        }
+
+        #text3-animated {
+            top: 57%;
+            right: 18%;
+            width: 34%;
+        }
+
+        #text4-animated {
+            position: absolute;
+            top: 47%;
+            left: 3%;
+            width: 37%;
+        }
+
+        #fondo-gif {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        #fondo-gif-movil {
+            display: none;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .container {
+            max-width: 100%;
+        }
+
+        .hero-image {
+            margin-left: -163px;
+            margin-right: -120px;
+        }
+
+        #static-animated,
+        img[data-scroll-static] {
+            width: 75%;
+        }
+
+        .container-iframe {
+            width: 100% !important;
+            padding-top: 0% !important;
+        }
+
+        #hero-image {
+            background-size: 172% 170%;
+        }
+
+        #sloganInicial {
+            width: 90%;
+            height: 100%;
+        }
+
+        #text1-animated {
+            top: 9%;
+            left: 7%;
+            width: 25%;
+        }
+
+        #text2-animated {
+            top: 8.5%;
+            right: 15.5%;
+            width: 31%;
+        }
+
+        #text3-animated {
+            top: 58%;
+            right: 17%;
+            width: 34%;
+        }
+
+        #text4-animated {
+            top: 43%;
+            left: 10%;
+            width: 31%;
+        }
+
+        #fondo-gif {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        #fondo-gif-movil {
+            display: none;
+        }
+    }
+
+    @media(min-width: 1200px) {
+        .container {
+            max-width: 100%;
+        }
+
+        .hero-image {
+            margin-left: -50% !important;
+            margin-right: -50% !important;
+        }
+
+        .container-iframe {
+            padding-top: 0% !important;
+        }
+
+        #static-animated,
+        img[data-scroll-static] {
+            position: absolute;
+            width: 70%;
+            transition: all 0.8s;
+        }
+
+        img[data-scroll-animated],
+        img[data-scroll] {
+            width: 20%;
+            transition: all 0.8s;
+        }
+
+        #sloganInicial {
+            width: 90%;
+            height: 60%;
+        }
+
+        #text1-animated {
+            position: absolute;
+            top: 6%;
+            left: 10%;
+        }
+
+        #text2-animated {
+            position: absolute;
+            top: 3.5%;
+            right: 15.5%;
+        }
+
+        #text3-animated {
+            position: absolute;
+            top: 53%;
+            right: 17%;
+        }
+
+        #text4-animated {
+            position: absolute;
+            top: 45%;
+            left: 13%;
+        }
+
+        #fondo-gif {
+            display: block;
+            width: 123%;
+            height: 119%;
+            left: -10%;
+        }
+
+        #fondo-gif-movil {
+            display: none;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        .container {
+            max-width: 100%;
+        }
+
+        .hero-image {
+            margin-left: -50% !important;
+            margin-right: -50% !important;
+        }
+
+        .container-iframe {
+            padding-top: 0% !important;
+        }
+
+        #static-animated,
+        img[data-scroll-static] {
+            position: absolute;
+            width: 70%;
+            transition: all 0.8s;
+        }
+
+        img[data-scroll-animated],
+        img[data-scroll] {
+            width: 20%;
+            transition: all 0.8s;
+        }
+
+        #sloganInicial {
+            width: 90%;
+            height: 70%;
+        }
+
+        #text1-animated {
+            position: absolute;
+            top: 13%;
+            left: 10%;
+        }
+
+        #text2-animated {
+            position: absolute;
+            top: 13.5%;
+            right: 15.5%;
+        }
+
+        #text3-animated {
+            position: absolute;
+            top: 53%;
+            right: 17%;
+        }
+
+        #text4-animated {
+            position: absolute;
+            top: 45%;
+            left: 13%;
+        }
+
+        #fondo-gif {
+            display: block;
+            width: 180%;
+            height: 133%;
+            left: -40%;
+        }
+
+        #fondo-gif-movil {
+            display: none;
+        }
+    }
+
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    :root {
+        --container-width: 1200px;
+        --image: url('https://yetox.com/media/wysiwyg/lukoilgenesis/BG_2_EAR.jpg');
+    }
+
+    body {
+        margin: 0 !important;
+        transition: top 6s ease-in-out 50ms;
+    }
+
+    .container {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .oculta {
+        display: none !important;
+    }
+
+    .class-gif {
+        position: absolute;
+    }
+
+    .content-header {
+        position: fixed;
+        transform: scale(0);
+    }
+
+    .content-header.top {
+        transition-duration: 0.5s, 1s;
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .container-iframe {
+        position: relative;
+        width: 80%;
+        overflow: hidden;
+        padding-top: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 100vh;
+        z-index: 2;
+    }
+
+    .responsive-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    .hero-image {
+        margin-left: -91px;
+        margin-right: -88px;
+        min-height: 367vh;
+        background-image: var(--image);
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+    }
+
+    .hero-image section {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section {
+        padding-top: 0;
+        padding-bottom: 4rem;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: var(--container-width);
+        min-height: 100vh;
+    }
+
+    img[data-scroll-animated],
+    img[data-scroll] {
+        transition: all 0.8s;
+    }
+
+    .scroll-down {
+        position: fixed;
+        bottom: 30px;
+        display: block;
+        text-align: center;
+        font-size: 20px;
+        z-index: 100;
+        text-decoration: none;
+        width: 33px;
+        height: 33px;
+        border-bottom: 2px solid #fff;
+        border-right: 2px solid #fff;
+        z-index: 1;
+        left: 48%;
+        animation: fade_move_down 2s ease-in-out infinite;
+    }
+
+    /*animated scroll arrow animation*/
+    @-webkit-keyframes fade_move_down {
+        0% {
+            -webkit-transform: translate(0, -10px) rotate(45deg);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            -webkit-transform: translate(0, 10px) rotate(45deg);
+            opacity: 0;
+        }
+    }
+
+    @-moz-keyframes fade_move_down {
+        0% {
+            -moz-transform: translate(0, -10px) rotate(45deg);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            -moz-transform: translate(0, 10px) rotate(45deg);
+            opacity: 0;
+        }
+    }
+
+    @keyframes fade_move_down {
+        0% {
+            transform: translate(0, -10px) rotate(45deg);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translate(0, 10px) rotate(45deg);
+            opacity: 0;
+        }
+    }
+</style>
+<section id="hero-image" class="hero-image">
+    <div class="scroll-down"></div>
+    <section id="seccion0" class="section" data-scroll-spy=""><img id="sloganInicial" class="content-header top"
+            src="https://yetox.com/media/wysiwyg/lukoilgenesis/Title.png" alt="" data-scroll-animated=""></section>
+    <section id="seccion1" class="section oculta" data-scroll-spy=""><img id="static-animated" class="content-header"
+            src="https://yetox.com/media/wysiwyg/lukoilgenesis/vector_garrafa_sinEAR_.png" alt=""
+            data-scroll-animated="">
+    </section>
+    <section id="seccion2" class="section oculta" data-scroll-spy=""><img id="text1-animated" class="content-header"
+            src="https://yetox.com/media/wysiwyg/lukoilgenesis/Text1.png" alt="" data-scroll-animated=""> <img class=""
+            src="https://yetox.com/media/wysiwyg/lukoilgenesis/vector_garrafa_sinEAR_.png" alt="" data-scroll-static="">
+    </section>
+    <section id="seccion3" class="section oculta" data-scroll-spy=""><img id="text1-animated" class="content-header"
+            src="https://yetox.com/media/wysiwyg/lukoilgenesis/Text1.png" alt="" data-scroll=""> <img class=""
+            src="https://yetox.com/media/wysiwyg/lukoilgenesis/vector_garrafa_sinEAR_.png" alt="" data-scroll-static="">
+        <img id="text2-animated" class="content-header" src="https://yetox.com/media/wysiwyg/lukoilgenesis/Text2.png"
+            alt="" data-scroll-animated="">
+    </section>
+    <section id="seccion4" class="section oculta" data-scroll-spy=""><img id="text1-animated" class="content-header"
+            src="https://yetox.com/media/wysiwyg/lukoilgenesis/Text1.png" alt="" data-scroll=""> <img class=""
+            src="https://yetox.com/media/wysiwyg/lukoilgenesis/vector_garrafa_sinEAR_.png" alt="" data-scroll-static="">
+        <img id="text2-animated" class="content-header" src="https://yetox.com/media/wysiwyg/lukoilgenesis/Text2.png"
+            alt="" data-scroll=""> <img id="text3-animated" class="content-header"
+            src="https://yetox.com/media/wysiwyg/lukoilgenesis/Text3.png" alt="" data-scroll-animated="">
+    </section>
+    <section id="seccion5" class="section oculta" data-scroll-spy="">
+        <img id="text4-animated" class="content-header" src="https://yetox.com/media/wysiwyg/lukoilgenesis/Text4.png"
+            alt="" data-scroll-animated="">
+        <img id="text1-animated" class="content-header" src="https://yetox.com/media/wysiwyg/lukoilgenesis/Text1.png"
+            alt="" data-scroll="">
+        <img class="" src="https://yetox.com/media/wysiwyg/lukoilgenesis/vector_garrafa_sinEAR_.png" alt=""
+            data-scroll-static="">
+        <img id="text2-animated" class="content-header" src="https://yetox.com/media/wysiwyg/lukoilgenesis/Text2.png"
+            alt="" data-scroll="">
+        <img id="text3-animated" class="content-header" src="https://yetox.com/media/wysiwyg/lukoilgenesis/Text3.png"
+            alt="" data-scroll="">
+    </section>
+    <!-- Final -->
+    <section id="seccion6" class="section oculta" data-scroll-spy="">
+        <video id="fondo-gif" class="class-gif" autoplay="autoplay" loop="loop" muted="" width="300" height="150">
+            <source src="https://yetox.com/media/wysiwyg/lukoilgenesis/LandingHome.mp4" type="video/mp4">
+        </video> <video id="fondo-gif-movil" class="class-gif" autoplay="autoplay" loop="loop" muted="" width="300"
+            height="150">
+            <source src="https://yetox.com/media/wysiwyg/lukoilgenesis/M_vil.mp4" type="video/mp4">
+        </video>
+    </section>
+</section>
+<!-- Formulario -->
+<div class="container-iframe"><iframe class="responsive-iframe"
+        src="https://forms.yetox.com/form/public/views/form_genesis.php"></iframe></div>
+<script type="text/javascript">
+    const d = document,
+        w = window;
+
+    function tamanoPorSection() {
+        let section = d.getElementById("hero-image"),
+            $sections = d.querySelectorAll("section[data-scroll-spy]").length,
+            medida = section.clientHeight,
+            $medida_section = Math.round(medida / $sections),
+            jsonMedidas = {};
+
+        for (let i = 0; i <= $sections; i++) {
+            jsonMedidas[i] = ($medida_section - 100) * i;
+        }
+        return jsonMedidas;
+    }
+
+    function eliminaClase($idelement, $classname) {
+        let element = d.getElementById($idelement),
+            hasClase2 = element.classList.contains($classname);
+        if (hasClase2) element.classList.remove($classname);
+    }
+
+    function agregaClase($idelement, $classname) {
+        let element = d.getElementById($idelement),
+            hasClase2 = element.classList.contains($classname);
+        if (!hasClase2) element.classList.add($classname);
+    }
+
+    function preventScroll(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        return false;
+    }
+
+    function disable() {
+        document.querySelector('.hero-image').addEventListener('wheel', preventScroll);
+    }
+
+    function enable() {
+        document.querySelector('.hero-image').removeEventListener('wheel', preventScroll);
+    }
+
+    const $sections = d.querySelectorAll("section[data-scroll-spy]");
+
+    let oldValue = 0,
+        newValue = 0,
+        direccion = 0;
+
+    let myScrollFunc = function () {
+        let y = w.scrollY,
+            obsj = tamanoPorSection(),
+            newValue = w.pageYOffset;
+
+        if (oldValue < newValue) {
+            direccion = 0;
+        } else if (oldValue > newValue) {
+            direccion = 1;
+        }
+
+        for (let i = 0; i < Object.keys(obsj).length - 1; i++) {
+            if (y >= obsj[i] && y <= obsj[i + 1]) {
+                let sectionEle = $sections[i],
+                    claseSection = sectionEle.classList.contains('oculta');
+
+                if (claseSection) {
+                    eliminaClase(sectionEle.id, 'oculta');
+
+                    const childrenSinAnimacion = Array.from(sectionEle.querySelectorAll(':scope > img[data-scroll]')),
+                        children = Array.from(sectionEle.querySelectorAll(':scope > img[data-scroll-animated]'));
+
+                    childrenSinAnimacion.forEach((element) => {
+                        element.classList.toggle("top");
+                    });
+
+                    if (direccion) {
+                        children.forEach((element) => {
+                            element.classList.toggle("top");
+                        });
+                    }
+                    else {
+                        children.forEach((element) => {
+                            setTimeout(() => {
+                                element.classList.toggle("top");
+                            }, 1);
+                        });
+                    }
+
+                        disable();
+
+                    setTimeout(() => {
+                        enable();
+                    }, 1000);
+                }
+            } else {
+                let sectionEle = $sections[i],
+                    claseSection = sectionEle.classList.contains('oculta');
+
+                if (!claseSection) {
+                    agregaClase(sectionEle.id, 'oculta');
+
+                    const children = Array.from(sectionEle.querySelectorAll(':scope > img.content-header'));
+
+                    children.forEach((element) => {
+                        setTimeout(() => {
+                            element.classList.remove("top");
+                        }, 100);
+                    });
+                }
+            }
+        }
+
+        oldValue = newValue;
+    };
+
+    w.addEventListener("scroll", myScrollFunc);
+
+</script>
