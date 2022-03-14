@@ -1,0 +1,420 @@
+<style>
+    @media (max-width: 575.98px) {
+        h2 {
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        .text-media__col_first_text,
+        .text-media__col--text {
+            text-align: justify;
+            justify-content: center;
+        }
+
+        .text-alone {
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+        }
+    }
+
+    @media (min-width: 576px) {
+        h2 {
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        .text-media__col_first_text,
+        .text-media__col--text {
+            text-align: justify;
+            justify-content: center;
+        }
+
+        .text-alone {
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+        }
+    }
+
+    @media (min-width: 768px) {
+
+        h2 {
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        .text-alone>h2 {
+            text-align: unset;
+        }
+
+        .text-media__content>*+* {
+            margin-top: 1.75rem;
+        }
+
+        .text-media__content {
+            padding: 2rem;
+        }
+
+        .text-alone {
+            padding-right: 8rem;
+            padding-left: 8rem;
+        }
+
+        .text-media__col_first_text {
+            text-align: justify;
+            justify-content: center;
+        }
+
+        .text-media__col--text {
+            text-align: justify;
+            justify-content: center;
+        }
+
+        .first-card {
+            padding-left: 0;
+        }
+    }
+
+    @media (min-width: 992px) {
+        h2 {
+            text-align: unset;
+        }
+
+        .text-media__content {
+            padding: var(--pt, var(--py)) 4rem var(--py) 4rem;
+        }
+
+        .text-media+.text-media--no-bg,
+        .text-media--no-bg+.text-media {
+            margin-top: 6rem;
+        }
+
+        .text-media--no-img {
+            justify-content: center;
+        }
+
+        .text-media--no-img .text-media__col {
+            flex: 0 1 75rem;
+        }
+
+        .text-media--narrow .text-media__col--media {
+            padding: var(--py) 0;
+        }
+
+        .text-media--narrow:nth-of-type(even) .text-media__img-wrapper {
+            padding: 0 4rem 0 0;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .text-media--narrow .text-media__img-wrapper {
+            position: relative;
+            max-width: 45rem;
+            padding: 0 0 0 4rem;
+            margin-left: auto;
+        }
+
+        .text-media--narrow .text-media__img {
+            object-fit: auto;
+            height: auto;
+        }
+
+        .text-media {
+            display: flex;
+            /* Alternate layouts are reversed */
+        }
+
+        .text-media:nth-of-type(even) {
+            flex-direction: row-reverse;
+        }
+
+        .text-media:nth-of-type(even) .text-media__content {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .text-media__img-wrapper {
+            height: 100%;
+        }
+
+        .text-alone {
+            padding-right: 18rem;
+            padding-left: 18rem;
+        }
+
+        .first-card {
+            padding-left: 5%;
+        }
+
+        .text-media__col_first_text,
+        .text-media__col--text {
+            text-align: start;
+            justify-content: flex-start;
+        }
+    }
+
+    @media(min-width: 1200px) {
+        .first-card {
+            padding-left: 5% !important;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        h2 {
+            text-align: unset;
+        }
+
+        .text-media__content {
+            padding: var(--pt, var(--py)) 4rem var(--py) 4rem;
+        }
+
+        .text-media+.text-media--no-bg,
+        .text-media--no-bg+.text-media {
+            margin-top: 6rem;
+        }
+
+        .text-media--no-img {
+            justify-content: center;
+        }
+
+        .text-media--no-img .text-media__col {
+            flex: 0 1 75rem;
+        }
+
+        .text-media--narrow .text-media__col--media {
+            padding: var(--py) 0;
+        }
+
+        .text-media--narrow:nth-of-type(even) .text-media__img-wrapper {
+            padding: 0 4rem 0 0;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .text-media--narrow .text-media__img-wrapper {
+            position: relative;
+            max-width: 45rem;
+            padding: 0 0 0 4rem;
+            margin-left: auto;
+        }
+
+        .text-media--narrow .text-media__img {
+            object-fit: auto;
+            height: auto;
+        }
+
+        .text-media {
+            display: flex;
+            /* Alternate layouts are reversed */
+        }
+
+        .text-media:nth-of-type(even) {
+            flex-direction: row-reverse;
+        }
+
+        .text-media:nth-of-type(even) .text-media__content {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .text-media__img-wrapper {
+            height: 100%;
+        }
+
+        .text-alone {
+            padding-right: 18rem;
+            padding-left: 18rem;
+        }
+
+        .first-card {
+            padding-left: 5%;
+        }
+
+        .text-media__col_first_text,
+        .text-media__col--text {
+            text-align: start;
+            justify-content: flex-start;
+        }
+    }
+
+    header {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+
+    .container {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    #banner_como_vender {
+        width: 100%;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    /*---------------------*/
+
+    a {
+        color: #007bff;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+
+    .text-media {
+        --py: 4rem;
+        padding: 2rem;
+    }
+
+    .text-media__col {
+        position: relative;
+        flex: 0 0 50%;
+    }
+
+    .text-media__col_first_text {
+        position: relative;
+        flex: 0 0 40%;
+    }
+
+    .text-media__col_first {
+        position: relative;
+        flex: 0 0 60%;
+    }
+
+    .text-media__col--text {
+        display: flex;
+        align-items: center;
+    }
+
+    .text-media__img_iframe {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 3/2;
+    }
+
+    .text-media__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .text-media__content {
+        max-width: 45rem;
+        padding: 1rem;
+    }
+
+    .text-media__content>*+* {
+        margin-top: 1rem;
+    }
+
+    .text-alone>p {
+        text-align: justify;
+    }
+
+    .text-alone>#coment-final {
+        text-align: center;
+    }
+
+    .parrafo {
+        padding-block-end: 8rem;
+    }
+
+    .text-media--no-bg.text-media--narrow {
+        --py: 0;
+    }
+
+    .text-media--no-img .text-media__content {
+        max-width: 65rem;
+    }
+
+    .text-media--no-img.text-media--no-bg {
+        --py: 0;
+    }
+</style>
+<img id="banner_como_vender" src="{{media url='wysiwyg/como_vender_en_y/c_mo-vender-en-yetox_banner.jpg'}}" alt=""><br>
+<!-- ******************************************* -->
+<section class="text-media first-card">
+    <div class="text-media__col_first text-media__col--media">
+        <div class="text-media__img-wrapper"><iframe class="text-media__img_iframe"
+                src="https://www.youtube.com/embed/opKH4wpKfI4?loop=1&amp;playlist=opKH4wpKfI4&amp;autoplay=1&amp;mute=1"
+                title="YouTube video como vender en yetox" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen="allowfullscreen"></iframe></div>
+    </div>
+    <div class="text-media__col_first_text text-media__col--text">
+        <div class="text-media__content">
+            <p>Vender productos para la industria puede ser algo complejo y seguramente estás de acuerdo con nosotros en
+                que es más fácil vender por internet una licuadora que un microscopio láser certificado
+                <strong>¿verdad?</strong></p>
+        </div>
+    </div>
+</section>
+<div class="text-alone">
+    <h2>Implementar tecnología digital e innovar</h2>
+    <br>
+    <p>Ha sido labor constante de todos aquellos que entienden la importancia de vender y comprar a través de internet;
+        y es que, cada vez es mayor el número de transacciones a través de internet.</p>
+    <p>Te presentamos una guía sobre cómo vender tus productos industriales y semi-industriales en Yetox® y todos
+        beneficios que podrías aprovechar.</p>
+</div>
+<!--Without background color-->
+<section class="text-media">
+    <div class="text-media__col text-media__col--media">
+        <div class="text-media__img-wrapper"><img class="text-media__img"
+                src="{{media url='wysiwyg/como_vender_en_y/Infographic1.png'}}" alt="Registrate en yetox"></div>
+    </div>
+    <div class="text-media__col text-media__col--text">
+        <div class="text-media__content">
+            <h2>Regístrate</h2>
+            <p>Crea un usuario y contraseña; podrás crear un perfil de usuario, en el cual especificarás la dirección
+                desde donde enviarás tus productos para que la paquetería pueda hacer el cálculo automático del envío.
+            </p>
+        </div>
+    </div>
+</section>
+<!--Without background color and with narrower image-->
+<section class="text-media">
+    <div class="text-media__col text-media__col--media">
+        <div class="text-media__img-wrapper"><img class="text-media__img"
+                src="{{media url='wysiwyg/como_vender_en_y/Infographic2.png'}}" alt="Publica productos en yetox"></div>
+    </div>
+    <div class="text-media__col text-media__col--text">
+        <div class="text-media__content">
+            <h2>Publica tu producto</h2>
+            <p>Con tu cuenta lista, ya puedes crear una publicación; para ello, te recomendamos añadir toda la
+                información que solicitamos, además, agregar todos los elementos que consideres necesarios para que tus
+                futuros compradores tengan información técnica y comercial sobre tus productos.</p>
+        </div>
+    </div>
+</section>
+<div class="text-alone parrafo">
+    <p>Dale la información y confianza necesaria para que elija tus productos sobre los de tu competencia.</p>
+    <p>No siempre los compradores eligen el producto más barato, sino que algunas veces elijen aquél con mayor
+        información provocando en ellos más confianza respecto a la calidad o claridad en las especificaciones del
+        producto.</p>
+</div>
+<!--With background color and narrow image-->
+<section class="text-media">
+    <div class="text-media__col text-media__col--media">
+        <div class="text-media__img-wrapper"><img class="text-media__img"
+                src="{{media url='wysiwyg/como_vender_en_y/Infographic3.png'}}" alt="Compra en yetox"></div>
+    </div>
+    <div class="text-media__col text-media__col--text">
+        <div class="text-media__content">
+            <h2>¡Compraron tu producto!</h2>
+            <p>Felicidades, ya realizaron la compra de tu producto. Recibirás una notificación de Venta y una guía de
+                envío a tu correo. De igual manera, toda esta información la podrás obtener en tu dashboard de usuario
+                dentro de la página. Realiza el envío y cuando se acredite el proceso de compra exitosa, Yetox®
+                dispersará tu dinero a la cuenta bancaria que hayas vinculado en tu perfil.</p>
+        </div>
+    </div>
+</section>
+<div class="text-alone parrafo">
+    <p id="coment-final">Si tienes más dudas o comentarios no dudes en escribirnos a <a
+            href="mailto: info@yetox.com">info@yetox.com</a> y con mucho gusto te ayudaremos.</p>
+</div>
+<!-- ******************************************* -->
