@@ -9,6 +9,10 @@
       margin-right: -120px;
     }
 
+    .hero-image section {
+      flex-direction: column-reverse !important;
+    }
+
     #static-animated,
     img[data-scroll-static] {
       position: absolute;
@@ -30,35 +34,224 @@
     }
 
     #sloganInicial {
-      width: 90%;
+      top: 10%;
+      width: 80%;
       height: 20%;
+    }
+
+    #text1-animated.disable_image,
+    #text2-animated.disable_image,
+    #text3-animated.disable_image {
+      transform: scale(0.5);
     }
 
     #text1-animated {
       position: absolute;
-      top: 31%;
-      left: 1%;
-      width: 30%;
+      top: 20%;
+      left: 2%;
+      width: 50%;
+      margin-top: -20%;
     }
 
     #text2-animated {
       position: absolute;
-      top: 31.5%;
-      right: 1%;
-      width: 44%;
+      top: 20%;
+      right: 2%;
+      width: 50%;
     }
 
     #text3-animated {
-      top: 55%;
-      right: 18%;
-      width: 34%;
+      position: absolute;
+      top: 30%;
+      left: 2%;
+      width: 50%;
     }
 
     #text4-animated {
+      position: relative !important;
+      top: 20%;
+      right: -5%;
+      left: auto;
+      width: 50%;
+    }
+
+    .onClickTextOverImage {
+      cursor: pointer;
+    }
+
+    #text_firstcard,
+    #text_threecard {
+      width: 50%;
+      right: 0%;
+      margin-top: 30%;
+    }
+
+    #text_secondcard {
+      width: 50%;
+      left: -25%;
+      margin-top: 60%;
+    }
+
+    .imagen .text {
       position: absolute;
-      top: 46%;
-      left: 3%;
-      width: 37%;
+      color: #ffffff;
+      text-align: justify;
+      opacity: 0;
+      visibility: hidden;
+      transition-duration: 0.5s, 1s;
+      transform: translateX(50%);
+    }
+
+    .imagen.show .text {
+      position: relative;
+      opacity: 1;
+      visibility: visible;
+      transition-duration: 0.5s, 1s;
+      transform: translateX(0%);
+    }
+
+    .imagen .text_left {
+      position: absolute;
+      color: #ffffff;
+      text-align: justify;
+      opacity: 0;
+      visibility: hidden;
+      transition-duration: 0.5s, 1s;
+      transform: translateX(0%);
+    }
+
+    .imagen.show .text_left {
+      position: relative;
+      opacity: 1;
+      visibility: visible;
+      transition-duration: 0.5s, 1s;
+      transform: translateX(50%);
+    }
+
+    .responsive-iframe {
+      position: relative !important;
+      width: 100% !important;
+      height: 80vh !important;
+    }
+
+    .container-iframe {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    #vert_1 {
+      position: absolute;
+      height: 5px;
+      width: 30%;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 40%;
+      margin-right: 20%;
+      margin-top: -115%;
+      opacity: 0.5;
+    }
+
+    #hori_2 {
+      position: absolute;
+      height: 4.5%;
+      width: 5px;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 0;
+      margin-right: -50%;
+      margin-top: -107%;
+      opacity: 0.5;
+    }
+
+    #vert_3 {
+      position: absolute;
+      height: 5px;
+      width: 36%;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 77%;
+      margin-right: 62%;
+      margin-top: -45%;
+      opacity: 0.5;
+    }
+
+    #hori_4 {
+      position: absolute;
+      height: 7.5%;
+      width: 5px;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 0;
+      margin-right: -49%;
+      margin-top: -60%;
+      opacity: 0.5;
+    }
+
+    #vert_5 {
+      display: none;
+    }
+
+    #hori_6 {
+      position: absolute;
+      height: 60.5%;
+      width: 5px;
+      border: none;
+      background-color: #ff6803;
+      margin-left: -60%;
+      margin-right: 0;
+      margin-top: 90%;
+      opacity: 0.5;
+    }
+
+    .scroll-down {
+      position: fixed;
+      bottom: 80px;
+      display: block;
+      text-align: center;
+      font-size: 30px;
+      z-index: 100;
+      text-decoration: none;
+      width: 51px;
+      height: 51px;
+      border-bottom: 2px solid #fff;
+      border-right: 2px solid #fff;
+      z-index: 1;
+      left: 45%;
+      animation: fade_move_down 1s ease-in-out infinite;
+    }
+
+    .text_down {
+      position: fixed;
+      bottom: 80px;
+      display: block;
+      text-align: center;
+      font-size: 30px;
+      z-index: 1;
+      left: 20%;
+      color: white;
+      animation: fade_move_down_vertical 2s infinite;
+    }
+
+    .marcas_base {
+      padding: 2rem;
+      width: 40%;
+      margin: 1rem;
+      transform: rotate(-20deg) scale(1.2);
+      transition: .3s ease-in-out;
+    }
+
+    .marcas_base:hover {
+      -webkit-transform: rotate(0) scale(1);
+      transform: rotate(0) scale(1);
+    }
+
+    .img-base {
+      display: flex;
+      bottom: 30%;
+      position: fixed;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
     }
   }
 
@@ -70,6 +263,10 @@
     .hero-image {
       margin-left: -163px;
       margin-right: -120px;
+    }
+
+    .hero-image section {
+      flex-direction: column-reverse !important;
     }
 
     .hero-image section {
@@ -92,7 +289,9 @@
     }
 
     #sloganInicial {
-      width: 90%;
+      top: 15%;
+      width: 95%;
+      height: 25%;
     }
 
     #text1-animated {
@@ -121,6 +320,57 @@
       left: 3%;
       width: 37%;
     }
+
+    .scroll-down {
+      position: fixed;
+      bottom: 150px;
+      display: block;
+      text-align: center;
+      font-size: 30px;
+      z-index: 100;
+      text-decoration: none;
+      width: 51px;
+      height: 51px;
+      border-bottom: 2px solid #fff;
+      border-right: 2px solid #fff;
+      z-index: 1;
+      left: 45%;
+      animation: fade_move_down 1s ease-in-out infinite;
+    }
+
+    .text_down {
+      position: fixed;
+      bottom: 150px;
+      display: block;
+      text-align: center;
+      font-size: 30px;
+      z-index: 1;
+      left: 20%;
+      color: white;
+      animation: fade_move_down_vertical 2s infinite;
+    }
+
+    .marcas_base {
+      padding: 2rem;
+      width: 45%;
+      margin: 1rem;
+      transform: rotate(-20deg) scale(1.2);
+      transition: .3s ease-in-out;
+    }
+
+    .marcas_base:hover {
+      -webkit-transform: rotate(0) scale(1);
+      transform: rotate(0) scale(1);
+    }
+
+    .img-base {
+      display: flex;
+      bottom: 30%;
+      position: fixed;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
   }
 
   @media (min-width: 768px) {
@@ -131,6 +381,18 @@
     .hero-image {
       margin-left: -163px;
       margin-right: -120px;
+    }
+
+    .hero-image section {
+      flex-direction: inherit !important;
+    }
+
+    .responsive-iframe {
+      width: 56% !important;
+    }
+
+    .container-iframe {
+      margin-left: 0 !important;
     }
 
     #static-animated,
@@ -149,35 +411,208 @@
     }
 
     #sloganInicial {
-      width: 98%;
-      height: 50%;
+      top: 10%;
+      width: 80%;
+      height: 20%;
+    }
+
+    #vert_1 {
+      position: absolute;
+      height: 5px;
+      width: 30%;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 40%;
+      margin-right: 20%;
+      margin-top: -105%;
+      opacity: 0.5;
+    }
+
+    #hori_2 {
+      position: absolute;
+      height: 7.5%;
+      width: 5px;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 0;
+      margin-right: -50%;
+      margin-top: -95%;
+      opacity: 0.5;
+    }
+
+    #vert_3 {
+      position: absolute;
+      height: 5px;
+      width: 32%;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 87%;
+      margin-right: 70%;
+      margin-top: -27%;
+      opacity: 0.5;
+    }
+
+    #hori_4 {
+      position: absolute;
+      height: 10.5%;
+      width: 5px;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 0;
+      margin-right: -49%;
+      margin-top: -42%;
+      opacity: 0.5;
+    }
+
+    #vert_5 {
+      display: none;
+    }
+
+    #hori_6 {
+      position: absolute;
+      height: 56.5%;
+      width: 5px;
+      border: none;
+      background-color: #ff6803;
+      margin-left: -60%;
+      margin-right: 0;
+      margin-top: 67%;
+      opacity: 0.5;
+    }
+
+    #text1-animated.disable_image,
+    #text2-animated.disable_image,
+    #text3-animated.disable_image {
+      transform: scale(0.5);
     }
 
     #text1-animated {
       position: absolute;
-      top: 25%;
-      left: 1%;
-      width: 30%;
+      top: 0%;
+      left: 3%;
+      width: 50%;
     }
 
     #text2-animated {
       position: absolute;
-      top: 25.5%;
-      right: 1%;
-      width: 44%;
+      top: 15%;
+      right: 3%;
+      width: 50%;
     }
 
     #text3-animated {
-      top: 57%;
-      right: 18%;
-      width: 34%;
+      position: absolute;
+      top: 30%;
+      left: 3%;
+      width: 50%;
     }
 
     #text4-animated {
       position: absolute;
-      top: 47%;
-      left: 3%;
-      width: 37%;
+      top: 35%;
+      right: -1%;
+      left: auto;
+      width: 45%;
+    }
+
+    #text_firstcard,
+    #text_threecard {
+      width: 50%;
+      right: 0%;
+      margin-top: 30%;
+    }
+
+    #text_secondcard {
+      width: 50%;
+      left: -25%;
+      margin-top: 60%;
+    }
+
+    .imagen .text {
+      position: absolute;
+      color: #ffffff;
+      text-align: justify;
+      opacity: 0;
+      visibility: hidden;
+      transition-duration: 0.5s, 1s;
+      transform: translateX(50%);
+    }
+
+    .imagen.show .text {
+      position: relative;
+      opacity: 1;
+      visibility: visible;
+      transition-duration: 0.5s, 1s;
+      transform: translateX(0%);
+    }
+
+    .imagen .text_left {
+      position: absolute;
+      color: #ffffff;
+      text-align: justify;
+      opacity: 0;
+      visibility: hidden;
+      transition-duration: 0.5s, 1s;
+      transform: translateX(0%);
+    }
+
+    .imagen.show .text_left {
+      position: relative;
+      opacity: 1;
+      visibility: visible;
+      transition-duration: 0.5s, 1s;
+      transform: translateX(50%);
+    }
+
+    .scroll-down {
+      position: fixed;
+      bottom: 80px;
+      display: block;
+      text-align: center;
+      font-size: 30px;
+      z-index: 100;
+      text-decoration: none;
+      width: 51px;
+      height: 51px;
+      border-bottom: 2px solid #fff;
+      border-right: 2px solid #fff;
+      z-index: 1;
+      left: 45%;
+      animation: fade_move_down 1s ease-in-out infinite;
+    }
+
+    .text_down {
+      position: fixed;
+      bottom: 80px;
+      display: block;
+      text-align: center;
+      font-size: 30px;
+      z-index: 1;
+      left: 33%;
+      color: white;
+      animation: fade_move_down_vertical 2s infinite;
+    }
+
+    .marcas_base {
+      padding: 2rem;
+      width: 40%;
+      margin: 1rem;
+      transform: rotate(-20deg) scale(1.2);
+      transition: .3s ease-in-out;
+    }
+
+    .marcas_base:hover {
+      -webkit-transform: rotate(0) scale(1);
+      transform: rotate(0) scale(1);
+    }
+
+    .img-base {
+      display: flex;
+      bottom: 30%;
+      position: fixed;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
     }
   }
 
@@ -189,6 +624,10 @@
     .hero-image {
       margin-left: -163px;
       margin-right: -120px;
+    }
+
+    .hero-image section {
+      flex-direction: inherit !important;
     }
 
     #static-animated,
@@ -245,6 +684,10 @@
       margin-right: -50% !important;
     }
 
+    .hero-image section {
+      flex-direction: inherit !important;
+    }
+
     .container-iframe {
       padding-top: 0% !important;
     }
@@ -263,27 +706,107 @@
     }
 
     #sloganInicial {
-      width: 90%;
-      height: 60%;
+      top: 3%;
+      width: 75%;
+      height: 50%;
+    }
+
+    #vert_1 {
+      position: absolute;
+      height: 5px;
+      width: 30%;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 40%;
+      margin-right: 20%;
+      margin-top: -15%;
+      opacity: 0.5;
+    }
+
+    #hori_2 {
+      position: absolute;
+      height: 10.5%;
+      width: 5px;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 0;
+      margin-right: -50%;
+      margin-top: -10%;
+      opacity: 0.5;
+    }
+
+    #vert_3 {
+      position: absolute;
+      height: 5px;
+      width: 42%;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 77%;
+      margin-right: 70%;
+      margin-top: 30%;
+      opacity: 0.5;
+    }
+
+    #hori_4 {
+      position: absolute;
+      height: 10.5%;
+      width: 5px;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 0;
+      margin-right: -49%;
+      margin-top: 25%;
+      opacity: 0.5;
+    }
+
+    #vert_5 {
+      display: block;
+      position: absolute;
+      height: 5px;
+      width: 42%;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 77%;
+      margin-right: 70%;
+      margin-top: 40%;
+      opacity: 0.5;
+    }
+
+    #hori_6 {
+      position: absolute;
+      height: 10.5%;
+      width: 5px;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 0;
+      margin-right: -49%;
+      margin-top: 45%;
+      opacity: 0.5;
+    }
+
+    #text1-animated.disable_image,
+    #text2-animated.disable_image,
+    #text3-animated.disable_image {
+      transform: scale(0.5);
     }
 
     #text1-animated {
       position: absolute;
-      top: 6%;
+      top: 0%;
       left: -5%;
       width: 50%;
     }
 
     #text2-animated {
       position: absolute;
-      top: 25%;
+      top: 30%;
       right: -1%;
       width: 50%;
     }
 
     #text3-animated {
       position: absolute;
-      top: 35%;
+      top: 50%;
       left: -5%;
       width: 50%;
     }
@@ -304,15 +827,22 @@
       cursor: pointer;
     }
 
-    #text_firstcard,
-    #text_threecard {
+    #text_firstcard {
       width: 40%;
-      right: -30%;
+      right: 20%;
+      margin-top: 5%;
     }
 
     #text_secondcard {
       width: 40%;
-      left: -50%;
+      left: -40%;
+      margin-top: 0;
+    }
+
+    #text_threecard {
+      width: 40%;
+      right: -10%;
+      margin-top: -5%;
     }
 
     .imagen .text {
@@ -331,6 +861,7 @@
       visibility: visible;
       transition-duration: 0.5s, 1s;
       transform: translateX(0%);
+      z-index: 1;
     }
 
     .imagen .text_left {
@@ -350,6 +881,57 @@
       transition-duration: 0.5s, 1s;
       transform: translateX(50%);
     }
+
+    .scroll-down {
+      position: fixed;
+      bottom: 50px;
+      display: block;
+      text-align: center;
+      font-size: 30px;
+      z-index: 100;
+      text-decoration: none;
+      width: 51px;
+      height: 51px;
+      border-bottom: 2px solid #fff;
+      border-right: 2px solid #fff;
+      z-index: 1;
+      left: 48%;
+      animation: fade_move_down 1s ease-in-out infinite;
+    }
+
+    .text_down {
+      position: fixed;
+      bottom: 50px;
+      display: block;
+      text-align: center;
+      font-size: 30px;
+      z-index: 1;
+      left: 40%;
+      color: white;
+      animation: fade_move_down_vertical 2s infinite;
+    }
+
+    .marcas_base {
+      width: 20%;
+      padding: 2rem;
+      width: 15%;
+      padding: 2rem;
+      transform: rotate(-20deg) scale(1.2);
+      transition: .3s ease-in-out;
+    }
+
+    .marcas_base:hover {
+      -webkit-transform: rotate(0) scale(1);
+      transform: rotate(0) scale(1);
+    }
+
+    .img-base {
+      display: flex;
+      bottom: 20%;
+      position: fixed;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   @media (min-width: 1400px) {
@@ -366,6 +948,10 @@
       padding-top: 0% !important;
     }
 
+    .hero-image section {
+      flex-direction: inherit !important;
+    }
+
     #static-animated,
     img[data-scroll-static] {
       position: absolute;
@@ -380,32 +966,230 @@
     }
 
     #sloganInicial {
-      width: 90%;
-      height: 70%;
+      top: 3%;
+      width: 75%;
+      height: 50%;
+    }
+
+    #vert_1 {
+      position: absolute;
+      height: 5px;
+      width: 30%;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 40%;
+      margin-right: 20%;
+      margin-top: -34%;
+      opacity: 0.5;
+    }
+
+    #hori_2 {
+      position: absolute;
+      height: 8.5%;
+      width: 5px;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 0;
+      margin-right: -50%;
+      margin-top: -27%;
+      opacity: 0.5;
+    }
+
+    #vert_3 {
+      position: absolute;
+      height: 5px;
+      width: 42%;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 77%;
+      margin-right: 70%;
+      margin-top: 30%;
+      opacity: 0.5;
+    }
+
+    #hori_4 {
+      position: absolute;
+      height: 10.5%;
+      width: 5px;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 0;
+      margin-right: -49%;
+      margin-top: 21%;
+      opacity: 0.5;
+    }
+
+    #vert_5 {
+      position: absolute;
+      height: 5px;
+      width: 42%;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 77%;
+      margin-right: 70%;
+      margin-top: 40%;
+      opacity: 0.5;
+    }
+
+    #hori_6 {
+      position: absolute;
+      height: 20.5%;
+      width: 5px;
+      border: none;
+      background-color: #ff6803;
+      margin-left: 0%;
+      margin-right: 50%;
+      margin-top: 61%;
+      opacity: 0.5;
+    }
+
+    #text1-animated.disable_image,
+    #text2-animated.disable_image,
+    #text3-animated.disable_image {
+      transform: scale(0.5);
     }
 
     #text1-animated {
       position: absolute;
-      top: 13%;
-      left: 10%;
+      top: 10%;
+      left: -5%;
+      width: 50%;
     }
 
     #text2-animated {
       position: absolute;
-      top: 13.5%;
-      right: 15.5%;
+      top: 30%;
+      right: -1%;
+      width: 50%;
     }
 
     #text3-animated {
       position: absolute;
-      top: 53%;
-      right: 17%;
+      top: 50%;
+      left: -5%;
+      width: 50%;
     }
 
     #text4-animated {
       position: absolute;
-      top: 45%;
-      left: 13%;
+      top: 20%;
+      right: -5%;
+      left: auto;
+      width: 50%;
+    }
+
+    .hero-image section {
+      flex-wrap: nowrap;
+    }
+
+    .onClickTextOverImage {
+      cursor: pointer;
+    }
+
+    #text_firstcard {
+      width: 40%;
+      right: 20%;
+      margin-top: 5%;
+    }
+
+    #text_secondcard {
+      width: 40%;
+      left: -40%;
+    }
+
+    #text_threecard {
+      width: 40%;
+      right: -10%;
+      margin-top: -5%;
+    }
+
+    .imagen .text {
+      position: absolute;
+      color: #ffffff;
+      text-align: justify;
+      opacity: 0;
+      visibility: hidden;
+      transition-duration: 0.5s, 1s;
+      transform: translateX(50%);
+    }
+
+    .imagen.show .text {
+      position: relative;
+      opacity: 1;
+      visibility: visible;
+      transition-duration: 0.5s, 1s;
+      transform: translateX(0%);
+      z-index: 1;
+    }
+
+    .imagen .text_left {
+      position: absolute;
+      color: #ffffff;
+      text-align: justify;
+      opacity: 0;
+      visibility: hidden;
+      transition-duration: 0.5s, 1s;
+      transform: translateX(0%);
+    }
+
+    .imagen.show .text_left {
+      position: relative;
+      opacity: 1;
+      visibility: visible;
+      transition-duration: 0.5s, 1s;
+      transform: translateX(50%);
+    }
+
+    .scroll-down {
+      position: fixed;
+      bottom: 50px;
+      display: block;
+      text-align: center;
+      font-size: 30px;
+      z-index: 100;
+      text-decoration: none;
+      width: 51px;
+      height: 51px;
+      border-bottom: 2px solid #fff;
+      border-right: 2px solid #fff;
+      z-index: 1;
+      left: 48%;
+      animation: fade_move_down 1s ease-in-out infinite;
+    }
+
+    .text_down {
+      position: fixed;
+      bottom: 50px;
+      display: block;
+      text-align: center;
+      font-size: 30px;
+      z-index: 1;
+      left: 43.5%;
+      color: white;
+      animation: fade_move_down_vertical 2s infinite;
+    }
+
+    .marcas_base {
+      width: 20%;
+      padding: 2rem;
+
+      width: 20%;
+      padding: 2rem;
+      transform: rotate(-20deg) scale(1.1);
+      transition: .3s ease-in-out;
+    }
+
+    .marcas_base:hover {
+      -webkit-transform: rotate(0) scale(1);
+      transform: rotate(0) scale(1);
+    }
+
+    .img-base {
+      display: flex;
+      bottom: 20%;
+      position: fixed;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -416,7 +1200,7 @@
   :root {
     --container-width: 1200px;
     --image: url('{{media url='wysiwyg/distribuciongenesis/BG_1.jpg'}}');
-  }
+      }
 
   body {
     margin: 0 !important;
@@ -425,6 +1209,10 @@
   .container {
     padding-right: 0 !important;
     padding-left: 0 !important;
+  }
+
+  #go-top a i {
+    color: white !important;
   }
 
   .oculta {
@@ -511,23 +1299,6 @@
     transition: all 0.8s;
   }
 
-  .scroll-down {
-    position: fixed;
-    bottom: 30px;
-    display: block;
-    text-align: center;
-    font-size: 20px;
-    z-index: 100;
-    text-decoration: none;
-    width: 33px;
-    height: 33px;
-    border-bottom: 2px solid #fff;
-    border-right: 2px solid #fff;
-    z-index: 1;
-    left: 48%;
-    animation: fade_move_down 2s ease-in-out infinite;
-  }
-
   .scroll-left {
     position: fixed;
     display: block;
@@ -554,6 +1325,16 @@
     height: 100%;
     object-fit: cover;
     aspect-ratio: 7/4;
+  }
+
+  .disable_image {
+    opacity: 0.2;
+  }
+
+  #text1-animated.top,
+  #text2-animated.top,
+  #text3-animated.top {
+    animation: zoominoutsinglefeatured 1s infinite;
   }
 
   @-webkit-keyframes fade_move_down {
@@ -603,64 +1384,99 @@
       opacity: 0;
     }
   }
+
+  @-moz-keyframes fade_move_down_vertical {
+    0% {
+      transform: translate(0, -50px);
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(0, -20px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade_move_down_vertical {
+    0% {
+      transform: translate(0, -50px);
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(0, -20px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes zoominoutsinglefeatured {
+    0% {
+      transform: scale(1,1);
+    }
+    50% {
+      transform: scale(1.025,1.025);
+    }
+    100% {
+      transform: scale(1,1);
+    }
+  }
 </style>
-<div class="scroll-down"></div>
+<p id="text_desliza" class="text_down" lang="es">deslizar hacia abajo</p>
+<div id="scroll_down_animation" class="scroll-down"></div>
 <section id="hero-image" class="hero-image">
-  <section id="seccion0" class="section" data-scroll-spy=""><img id="sloganInicial" class="content-header top"
-      src="{{media url='wysiwyg/distribuciongenesis/Title.png'}}" alt="" data-scroll-animated=""></section>
+  <section id="seccion0" class="section" data-scroll-spy=""><img id="sloganInicial" class="content-header top" src="{{media url='wysiwyg/distribuciongenesis/PrincipalDistribucion.png'}}" alt="" data-scroll-animated="">
+    <div class="img-base"><img class="marcas_base" src="{{media url='wysiwyg/distribuciongenesis/SynthexLogotipo.png'}}" alt=""><img class="marcas_base" src="{{media url='wysiwyg/distribuciongenesis/marcas/YexLub_O.png'}}" alt=""> <img class="marcas_base" src="{{media url='wysiwyg/distribuciongenesis/marcas/Logo_Luk_W.png'}}" alt=""> <img class="marcas_base" src="{{media url='wysiwyg/distribuciongenesis/marcas/logo_motor_oil_w.png'}}" alt=""> <img class="marcas_base" src="{{media url='wysiwyg/distribuciongenesis/marcas/motul-logo-o.png'}}" alt=""><img class="marcas_base" src="{{media url='wysiwyg/distribuciongenesis/kixx-w.png'}}" alt=""></div>
+  </section>
   <section id="seccion1" class="section oculta" data-scroll-spy="">
     <div class="text-media__col_first text-media__col--media">
-      <div class="text-media__img-wrapper"><iframe class="text-media__img_iframe"
-          src="https://www.youtube.com/embed/pA9FyAabSfA?loop=1&amp;playlist=pA9FyAabSfA&amp;autoplay=1&amp;mute=1"
-          title="YouTube video COTIEN" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen="allowfullscreen"></iframe></div>
+      <div class="text-media__img-wrapper"><!--<iframe class="text-media__img_iframe" src="https://www.youtube.com/embed/AKyOLqgXx-4?loop=1&amp;playlist=AKyOLqgXx-4&amp;autoplay=1&amp;mute=1" title="YouTube video COTIEN" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>--></div>
     </div>
   </section>
-  <section id="seccion2" class="imagen section oculta" data-scroll-spy=""><img id="text1-animated"
-      class="onClickTextOverImage content-header"
-      src="{{media url='wysiwyg/distribuciongenesis/Product-Page-Bottoms1.png'}}" alt="" data-scroll-animated="">
+  <section id="seccion2" class="imagen section oculta" data-scroll-spy=""><img id="text1-animated" class="onClickTextOverImage content-header" src="{{media url='wysiwyg/distribuciongenesis/Product-Page-Bottoms1.png'}}" alt="" data-scroll-animated="">
     <div id="text_firstcard" class="text">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis alias error accusantium sequi est laboriosam
-        saepe quaerat illum libero similique, nam voluptas blanditiis, veniam ducimus fugiat nisi dolore aliquam
-        perspiciatis.</p>
+      <p>¡Renovamos tu negocio! No hay nada más valioso que lucir profesional gracias al respaldo que la marca te da portando sus colores oficiales*</p>
+      <p><i>*Beneficio sujeto al volumen de compra mensual.</i></p>
     </div>
-  </section>
+    <div id="hori_2"></div>
+    <div id="vert_1"></div>
+    <img id="text2-animated" class="disable_image" src="{{media url='wysiwyg/distribuciongenesis/Product-Page-Bottoms2.png'}}" alt="" data-scroll-static=""></section>
   <section id="seccion3" class="imagen section oculta" data-scroll-spy="">
+    <div id="vert_3"></div>
+    <div id="hori_4"></div>
     <div id="text_secondcard" class="text_left">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis alias error accusantium sequi est laboriosam
-        saepe quaerat illum libero similique, nam voluptas blanditiis, veniam ducimus fugiat nisi dolore aliquam
-        perspiciatis.</p>
+      <p>Te ofrecemos <strong> CLÍNICAS DE LA LUBRICACIÓN.</strong> Un programa para capacitarte junto a tus colaboradores acerca de los beneficios de usar la mejor tecnología en aceites con Lukoil GENESIS®, charlas técnicas y promotoría para tu refaccionaria o taller.</p>
+      <p><i>*Fechas a elegir y sujeto a volumen de compra.</i></p>
     </div>
-    <img id="text2-animated" class="onClickTextOverImage content-header"
-      src="{{media url='wysiwyg/distribuciongenesis/Product-Page-Bottoms2.png'}}" alt="" data-scroll-animated="">
-  </section>
-  <section id="seccion4" class="imagen section oculta" data-scroll-spy=""><img id="text3-animated"
-      class="onClickTextOverImage content-header"
-      src="{{media url='wysiwyg/distribuciongenesis/Product-Page-Bottoms3.png'}}" alt="" data-scroll-animated="">
+    <img id="text2-animated" class="onClickTextOverImage content-header" src="{{media url='wysiwyg/distribuciongenesis/Product-Page-Bottoms2.png'}}" alt="" data-scroll-animated=""> <img id="text3-animated" class="disable_image" src="{{media url='wysiwyg/distribuciongenesis/Product-Page-Bottoms1.png'}}" alt="" data-scroll-static=""></section>
+  <section id="seccion4" class="imagen section oculta" data-scroll-spy="">
+    <div id="vert_5"></div>
+    <div id="hori_6"></div>
+    <img id="text3-animated" class="onClickTextOverImage content-header" src="{{media url='wysiwyg/distribuciongenesis/Product-Page-Bottoms3.png'}}" alt="" data-scroll-animated="">
     <div id="text_threecard" class="text">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis alias error accusantium sequi est laboriosam
-        saepe quaerat illum libero similique, nam voluptas blanditiis, veniam ducimus fugiat nisi dolore aliquam
-        perspiciatis.</p>
+      <p>¡Incrementa tus ventas! Te ofrecemos el material de apoyo necesario para potenciar tus ventas: caravanas, activaciones en tu punto de venta.</p>
+      <p><i>*Pregunta a tu asesor comercial.</i></p>
     </div>
   </section>
   <section id="seccion5" class="section oculta" data-scroll-spy="">
-    <div class="container-iframe"><iframe class="responsive-iframe"
-        src="https://forms.yetox.com/form/public/views/form_genesis.php"></iframe></div>
-    <img id="text4-animated" class="content-header" src="{{media url='wysiwyg/distribuciongenesis/Mapa3.1.png'}}" alt=""
-      data-scroll-animated="">
-  </section>
+    <div class="container-iframe"><iframe class="responsive-iframe" src="https://forms.yetox.com/form/public/views/form_distribucion.php"></iframe></div>
+    <img id="text4-animated" class="content-header" src="{{media url='wysiwyg/distribuciongenesis/Mapa3.1.png'}}" alt="" data-scroll-animated=""></section>
 </section>
 <script type="text/javascript">
   const d = document,
-    w = window;
+        w = window;
 
   function tamanoPorSection() {
     let section = d.getElementById("hero-image"),
-      $sections = d.querySelectorAll("section[data-scroll-spy]").length,
-      medida = section.clientHeight,
-      $medida_section = Math.round(medida / $sections),
-      jsonMedidas = {};
+        $sections = d.querySelectorAll("section[data-scroll-spy]").length,
+        medida = section.clientHeight,
+        $medida_section = Math.round(medida / $sections),
+        jsonMedidas = {};
 
     for (let i = 0; i <= $sections; i++) {
       jsonMedidas[i] = ($medida_section - 100) * i;
@@ -671,13 +1487,13 @@
 
   function eliminaClase($idelement, $classname) {
     let element = d.getElementById($idelement),
-      hasClase2 = element.classList.contains($classname);
+        hasClase2 = element.classList.contains($classname);
     if (hasClase2) element.classList.remove($classname);
   }
 
   function agregaClase($idelement, $classname) {
     let element = d.getElementById($idelement),
-      hasClase2 = element.classList.contains($classname);
+        hasClase2 = element.classList.contains($classname);
     if (!hasClase2) element.classList.add($classname);
   }
 
@@ -693,13 +1509,14 @@
   const $sections = d.querySelectorAll("section[data-scroll-spy]");
 
   let oldValue = 0,
-    newValue = 0,
-    direccion = 0;
+      newValue = 0,
+      direccion = 0;
 
   let myScrollFunc = function () {
     let y = w.scrollY,
-      obsj = tamanoPorSection(),
-      newValue = w.pageYOffset;
+        obsj = tamanoPorSection(),
+        newValue = w.pageYOffset,
+        lastItem = obsj[Object.keys(obsj).length - 1];
 
     if (oldValue < newValue) {
       direccion = 0;
@@ -708,9 +1525,17 @@
     }
 
     for (let i = 0; i < Object.keys(obsj).length - 1; i++) {
+      if ((y + 1000) >= lastItem) {
+        d.getElementById("scroll_down_animation").style.display = "none";
+        d.getElementById("text_desliza").style.display = "none";
+      } else {
+        d.getElementById("scroll_down_animation").style.display = "block";
+        d.getElementById("text_desliza").style.display = "block";
+      }
+
       if (y >= obsj[i] && y <= obsj[i + 1]) {
         let sectionEle = $sections[i],
-          claseSection = sectionEle.classList.contains('oculta');
+            claseSection = sectionEle.classList.contains('oculta');
 
         if (claseSection) {
           disableScroll();
@@ -720,7 +1545,7 @@
           eliminaClase(sectionEle.id, 'oculta');
 
           const childrenSinAnimacion = Array.from(sectionEle.querySelectorAll(':scope > img[data-scroll]')),
-            children = Array.from(sectionEle.querySelectorAll(':scope > img[data-scroll-animated]'));
+                children = Array.from(sectionEle.querySelectorAll(':scope > img[data-scroll-animated]'));
 
           childrenSinAnimacion.forEach((element) => {
             element.classList.toggle("top");
@@ -741,7 +1566,7 @@
         }
       } else {
         let sectionEle = $sections[i],
-          claseSection = sectionEle.classList.contains('oculta');
+            claseSection = sectionEle.classList.contains('oculta');
 
         if (!claseSection) {
           agregaClase(sectionEle.id, 'oculta');
@@ -770,7 +1595,7 @@
 
 
   let textOverImages = document.getElementsByClassName("onClickTextOverImage"),
-    previousTextOverImage;
+      previousTextOverImage;
 
   for (let i = 0; i < textOverImages.length; i++) {
     textOverImages[i].onclick = function () {
