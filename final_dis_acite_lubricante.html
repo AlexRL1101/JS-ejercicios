@@ -1,0 +1,1724 @@
+<style>
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    :root {
+        --container-width: 1200px;
+        --image: url('{{media url=' wysiwyg/distribuciongenesis/BG_1.jpg'}}');
+        --light: hsl(220, 50%, 90%);
+        --primary: hsl(255, 30%, 55%);
+        --focus: hsl(210, 90%, 50%);
+        --border-color: hsla(0, 0%, 100%, .2);
+        --global-background: hsl(220, 25%, 10%);
+        --background: linear-gradient(to right, hsl(210, 30%, 20%), hsl(255, 30%, 25%));
+        --shadow-1: hsla(236, 50%, 50%, .3);
+        --shadow-2: hsla(236, 50%, 50%, .4);
+    }
+
+    body {
+        margin: 0 !important;
+    }
+
+    a,
+    a:link {
+        font-family: inherit;
+        text-decoration: none;
+    }
+
+    .container {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+
+    .img-base a {
+        display: contents;
+    }
+
+    #go-top a i {
+        color: white !important;
+    }
+
+    #img_video {
+        padding: 1rem;
+    }
+
+    .oculta {
+        display: none !important;
+    }
+
+    .content-header {
+        position: fixed;
+        transform: scale(0);
+    }
+
+    .content-header.top {
+        transition-duration: 0.5s, 1s;
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .container-iframe {
+        position: relative;
+        width: 80%;
+        overflow: hidden;
+        padding-top: 100%;
+        margin-left: -110px;
+        margin-right: auto;
+        min-height: 100vh;
+        z-index: 2;
+    }
+
+    .responsive-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 60%;
+        height: 100%;
+        border: none;
+    }
+
+    .hero-image {
+        margin-left: -91px;
+        margin-right: -88px;
+        min-height: 900vh;
+        background-image: var(--image);
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+    }
+
+    .hero-image section {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section {
+        padding-top: 0;
+        padding-bottom: 4rem;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: var(--container-width);
+        min-height: 100vh;
+    }
+
+    .scrollable-place {
+        height: 1000px;
+    }
+
+    .remove-scrolling {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    img[data-scroll-animated],
+    img[data-scroll] {
+        transition: all 0.8s;
+    }
+
+    .scroll-left {
+        position: fixed;
+        display: block;
+        width: 33px;
+        height: 33px;
+        border-bottom: 2px solid #fff;
+        border-right: 2px solid #fff;
+        z-index: 1;
+        left: 2%;
+        animation: fadeInLeft 2s ease-in-out infinite;
+    }
+
+    .text-media__col_first {
+        position: relative;
+        flex: 0 0 80%;
+    }
+
+    .text-media__img-wrapper {
+        height: 100%;
+    }
+
+    .text-media__img_iframe {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 7/4;
+    }
+
+    .disable_image {
+        opacity: 0.2;
+    }
+
+    #text1-animated.top,
+    #text2-animated.top,
+    #text3-animated.top {
+        animation: zoominoutsinglefeatured 1s infinite;
+    }
+
+    .slides img {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: -2;
+    }
+
+    .slides img.top {
+        z-index: -1;
+    }
+
+    .slides .front {
+        position: absolute;
+        right: 10px;
+        border-radius: 60px;
+        text-align: center;
+        background: white;
+        cursor: pointer;
+        font-size: 30px;
+        font-weight: bold;
+        width: 14%;
+        height: 10%;
+        opacity: 0.5;
+    }
+
+    .slides .back {
+        position: absolute;
+        left: 10px;
+        border-radius: 60px;
+        text-align: center;
+        background: white;
+        cursor: pointer;
+        font-size: 30px;
+        font-weight: bold;
+        width: 14%;
+        height: 10%;
+        opacity: 0.5;
+    }
+
+    .owl-nav {
+        position: absolute;
+        top: -100px;
+        right: 0;
+    }
+
+    .owl-nav button {
+        background: #fff !important;
+        width: 45px;
+        height: 45px;
+        font-size: 25px !important;
+        box-shadow: 0px 0px 17px #00000005;
+        border-radius: 50%;
+    }
+
+    .owl-nav button:nth-of-type(1) {
+        margin-right: 13px;
+    }
+
+    .slides button {
+        background: #fff !important;
+        width: 45px;
+        height: 45px;
+        font-size: 25px !important;
+        box-shadow: 0px 0px 17px #00000005;
+        border-radius: 50%;
+        text-align-last: center;
+    }
+
+    .slides button:nth-of-type(1) {
+        margin-right: 13px;
+    }
+
+    .text-media__img-wrapper img {
+        width: 100%;
+    }
+</style>
+<style>
+    .modal-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+
+        display: none;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 100%;
+
+        background: var(--m-background);
+    }
+
+    .modal-container:target {
+        display: flex;
+    }
+
+    .modal {
+        width: 60rem;
+        padding: 4rem 2rem;
+        border-radius: .8rem;
+
+        color: var(--light);
+        background: var(--background);
+        box-shadow: var(--m-shadow, .4rem .4rem 10.2rem .2rem) var(--shadow-1);
+        position: relative;
+
+        overflow: hidden;
+    }
+
+    .modal__title {
+        font-size: 3.2rem;
+    }
+
+    .modal__text {
+        padding: 0 4rem;
+        margin-top: 4rem;
+
+        font-size: 1.6rem;
+        line-height: 2;
+    }
+
+    .modal__btn {
+        margin-top: 4rem;
+        padding: 1rem 1.6rem;
+        border: 1px solid var(--border-color);
+        border-radius: 100rem;
+
+        color: inherit;
+        background: transparent;
+        font-size: 1.4rem;
+        font-family: inherit;
+        letter-spacing: .2rem;
+
+        transition: .2s;
+        cursor: pointer;
+    }
+
+    .modal__btn:nth-of-type(1) {
+        margin-right: 1rem;
+    }
+
+    .modal__btn:hover,
+    .modal__btn:focus {
+        background: var(--focus);
+        border-color: var(--focus);
+        transform: translateY(-.2rem);
+    }
+
+    .link-2 {
+        width: 4rem;
+        height: 4rem;
+        border: 1px solid var(--border-color);
+        border-radius: 100rem;
+
+        color: inherit;
+        font-size: 2.2rem;
+
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: .2s;
+    }
+
+    .link-2::before {
+        content: '×';
+
+        transform: translateY(-.1rem);
+    }
+
+    .link-2:hover,
+    .link-2:focus {
+        background: var(--focus);
+        border-color: var(--focus);
+        transform: translateY(-.2rem);
+    }
+</style>
+<style>
+    @media (max-width: 575.98px) {
+        .container {
+            max-width: 100%;
+        }
+
+        .hero-image {
+            margin-left: -163px;
+            margin-right: -120px;
+        }
+
+        .hero-image section {
+            flex-direction: column-reverse !important;
+        }
+
+        #static-animated,
+        img[data-scroll-static] {
+            position: absolute;
+            width: 100%;
+            transition: all 0.8s;
+        }
+
+        .container-iframe {
+            width: 100% !important;
+            padding-top: 0% !important;
+        }
+
+        #hero-image {
+            background-size: 186% 100%;
+        }
+
+        .hero-image section {
+            flex-wrap: wrap;
+        }
+
+        #sloganInicial {
+            top: 16%;
+            width: 90%;
+            height: 18%;
+        }
+
+        #text1-animated.disable_image,
+        #text2-animated.disable_image,
+        #text3-animated.disable_image {
+            transform: scale(0.5);
+        }
+
+        #text1-animated,
+        #text2-animated,
+        #text3-animated {
+            position: absolute;
+            width: 90%;
+            margin-inline-start: 4%;
+            margin-top: 15%;
+            /* background-image: var(--image); */
+            background-color: #0b0b0b;
+        }
+
+        #text4-animated {
+            position: relative !important;
+            top: 20%;
+            right: -5%;
+            left: auto;
+            width: 50%;
+        }
+
+        .onClickTextOverImage {
+            cursor: pointer;
+        }
+
+        #text_firstcard,
+        #text_threecard {
+            width: 50%;
+            right: 0%;
+            margin-top: 30%;
+        }
+
+        #text_secondcard {
+            width: 50%;
+            left: -25%;
+            margin-top: 60%;
+        }
+
+        #logo-eneos {
+            width: 40%;
+            height: 15vh;
+        }
+
+        .imagen .text {
+            position: absolute;
+            color: #ffffff;
+            text-align: justify;
+            opacity: 0;
+            visibility: hidden;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(50%);
+        }
+
+        .imagen.show .text {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(0%);
+        }
+
+        .imagen .text_left {
+            position: absolute;
+            color: #ffffff;
+            text-align: justify;
+            opacity: 0;
+            visibility: hidden;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(0%);
+        }
+
+        .imagen.show .text_left {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(50%);
+        }
+
+        .responsive-iframe {
+            position: relative !important;
+            width: 100% !important;
+            height: 80vh !important;
+        }
+
+        .container-iframe {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        .scroll-down {
+            position: fixed;
+            bottom: 80px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            z-index: 100;
+            text-decoration: none;
+            width: 51px;
+            height: 51px;
+            border-bottom: 2px solid #fff;
+            border-right: 2px solid #fff;
+            z-index: 1;
+            left: 45%;
+            animation: fade_move_down 1s ease-in-out infinite;
+        }
+
+        .text_down {
+            position: fixed;
+            bottom: 80px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            z-index: 1;
+            left: 20%;
+            color: white;
+            animation: fade_move_down_vertical 2s infinite;
+        }
+
+        .marcas_base {
+            padding: 2rem;
+            width: 40%;
+            margin: 1rem;
+        }
+
+        .marcas_base:hover {
+            -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+        }
+
+        .img-base {
+            display: flex;
+            bottom: 20%;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+    }
+
+    @media (min-width: 576px) {
+        .container {
+            max-width: 100%;
+        }
+
+        .hero-image {
+            margin-left: -163px;
+            margin-right: -120px;
+        }
+
+        .hero-image section {
+            flex-direction: column-reverse !important;
+        }
+
+        .hero-image section {
+            flex-wrap: wrap;
+        }
+
+        #static-animated,
+        img[data-scroll-static] {
+            position: absolute;
+            width: 100%;
+            transition: all 0.8s;
+        }
+
+        .container-iframe {
+            width: 100%;
+        }
+
+        .owl-nav {
+            top: -60px !important;
+        }
+
+        #hero-image {
+            background-size: 186% 100%;
+        }
+
+        #sloganInicial {
+            top: 15%;
+            width: 95%;
+            height: 25%;
+        }
+
+        #text1-animated {
+            position: absolute;
+            top: 0%;
+            left: 1%;
+            width: 30%;
+        }
+
+        #text2-animated {
+            position: absolute;
+            top: 0%;
+            right: 1%;
+            width: 44%;
+        }
+
+        #text3-animated {
+            top: 0%;
+            right: 17%;
+            width: 34%;
+        }
+
+        #text4-animated {
+            position: absolute;
+            top: 44%;
+            left: 3%;
+            width: 37%;
+        }
+
+        #logo-eneos {
+            width: 30%;
+            height: 12vh;
+        }
+
+        .scroll-down {
+            position: fixed;
+            bottom: 150px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            z-index: 100;
+            text-decoration: none;
+            width: 51px;
+            height: 51px;
+            border-bottom: 2px solid #fff;
+            border-right: 2px solid #fff;
+            z-index: 1;
+            left: 45%;
+            animation: fade_move_down 1s ease-in-out infinite;
+        }
+
+        .text_down {
+            position: fixed;
+            bottom: 150px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            z-index: 1;
+            left: 20%;
+            color: white;
+            animation: fade_move_down_vertical 2s infinite;
+        }
+
+        .marcas_base {
+            padding: 2rem;
+            width: 30%;
+            margin: 1rem;
+        }
+
+        .marcas_base:hover {
+            -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+        }
+
+        .img-base {
+            display: flex;
+            bottom: 20%;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            max-width: 100%;
+        }
+
+        .hero-image {
+            margin-left: -163px;
+            margin-right: -120px;
+        }
+
+        .hero-image section {
+            flex-direction: inherit !important;
+        }
+
+        .responsive-iframe {
+            width: 56% !important;
+        }
+
+        .container-iframe {
+            margin-left: 0 !important;
+        }
+
+        #static-animated,
+        img[data-scroll-static] {
+            position: absolute;
+            width: 100%;
+            transition: all 0.8s;
+        }
+
+        .container-iframe {
+            width: 100% !important;
+        }
+
+        #hero-image {
+            background-size: 186% 100%;
+        }
+
+        #sloganInicial {
+            top: 10%;
+            width: 80%;
+            height: 20%;
+        }
+
+        #text1-animated.disable_image,
+        #text2-animated.disable_image,
+        #text3-animated.disable_image {
+            transform: scale(0.5);
+        }
+
+        #text1-animated,
+        #text2-animated,
+        #text3-animated {
+            position: absolute;
+            width: 60%;
+            margin-inline-start: 20%;
+            margin-top: 5%;
+            background-color: #0b0b0b;
+        }
+
+        #text4-animated {
+            position: absolute;
+            top: 35%;
+            right: -1%;
+            left: auto;
+            width: 45%;
+        }
+
+        #text_firstcard,
+        #text_threecard {
+            width: 50%;
+            right: 0%;
+            margin-top: 30%;
+        }
+
+        #text_secondcard {
+            width: 50%;
+            left: -25%;
+            margin-top: 60%;
+        }
+
+        #logo-eneos {
+            width: 30%;
+            height: 16vh;
+        }
+
+        .imagen .text {
+            position: absolute;
+            color: #ffffff;
+            text-align: justify;
+            opacity: 0;
+            visibility: hidden;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(50%);
+        }
+
+        .imagen.show .text {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(0%);
+        }
+
+        .imagen .text_left {
+            position: absolute;
+            color: #ffffff;
+            text-align: justify;
+            opacity: 0;
+            visibility: hidden;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(0%);
+        }
+
+        .imagen.show .text_left {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(50%);
+        }
+
+        .scroll-down {
+            position: fixed;
+            bottom: 80px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            z-index: 100;
+            text-decoration: none;
+            width: 51px;
+            height: 51px;
+            border-bottom: 2px solid #fff;
+            border-right: 2px solid #fff;
+            z-index: 1;
+            left: 45%;
+            animation: fade_move_down 1s ease-in-out infinite;
+        }
+
+        .text_down {
+            position: fixed;
+            bottom: 80px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            z-index: 1;
+            left: 33%;
+            color: white;
+            animation: fade_move_down_vertical 2s infinite;
+        }
+
+        .marcas_base {
+            padding: 2rem;
+            width: 30%;
+            margin: 1rem;
+        }
+
+        .marcas_base:hover {
+            -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+        }
+
+        .img-base {
+            display: flex;
+            bottom: 25%;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .container {
+            max-width: 100%;
+        }
+
+        .hero-image {
+            margin-left: -163px;
+            margin-right: -120px;
+        }
+
+        .hero-image section {
+            flex-direction: inherit !important;
+        }
+
+        #static-animated,
+        img[data-scroll-static] {
+            width: 75%;
+        }
+
+        .container-iframe {
+            width: 100% !important;
+            padding-top: 0% !important;
+        }
+
+        #hero-image {
+            background-size: 172% 170%;
+        }
+
+        #sloganInicial {
+            top: 10%;
+            width: 60%;
+            height: 20%;
+        }
+
+        #logo-eneos {
+            width: 20%;
+            height: 16vh;
+        }
+
+        #text1-animated,
+        #text2-animated,
+        #text3-animated {
+            position: relative;
+            margin-top: 1%;
+            left: 0%;
+            width: 30%;
+            margin-inline-start: 0;
+            background-color: transparent;
+        }
+
+        #text4-animated {
+            position: absolute;
+            top: 35%;
+            right: -1%;
+            left: auto;
+            width: 45%;
+        }
+
+        .marcas_base {
+            padding: 2rem;
+            width: 20%;
+            margin: 1rem;
+        }
+
+        .img-base {
+            display: flex;
+            bottom: 25%;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    }
+
+    @media(min-width: 1200px) {
+        .container {
+            max-width: 100%;
+        }
+
+        .hero-image {
+            margin-left: -50% !important;
+            margin-right: -50% !important;
+        }
+
+        .hero-image section {
+            flex-direction: inherit !important;
+        }
+
+        .container-iframe {
+            padding-top: 0% !important;
+        }
+
+        #static-animated,
+        img[data-scroll-static] {
+            position: absolute;
+            width: 70%;
+            transition: all 0.8s;
+        }
+
+        img[data-scroll-animated],
+        img[data-scroll] {
+            width: 20%;
+            transition: all 0.8s;
+        }
+
+        #sloganInicial {
+            top: 3%;
+            width: 60%;
+            height: 40%;
+        }
+
+        #text1-animated.disable_image,
+        #text2-animated.disable_image,
+        #text3-animated.disable_image {
+            transform: scale(0.5);
+        }
+
+        #text1-animated,
+        #text2-animated,
+        #text3-animated {
+            position: relative;
+            margin-top: 1%;
+            left: 0%;
+            width: 30%;
+            margin-inline-start: 0;
+            background-color: transparent;
+        }
+
+        #text4-animated {
+            position: absolute;
+            top: 25%;
+            right: -1%;
+            left: auto;
+            width: 45%;
+        }
+
+        .hero-image section {
+            flex-wrap: nowrap;
+        }
+
+        .onClickTextOverImage {
+            cursor: pointer;
+        }
+
+        #text_firstcard {
+            width: 40%;
+            right: 20%;
+            margin-top: 5%;
+        }
+
+        #text_secondcard {
+            width: 40%;
+            left: -40%;
+            margin-top: 0;
+        }
+
+        #text_threecard {
+            width: 40%;
+            right: -10%;
+            margin-top: -5%;
+        }
+
+        #logo-eneos {
+            width: 10%;
+            height: 15vh;
+        }
+
+        .imagen .text {
+            position: absolute;
+            color: #ffffff;
+            text-align: justify;
+            opacity: 0;
+            visibility: hidden;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(50%);
+        }
+
+        .imagen.show .text {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(0%);
+            z-index: 1;
+        }
+
+        .imagen .text_left {
+            position: absolute;
+            color: #ffffff;
+            text-align: justify;
+            opacity: 0;
+            visibility: hidden;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(0%);
+        }
+
+        .imagen.show .text_left {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(50%);
+        }
+
+        .scroll-down {
+            position: fixed;
+            bottom: 50px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            z-index: 100;
+            text-decoration: none;
+            width: 51px;
+            height: 51px;
+            border-bottom: 2px solid #fff;
+            border-right: 2px solid #fff;
+            z-index: 1;
+            left: 48%;
+            animation: fade_move_down 1s ease-in-out infinite;
+        }
+
+        .text_down {
+            position: fixed;
+            bottom: 50px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            z-index: 1;
+            left: 40%;
+            color: white;
+            animation: fade_move_down_vertical 2s infinite;
+        }
+
+        .marcas_base {
+            width: 15%;
+            padding: 2rem;
+        }
+
+        .marcas_base:hover {
+            -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+        }
+
+        .img-base {
+            display: flex;
+            bottom: 20%;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        .container {
+            max-width: 100%;
+        }
+
+        .hero-image {
+            margin-left: -50% !important;
+            margin-right: -50% !important;
+        }
+
+        .container-iframe {
+            padding-top: 0% !important;
+        }
+
+        .hero-image section {
+            flex-direction: inherit !important;
+        }
+
+        #static-animated,
+        img[data-scroll-static] {
+            position: absolute;
+            width: 70%;
+            transition: all 0.8s;
+        }
+
+        img[data-scroll-animated],
+        img[data-scroll] {
+            width: 20%;
+            transition: all 0.8s;
+        }
+
+        #sloganInicial {
+            top: 3%;
+            width: 65%;
+            height: 50%;
+        }
+
+        #text1-animated.disable_image,
+        #text2-animated.disable_image,
+        #text3-animated.disable_image {
+            transform: scale(0.5);
+        }
+
+        #text1-animated,
+        #text2-animated,
+        #text3-animated {
+            position: relative;
+            margin-top: 0%;
+            left: 0%;
+            width: 40%;
+        }
+
+        #text4-animated {
+            position: absolute;
+            top: 20%;
+            right: -5%;
+            left: auto;
+            width: 50%;
+        }
+
+        .hero-image section {
+            flex-wrap: nowrap;
+        }
+
+        .onClickTextOverImage {
+            cursor: pointer;
+        }
+
+        #text_firstcard {
+            width: 40%;
+            right: 20%;
+            margin-top: 5%;
+        }
+
+        #text_secondcard {
+            width: 40%;
+            left: -40%;
+        }
+
+        #text_threecard {
+            width: 40%;
+            right: -10%;
+            margin-top: -5%;
+        }
+
+        .imagen .text {
+            position: absolute;
+            color: #ffffff;
+            text-align: justify;
+            opacity: 0;
+            visibility: hidden;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(50%);
+        }
+
+        .imagen.show .text {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(0%);
+            z-index: 1;
+        }
+
+        .imagen .text_left {
+            position: absolute;
+            color: #ffffff;
+            text-align: justify;
+            opacity: 0;
+            visibility: hidden;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(0%);
+        }
+
+        .imagen.show .text_left {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(50%);
+        }
+
+        .scroll-down {
+            position: fixed;
+            bottom: 50px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            z-index: 100;
+            text-decoration: none;
+            width: 51px;
+            height: 51px;
+            border-bottom: 2px solid #fff;
+            border-right: 2px solid #fff;
+            z-index: 1;
+            left: 48%;
+            animation: fade_move_down 1s ease-in-out infinite;
+        }
+
+        .text_down {
+            position: fixed;
+            bottom: 50px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            z-index: 1;
+            left: 43.5%;
+            color: white;
+            animation: fade_move_down_vertical 2s infinite;
+        }
+
+        .marcas_base {
+            width: 15%;
+            padding: 2rem;
+        }
+
+        .marcas_base:hover {
+            -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+        }
+
+        .img-base {
+            display: flex;
+            bottom: 15%;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @-webkit-keyframes fade_move_down {
+        0% {
+            -webkit-transform: translate(0, -10px) rotate(45deg);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            -webkit-transform: translate(0, 10px) rotate(45deg);
+            opacity: 0;
+        }
+    }
+
+    @-moz-keyframes fade_move_down {
+        0% {
+            -moz-transform: translate(0, -10px) rotate(45deg);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            -moz-transform: translate(0, 10px) rotate(45deg);
+            opacity: 0;
+        }
+    }
+
+    @keyframes fade_move_down {
+        0% {
+            transform: translate(0, -10px) rotate(45deg);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translate(0, 10px) rotate(45deg);
+            opacity: 0;
+        }
+    }
+
+    @-moz-keyframes fade_move_down_vertical {
+        0% {
+            transform: translate(0, -50px);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translate(0, -20px);
+            opacity: 0;
+        }
+    }
+
+    @keyframes fade_move_down_vertical {
+        0% {
+            transform: translate(0, -50px);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translate(0, -20px);
+            opacity: 0;
+        }
+    }
+
+    @keyframes clickEffect {
+        0% {
+            opacity: 1;
+            width: 0.5em;
+            height: 0.5em;
+            margin: -0.25em;
+            border-width: 0.5em;
+        }
+
+        100% {
+            opacity: 0.2;
+            width: 15em;
+            height: 15em;
+            margin: -7.5em;
+            border-width: 0.03em;
+        }
+    }
+
+    @keyframes zoominoutsinglefeatured {
+        0% {
+            transform: scale(1, 1);
+        }
+
+        50% {
+            transform: scale(1.025, 1.025);
+        }
+
+        100% {
+            transform: scale(1, 1);
+        }
+    }
+</style>
+<p id="text_desliza" class="text_down" lang="es">deslizar hacia abajo</p>
+<div id="scroll_down_animation" class="scroll-down"></div>
+<section id="hero-image" class="hero-image">
+    <section id="seccion0" class="section" data-scroll-spy=""><img id="sloganInicial" class="content-header top"
+            src="{{media url='wysiwyg/distribuciongenesis/PrincipalDistribucion.png'}}" alt="distribuye el mejor aceite"
+            data-scroll-animated="">
+        <div class="img-base"><a href="#m1-o"> <img class="marcas_base"
+                    src="{{media url='wysiwyg/distribuciongenesis/logoEneos.png'}}" alt="eneos yetox"> </a> <a
+                href="#m2-o"><img class="marcas_base"
+                    src="{{media url='wysiwyg/distribuciongenesis/marcas/YexLub_O.png'}}" alt="yexlub yetox"></a> <a
+                href="#m3-o"><img class="marcas_base"
+                    src="{{media url='wysiwyg/distribuciongenesis/marcas/Logo_Luk_W.png'}}" alt="lukoil yetox"></a> <a
+                href="#m2-a"><img class="marcas_base"
+                    src="{{media url='wysiwyg/distribuciongenesis/marcas/logo_motor_oil_w.png'}}"
+                    alt="lukoil yetox"></a> <a href="#m4-a"><img class="marcas_base"
+                    src="{{media url='wysiwyg/distribuciongenesis/marcas/motul-logo-o.png'}}" alt="motul yetox"></a> <a
+                href="#m6-a"><img class="marcas_base" src="{{media url='wysiwyg/distribuciongenesis/syncron_oil.png'}}"
+                    alt="syncron yetox"></a></div>
+        <div class="modal-container" id="m1-o" style="--m-background: hsla(0, 0%, 0%, .4);">
+            <div class="modal">
+                <h1 class="modal__title">Modal 1 Title</h1>
+                <p class="modal__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis ex dicta
+                    maiores libero minus obcaecati iste optio, eius labore repellendus.</p>
+                <button class="modal__btn">Button →</button> <a href="#m1-c" class="link-2"></a>
+            </div>
+        </div>
+        <div class="modal-container" id="m2-o" style="--m-background: hsla(0, 0%, 0%, .4);">
+            <div class="modal">
+                <h1 class="modal__title">Modal 2 Title</h1>
+                <p class="modal__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis ex dicta
+                    maiores libero minus obcaecati iste optio, eius labore repellendus.</p>
+                <button class="modal__btn">Button →</button> <a href="#m2-c" class="link-2"></a>
+            </div>
+        </div>
+        <div class="modal-container" id="m3-o" style="--m-background: hsla(0, 0%, 0%, .4);">
+            <div class="modal">
+                <h1 class="modal__title">Modal 3 Title</h1>
+                <p class="modal__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis ex dicta
+                    maiores libero minus obcaecati iste optio, eius labore repellendus.</p>
+                <button class="modal__btn">Button →</button> <a href="#m3-c" class="link-2"></a>
+            </div>
+        </div>
+        <div class="modal-container" id="m2-a" style="--m-background: hsla(0, 0%, 0%, .4);">
+            <div class="modal">
+                <h1 class="modal__title">Modal 4 Title</h1>
+                <p class="modal__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis ex dicta
+                    maiores libero minus obcaecati iste optio, eius labore repellendus.</p>
+                <button class="modal__btn">Button →</button> <a href="#m4-c" class="link-2"></a>
+            </div>
+        </div>
+        <div class="modal-container" id="m4-a" style="--m-background: hsla(0, 0%, 0%, .4);">
+            <div class="modal">
+                <h1 class="modal__title">Modal 5 Title</h1>
+                <p class="modal__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis ex dicta
+                    maiores libero minus obcaecati iste optio, eius labore repellendus.</p>
+                <button class="modal__btn">Button →</button> <a href="#m5-c" class="link-2"></a>
+            </div>
+        </div>
+        <div class="modal-container" id="m6-a" style="--m-background: hsla(0, 0%, 0%, .4);">
+            <div class="modal">
+                <h1 class="modal__title">Modal 6 Title</h1>
+                <p class="modal__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis ex dicta
+                    maiores libero minus obcaecati iste optio, eius labore repellendus.</p>
+                <button class="modal__btn">Button →</button> <a href="#m6-c" class="link-2"></a>
+            </div>
+        </div>
+    </section>
+    <section id="seccion1" class="imagen section oculta slides" data-scroll-spy=""><img id="text1-animated"
+            class="onClickTextOverImage content-header mov"
+            src="{{media url='wysiwyg/distribuciongenesis/Carrusel_Beneficios1.png'}}" alt="beneficios yetox 1"
+            data-scroll-animated=""> <img id="text2-animated" class="onClickTextOverImage content-header mov"
+            src="{{media url='wysiwyg/distribuciongenesis/Carrusel_Beneficios2.png'}}" alt="beneficios yetox 2"
+            data-scroll-animated=""> <img id="text3-animated" class="onClickTextOverImage content-header mov"
+            src="{{media url='wysiwyg/distribuciongenesis/Carrusel_Beneficios3.png'}}" alt="beneficios yetox 3"
+            data-scroll-animated=""></section>
+    <section id="seccion2" class="section oculta" data-scroll-spy="">
+        <div class="container-iframe"><iframe class="responsive-iframe"
+                src="https://forms.yetox.com/form/public/views/form_distribucion.php"></iframe></div>
+        <img id="text4-animated" class="content-header" src="{{media url='wysiwyg/distribuciongenesis/MapaFinal.png'}}"
+            alt="mapa distribucion" data-scroll-animated="">
+    </section>
+</section>
+<script type="text/javascript">
+    const d = document,
+        w = window,
+        $sections = d.querySelectorAll("section[data-scroll-spy]");
+
+    let oldValue = 0,
+        newValue = 0,
+        direccion = 0;
+
+    let myScrollFunc = function () {
+        let y = w.scrollY,
+            obsj = tamanoPorSection(),
+            newValue = w.pageYOffset,
+            lastItem = obsj[Object.keys(obsj).length - 1];
+
+        if (oldValue < newValue) {
+            direccion = 0;
+        } else if (oldValue > newValue) {
+            direccion = 1;
+        }
+
+        for (let i = 0; i < Object.keys(obsj).length - 1; i++) {
+            if (y >= obsj[i] && y <= obsj[i + 1]) {
+                let sectionEle = $sections[i],
+                    claseSection = sectionEle.classList.contains('oculta');
+
+                habilitaYOcultaLeyenda(sectionEle.id);
+
+                if (claseSection) {
+                    disableScroll();
+                    setTimeout(() => {
+                        enableScroll();
+                    }, 1000);
+                    eliminaClase(sectionEle.id, 'oculta');
+
+                    const childrenSinAnimacion = Array.from(sectionEle.querySelectorAll(':scope > img[data-scroll]')),
+                        children = Array.from(sectionEle.querySelectorAll(':scope > img[data-scroll-animated]'));
+
+                    childrenSinAnimacion.forEach((element) => {
+                        element.classList.toggle("top");
+                    });
+
+                    if (direccion) {
+                        children.forEach((element) => {
+                            element.classList.toggle("top");
+                        });
+                    }
+                    else {
+                        children.forEach((element) => {
+                            setTimeout(() => {
+                                element.classList.toggle("top");
+                            }, 1);
+                        });
+                    }
+                }
+            } else {
+                let sectionEle = $sections[i],
+                    claseSection = sectionEle.classList.contains('oculta');
+
+                if (!claseSection) {
+                    agregaClase(sectionEle.id, 'oculta');
+
+                    const children = Array.from(sectionEle.querySelectorAll(':scope > img.content-header'));
+
+                    children.forEach((element) => {
+                        setTimeout(() => {
+                            element.classList.remove("top");
+                        }, 100);
+                    });
+                }
+            }
+        }
+
+        oldValue = newValue;
+
+        function tamanoPorSection() {
+            let section = d.getElementById("hero-image"),
+                $sections = d.querySelectorAll("section[data-scroll-spy]").length,
+                medida = section.clientHeight,
+                $medida_section = Math.round(medida / $sections),
+                jsonMedidas = {};
+
+            for (let i = 0; i <= $sections; i++) {
+                jsonMedidas[i] = ($medida_section - 100) * i;
+            }
+
+            return jsonMedidas;
+        }
+
+        function eliminaClase($idelement, $classname) {
+            let element = d.getElementById($idelement),
+                hasClase2 = element.classList.contains($classname);
+            if (hasClase2) element.classList.remove($classname);
+        }
+
+        function agregaClase($idelement, $classname) {
+            let element = d.getElementById($idelement),
+                hasClase2 = element.classList.contains($classname);
+            if (!hasClase2) element.classList.add($classname);
+        }
+
+        function habilitaYOcultaLeyenda(obj) {
+            //Desliza hacia abajo
+            if (obj == 'seccion2') {
+                d.getElementById("scroll_down_animation").style.display = "none";
+                d.getElementById("text_desliza").style.display = "none";
+            } else {
+                d.getElementById("scroll_down_animation").style.display = "block";
+                d.getElementById("text_desliza").style.display = "block";
+            }
+        }
+    };
+
+    w.addEventListener("scroll", myScrollFunc);
+
+    disableScroll();
+    setTimeout(() => {
+        enableScroll();
+    }, 1000);
+
+    function disableScroll() {
+        d.body.classList.add("remove-scrolling");
+    }
+
+    function enableScroll() {
+        d.body.classList.remove("remove-scrolling");
+    }
+
+    function stopPropagation(event) {
+        event.stopPropagation();
+    }
+
+    function init() {
+        //global letiables
+        const front = d.querySelector('.slides').id + '_front',
+            back = d.querySelector('.slides').id + '_back',
+            slide = d.querySelectorAll('.slides'),
+            btn1 = d.createElement('button'),
+            btn2 = d.createElement('button'),
+            div1 = d.querySelectorAll('.slides img');
+
+        let interval, timeout;
+
+        // wrapping images with a images div
+        for (const p of slide) {
+            const wrapper = d.createElement('div');
+            wrapper.classList.add('images');
+
+            while (p.firstChild) {
+                wrapper.appendChild(p.firstChild);
+            }
+            p.appendChild(wrapper);
+        }
+
+        //adding the front and back navigation
+        btn1.type = "button";
+        btn1.classList.add("back");
+        btn1.classList.add("owl-prev");
+        btn1.classList.add(back);
+        btn1.innerHTML = "‹";
+
+        btn2.type = "button";
+        btn2.classList.add("front");
+        btn2.classList.add("owl-next");
+        btn2.classList.add(front);
+        btn2.innerHTML = "›";
+
+        slide[0].prepend(btn1);
+        slide[0].prepend(btn2);
+
+        // initalizing the first image to class 'top'
+        div1[0].classList.add('top');
+
+        // function to start the auto animation
+        let start = function () {
+            interval = setInterval(forward, 3000);
+        }
+
+        // function to stop the auto animation
+        let stop = function () {
+            clearInterval(interval);
+            clearInterval(timeout);
+        }
+
+        // function to restart the animation
+        let reset = function () {
+            timeout = setTimeout(start, 3000);
+        }
+
+        //function to animate the images in forward direction
+        let forward = function () {
+            let curr = d.querySelector('.slides img.top');
+            let next = curr.nextElementSibling;
+
+            if (!next) {
+                let listy = d.querySelectorAll('.slides img');
+                next = listy[0];
+                next.classList.add('top');
+
+                curr.animate([
+                    {
+                        opacity: '0.0'
+                    }
+                ], 0);
+
+                curr.style.opacity = "1.0";
+                curr.classList.remove('top');
+            } else {
+                let newclass = next.animate([
+                    { opacity: '0.0' }
+                ], 0);
+
+                newclass.onfinish = function (e) {
+                    next.classList.add('top');
+                    next.animate([
+                        { opacity: '1.0' }
+                    ], 0);
+                    curr.classList.remove('top');
+                }
+            }
+        }
+
+        //function to animate the images in backward direction
+        let backward = function () {
+            let curr = d.querySelector('.slides img.top');
+            let next = curr.previousElementSibling;
+
+            if (!next) {
+                let items = d.querySelectorAll('.slides img');
+                next = items[items.length - 1];
+
+                next.style.opacity = "0.0";
+                next.classList.add('top');
+
+                next.animate([
+                    { opacity: '1.0' }
+                ], 0);
+
+                curr.classList.remove('top');
+                next.style.opacity = "1.0";
+            } else {
+                next.classList.add('top');
+                let newclass = curr.animate([
+                    { opacity: '0.0' }
+                ], 0);
+
+                newclass.onfinish = function (e) {
+                    curr.classList.remove('top');
+                    curr.style.opacity = "1.0";
+                }
+            }
+        }
+
+        d.addEventListener('click', function (event) {
+            if (event.target.matches('.' + front)) {
+                stop();
+                forward();
+                reset();
+            }
+
+            if (event.target.matches('.' + back)) {
+                stop();
+                backward();
+                reset();
+            }
+        });
+
+        start();
+    };
+
+    const mediaQuery = w.matchMedia('(max-width: 992px)');
+
+    if (mediaQuery.matches) {
+        init();
+    }
+
+</script>
