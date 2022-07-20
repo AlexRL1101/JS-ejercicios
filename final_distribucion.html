@@ -1221,7 +1221,7 @@
       id="text3-animated" class="onClickTextOverImage content-header mov"
       src="{{media url='wysiwyg/distribuciongenesis/Carrusel_Beneficios3.png'}}" alt="" data-scroll-animated="">
   </section>
-  <section id="seccion5" class="section oculta" data-scroll-spy="">
+  <section id="seccion3" class="section oculta" data-scroll-spy="">
     <div class="container-iframe"><iframe class="responsive-iframe"
         src="https://forms.yetox.com/form/public/views/form_distribucion.php"></iframe></div>
     <img id="text4-animated" class="content-header" src="{{media url='wysiwyg/distribuciongenesis/Mapa3.1.png'}}" alt=""
@@ -1230,44 +1230,9 @@
 </section>
 <script type="text/javascript">
   const d = document,
-    w = window;
-
-  function tamanoPorSection() {
-    let section = d.getElementById("hero-image"),
-      $sections = d.querySelectorAll("section[data-scroll-spy]").length,
-      medida = section.clientHeight,
-      $medida_section = Math.round(medida / $sections),
-      jsonMedidas = {};
-
-    for (let i = 0; i <= $sections; i++) {
-      jsonMedidas[i] = ($medida_section - 100) * i;
-    }
-
-    return jsonMedidas;
-  }
-
-  function eliminaClase($idelement, $classname) {
-    let element = d.getElementById($idelement),
-      hasClase2 = element.classList.contains($classname);
-    if (hasClase2) element.classList.remove($classname);
-  }
-
-  function agregaClase($idelement, $classname) {
-    let element = d.getElementById($idelement),
-      hasClase2 = element.classList.contains($classname);
-    if (!hasClase2) element.classList.add($classname);
-  }
-
-  function disableScroll() {
-    document.body.classList.add("remove-scrolling");
-  }
-
-  function enableScroll() {
-    document.body.classList.remove("remove-scrolling");
-  }
-
-
-  const $sections = d.querySelectorAll("section[data-scroll-spy]");
+    w = window,
+    $sections = d.querySelectorAll("section[data-scroll-spy]"),
+    mediaQuery = window.matchMedia('(max-width: 768px)');
 
   let oldValue = 0,
     newValue = 0,
@@ -1286,17 +1251,11 @@
     }
 
     for (let i = 0; i < Object.keys(obsj).length - 1; i++) {
-      if ((y + 1000) >= lastItem) {
-        d.getElementById("scroll_down_animation").style.display = "none";
-        d.getElementById("text_desliza").style.display = "none";
-      } else {
-        d.getElementById("scroll_down_animation").style.display = "block";
-        d.getElementById("text_desliza").style.display = "block";
-      }
-
       if (y >= obsj[i] && y <= obsj[i + 1]) {
         let sectionEle = $sections[i],
           claseSection = sectionEle.classList.contains('oculta');
+
+        habilitaYOcultaLeyenda(sectionEle.id);
 
         if (claseSection) {
           disableScroll();
@@ -1344,6 +1303,43 @@
     }
 
     oldValue = newValue;
+
+    function tamanoPorSection() {
+      let section = d.getElementById("hero-image"),
+        $sections = d.querySelectorAll("section[data-scroll-spy]").length,
+        medida = section.clientHeight,
+        $medida_section = Math.round(medida / $sections),
+        jsonMedidas = {};
+
+      for (let i = 0; i <= $sections; i++) {
+        jsonMedidas[i] = ($medida_section - 100) * i;
+      }
+
+      return jsonMedidas;
+    }
+
+    function eliminaClase($idelement, $classname) {
+      let element = d.getElementById($idelement),
+        hasClase2 = element.classList.contains($classname);
+      if (hasClase2) element.classList.remove($classname);
+    }
+
+    function agregaClase($idelement, $classname) {
+      let element = d.getElementById($idelement),
+        hasClase2 = element.classList.contains($classname);
+      if (!hasClase2) element.classList.add($classname);
+    }
+
+    function habilitaYOcultaLeyenda(obj) {
+      //Desliza hacia abajo
+      if (obj == 'seccion3') {
+        d.getElementById("scroll_down_animation").style.display = "none";
+        d.getElementById("text_desliza").style.display = "none";
+      } else {
+        d.getElementById("scroll_down_animation").style.display = "block";
+        d.getElementById("text_desliza").style.display = "block";
+      }
+    }
   };
 
   //w.addEventListener('touchmove', myScrollFunc);
@@ -1356,6 +1352,14 @@
 
   function stopPropagation(event) {
     event.stopPropagation();
+  }
+
+  function disableScroll() {
+    d.body.classList.add("remove-scrolling");
+  }
+
+  function enableScroll() {
+    d.body.classList.remove("remove-scrolling");
   }
 
   function init() {
@@ -1467,7 +1471,7 @@
         curr.classList.remove('top');
         next.style.opacity = "1.0";
       } else {
-        next.classList.add('toping');
+        next.classList.add('top');
         let newclass = curr.animate([
           { opacity: '0.0' }
         ], 0);
@@ -1495,8 +1499,6 @@
 
     start();
   };
-
-  const mediaQuery = window.matchMedia('(max-width: 768px)');
 
   if (mediaQuery.matches) {
     init();

@@ -1,0 +1,535 @@
+<style>
+    :root {
+        --black: #000000;
+        --orange: #FF8534;
+        --iconocamionetica: url('{{media url=' wysiwyg/envios_yetox/CamionetaIcon.png'}}');
+        --iconotarima: url('{{media url=' wysiwyg/envios_yetox/TarimaIcon.png'}}');
+        --iconomex: url('{{media url=' wysiwyg/envios_yetox/MexicoIcon.png'}}');
+        --textobanner: url('{{media url=' wysiwyg/envios_yetox/textobannerbajo.png'}}');
+        --repayetox: url('{{media url=' wysiwyg/envios_yetox/Deliveryman.png'}}');
+    }
+
+    header {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+
+    #go-top a i {
+        color: white !important;
+    }
+
+    #banner_como_vender {
+        width: 100%;
+    }
+
+    /*---------------------*/
+
+    a {
+        color: #007bff;
+    }
+
+    p {
+        line-height: 1.6;
+        font-size: 2rem;
+    }
+
+    .colornaranja {
+        background-color: var(--orange);
+    }
+
+    .text-media {
+        --py: 4rem;
+        padding: 8rem;
+        padding-block: 7em;
+    }
+
+    .text-media__col {
+        position: relative;
+        flex: 0 0 50%;
+    }
+
+    .text-media__col_first_text {
+        position: relative;
+        flex: 0 0 40%;
+    }
+
+    .text-media__col_first {
+        position: relative;
+        flex: 0 0 60%;
+    }
+
+    .text-media__col_first2 {
+        position: relative;
+        flex: 0 0 60%;
+    }
+
+    .text-media__col_first_text2 {
+        position: relative;
+        flex: 0 0 30%;
+    }
+
+    .text-media__col--text {
+        display: flex;
+        align-items: center;
+    }
+
+    .text-media__img_iframe {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 3/2;
+    }
+
+    .text-media__img {
+        width: 65%;
+        /*height: 100%;*/
+        object-fit: cover;
+    }
+
+    .text-media__content {
+        display: flex;
+        width: 100%;
+        max-width: 45rem;
+        padding: 1rem;
+        flex-direction: column;
+    }
+
+    .img_white {
+        filter: brightness(10);
+    }
+
+    .text-media__content h2:nth-child(2n) {
+        color: white;
+    }
+
+    .text-media__content>*+* {
+        margin-top: 1rem;
+    }
+
+    .text-alone>p {
+        text-align: justify;
+    }
+
+    .text-alone>#coment-final {
+        text-align: center;
+    }
+
+    .parrafo {
+        padding-block-end: 8rem;
+    }
+
+    .text-media--no-bg.text-media--narrow {
+        --py: 0;
+    }
+
+    .text-media--no-img .text-media__content {
+        max-width: 65rem;
+    }
+
+    .text-media--no-img.text-media--no-bg {
+        --py: 0;
+    }
+</style>
+<style>
+    @media (max-width: 575.98px) {
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.7rem;
+        }
+
+        .text-media__col_first_text,
+        .text-media__col--text {
+            text-align: justify;
+            justify-content: center;
+        }
+
+        .text-media__img-wrapper {
+            height: 100%;
+            text-align: center;
+        }
+
+        .text-alone {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .imagen_100w {
+            width: 100%;
+        }
+
+        .video_camion {
+            padding-block-end: 0;
+        }
+
+        .text-media {
+            --py: 4rem;
+            padding: 0rem;
+            padding-block: 4em;
+        }
+
+        .text-media__content {
+            flex-direction: column-reverse;
+        }
+
+        .finalsection {
+            --py: 4rem;
+            padding: 0rem;
+            padding-block: 2em;
+            padding-block-end: 0px;
+        }
+
+        .padding-separation {
+            padding: 1rem;
+        }
+    }
+
+    @media (min-width: 576px) {
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .text-media__col_first_text,
+        .text-media__col--text {
+            text-align: justify;
+            justify-content: center;
+        }
+
+        .text-media__img-wrapper {
+            height: 100%;
+            text-align: center;
+        }
+
+        .text-alone {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .imagen_100w {
+            width: 100%;
+        }
+
+        .video_camion {
+            padding-block-end: 0;
+        }
+    }
+
+    @media (min-width: 768px) {
+
+        h2 {
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        .text-alone>h2 {
+            text-align: unset;
+        }
+
+        .text-media__content>*+* {
+            margin-top: 1.75rem;
+        }
+
+        .text-media__content {
+            padding: 2rem;
+        }
+
+        .text-alone {
+            padding-right: 8rem;
+            padding-left: 8rem;
+        }
+
+        .text-media__col_first_text {
+            text-align: justify;
+            justify-content: center;
+        }
+
+        .text-media__col--text {
+            text-align: justify;
+            justify-content: center;
+        }
+
+        .text-media__img-wrapper {
+            height: 100%;
+            text-align: center;
+        }
+
+        .first-card {
+            /*padding-left: 0;*/
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @media (min-width: 992px) {
+        h2 {
+            text-align: unset;
+        }
+
+        .text-media__content {
+            padding: var(--pt, var(--py)) 4rem var(--py) 4rem;
+        }
+
+        .text-media+.text-media--no-bg,
+        .text-media--no-bg+.text-media {
+            margin-top: 6rem;
+        }
+
+        .text-media--no-img {
+            justify-content: center;
+        }
+
+        .text-media--no-img .text-media__col {
+            flex: 0 1 75rem;
+        }
+
+        .text-media--narrow .text-media__col--media {
+            padding: var(--py) 0;
+        }
+
+        .text-media--narrow:nth-of-type(even) .text-media__img-wrapper {
+            padding: 0 4rem 0 0;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .text-media--narrow .text-media__img-wrapper {
+            position: relative;
+            max-width: 45rem;
+            padding: 0 0 0 4rem;
+            margin-left: auto;
+        }
+
+        .text-media--narrow .text-media__img {
+            object-fit: auto;
+            height: auto;
+        }
+
+        .text-media {
+            display: flex;
+            /* Alternate layouts are reversed */
+        }
+
+        .text-media:nth-of-type(even) {
+            flex-direction: row;
+        }
+
+        .text-media:nth-of-type(even) .text-media__content {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .text-media__img-wrapper {
+            height: 100%;
+        }
+
+        .text-alone {
+            padding-right: 18rem;
+            padding-left: 18rem;
+        }
+
+        .first-card {
+            /*padding-left: 5%;*/
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text-media__col_first_text,
+        .text-media__col_first_text2,
+        .text-media__col--text {
+            text-align: start;
+            justify-content: flex-start;
+        }
+
+        .img_camionvideo {
+            width: 540px;
+            position: absolute;
+        }
+
+        .divcamion {
+            flex-flow: row-reverse;
+        }
+
+        .video_camion {
+            padding-block-end: 0;
+        }
+
+        .imagen_end {
+            align-self: end;
+        }
+
+        .imagen-icon {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding-block-start: 7em;
+        }
+    }
+
+    @media(min-width: 1200px) {
+        .first-card {
+            /*padding-left: 5% !important;**/
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img_right {
+            float: right;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        h2 {
+            text-align: unset;
+        }
+
+        .text-media__content {
+            padding: var(--pt, var(--py)) 4rem var(--py) 4rem;
+        }
+
+        .text-media+.text-media--no-bg,
+        .text-media--no-bg+.text-media {
+            margin-top: 6rem;
+        }
+
+        .text-media--no-img {
+            justify-content: center;
+        }
+
+        .text-media--no-img .text-media__col {
+            flex: 0 1 75rem;
+        }
+
+        .img_right {
+            float: right;
+        }
+
+        .text-media--narrow .text-media__col--media {
+            padding: var(--py) 0;
+        }
+
+        .text-media--narrow:nth-of-type(even) .text-media__img-wrapper {
+            padding: 0 4rem 0 0;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .text-media--narrow .text-media__img-wrapper {
+            position: relative;
+            max-width: 45rem;
+            padding: 0 0 0 4rem;
+            margin-left: auto;
+        }
+
+        .text-media--narrow .text-media__img {
+            object-fit: auto;
+            height: auto;
+        }
+
+        .text-media {
+            display: flex;
+            /* Alternate layouts are reversed */
+        }
+
+        .text-media:nth-of-type(even) {
+            flex-direction: row;
+        }
+
+        .text-media:nth-of-type(even) .text-media__content {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .text-media__img-wrapper {
+            height: 100%;
+        }
+
+        .text-alone {
+            padding-right: 18rem;
+            padding-left: 18rem;
+        }
+
+        .first-card {
+            /*padding-left: 5%;*/
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text-media__col_first_text,
+        .text-media__col--text {
+            text-align: start;
+            justify-content: flex-start;
+        }
+    }
+</style>
+<section class="text-media first-card colornaranja">
+    <div class="text-media__col_first text-media__col--media">
+        <div class="text-media__img-wrapper"><img class="imagen_100w padding-separation"
+                src="{{media url='wysiwyg/envios_yetox/CamionetaEnvios-OFICIAL.png'}}" alt="transporte-yetoxenvios">
+        </div>
+    </div>
+    <div class="text-media__col_first_text text-media__col--text">
+        <div class="text-media__content"><img class="img_white"
+                src="{{media url='wysiwyg/envios_yetox/Env_osYetox1.png'}}" alt="yetox envios">
+            <h2><strong>Envía y Recibe</strong> tus productos de manera fácil y segura con nuestra red de logística
+                especializada, recíbelos en 24 horas</h2>
+        </div>
+    </div>
+</section>
+<section class="text-media first-card colornaranja video_camion">
+    <div class="text-media__col_first2 text-media__col--media">
+        <div class="text-media__img-wrapper"><a href="https://youtu.be/Y4ugyt8I0xc?list=TLGGm8PvuvXoJMwxOTA3MjAyMg"
+                target="_black"><img class="imagen_100w"
+                    src="{{media url='wysiwyg/envios_yetox/PortadaVideoEnvios.jpg'}}" alt="video yetoxenvios"></a></div>
+    </div>
+    <div class="text-media__col_first_text2 text-media__col--text">
+        <div class="text-media__content divcamion"><img class="img_camionvideo imagen_100w"
+                srcset="{{media url='wysiwyg/envios_yetox/Cami_nEnv_os.png'}}" alt="camion yetox envios"></div>
+    </div>
+</section>
+<!--Without background color-->
+<section class="text-media imagen-icon">
+    <div>
+        <div class="text-media__img-wrapper"><img src="{{media url='wysiwyg/envios_yetox/CamionetaIcon.png'}}"
+                alt="icono camioneta yetoxenvios"></div>
+        <div class="text-media__img-wrapper">
+            <p>Optimizamos la mejor ruta logística para un envío de calidad.</p>
+        </div>
+    </div>
+    <div>
+        <div class="text-media__img-wrapper"><img src="{{media url='wysiwyg/envios_yetox/TarimaIcon.png'}}"
+                alt="icono tarima yetoxenvios"></div>
+        <div class="text-media__img-wrapper">
+            <p>Se empacan y embalan tus productos de forma segura.</p>
+        </div>
+    </div>
+    <div>
+        <div class="text-media__img-wrapper"><img src="{{media url='wysiwyg/envios_yetox/MexicoIcon.png'}}"
+                alt="icono mexico yetoxenvios">
+            <div class="text-media__img-wrapper">
+                <p>Entregamos los productos en diferentes puntos de la República Mexicana.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Without background color and with narrower image-->
+<section class="text-media finalsection video_camion colornaranja">
+    <div class="text-media__col text-media__col--media">
+        <div class="text-media__img-wrapper"><img class="imagen_100w"
+                src="{{media url='wysiwyg/envios_yetox/textobannerbajo.png'}}" alt="lema yetox envios"></div>
+    </div>
+    <div class="text-media__col text-media__col--text">
+        <div class="imagen_end"><img class="imagen_100w" src="{{media url='wysiwyg/envios_yetox/Deliveryman.png'}}"
+                alt="repartidor yetox envios"></div>
+    </div>
+</section>
+<!-- ******************************************* -->

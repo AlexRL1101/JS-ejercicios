@@ -1,13 +1,8 @@
 <style>
     @media (max-width: 575.98px) {
         h2 {
-            font-size: 2rem;
+            font-size: 3rem;
             text-align: center;
-        }
-
-        p {
-            line-height: 1.6;
-            font-size: 1.7rem;
         }
 
         .text-media__col_first_text,
@@ -16,22 +11,34 @@
             justify-content: center;
         }
 
-        .text-media__img-wrapper {
-            height: 100%;
-            text-align: center;
+        .text-alone {
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
         }
 
-        .text-alone {
+        .container-iframe {
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
+            flex: 0 100%;
+            padding-block-start: 3rem;
+        }
+
+        .responsive-iframe {
+            width: 100%;
+            min-height: 130vh;
+            border: none;
+        }
+
+        .text_init {
+            padding: 2rem;
+            text-align: justify;
         }
     }
 
     @media (min-width: 576px) {
         h2 {
-            font-size: 2rem;
+            font-size: 3rem;
             text-align: center;
         }
 
@@ -41,21 +48,32 @@
             justify-content: center;
         }
 
-        .text-media__img-wrapper {
-            height: 100%;
-            text-align: center;
+        .text-alone {
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
         }
 
-        .text-alone {
+        .container-iframe {
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
+            flex: 0 100%;
+            padding-block-start: 3rem;
+        }
+
+        .responsive-iframe {
+            width: 100%;
+            min-height: 130vh;
+            border: none;
+        }
+
+        .text_init {
+            padding: 2rem;
+            text-align: justify;
         }
     }
 
     @media (min-width: 768px) {
-
         h2 {
             font-size: 3rem;
             text-align: center;
@@ -88,15 +106,27 @@
             justify-content: center;
         }
 
-        .text-media__img-wrapper {
-            height: 100%;
-            text-align: center;
+        .first-card {
+            padding-left: 0;
         }
 
-        .first-card {
-            /*padding-left: 0;*/
+        .container-iframe {
+            display: flex;
             justify-content: center;
             align-items: center;
+            flex: 0 100%;
+            padding-block-start: 3rem;
+        }
+
+        .responsive-iframe {
+            width: 100%;
+            min-height: 80vh;
+            border: none;
+        }
+
+        .text_init {
+            padding: 2rem;
+            text-align: justify;
         }
     }
 
@@ -146,7 +176,6 @@
 
         .text-media {
             display: flex;
-            /* Alternate layouts are reversed */
         }
 
         .text-media:nth-of-type(even) {
@@ -168,9 +197,7 @@
         }
 
         .first-card {
-            /*padding-left: 5%;*/
-            justify-content: center;
-            align-items: center;
+            padding-left: 5%;
         }
 
         .text-media__col_first_text,
@@ -182,13 +209,25 @@
 
     @media(min-width: 1200px) {
         .first-card {
-            /*padding-left: 5% !important;**/
-            justify-content: center;
-            align-items: center;
+            padding-left: 5% !important;
         }
 
-        .img_right {
-            float: right;
+        .container-iframe {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 0 100%;
+            padding-block-start: 3rem;
+        }
+
+        .responsive-iframe {
+            width: 100%;
+            min-height: 150vh;
+            border: none;
+        }
+
+        .text_init {
+            padding: 6rem;
         }
     }
 
@@ -212,10 +251,6 @@
 
         .text-media--no-img .text-media__col {
             flex: 0 1 75rem;
-        }
-
-        .img_right {
-            float: right;
         }
 
         .text-media--narrow .text-media__col--media {
@@ -242,7 +277,6 @@
 
         .text-media {
             display: flex;
-            /* Alternate layouts are reversed */
         }
 
         .text-media:nth-of-type(even) {
@@ -264,15 +298,32 @@
         }
 
         .first-card {
-            /*padding-left: 5%;*/
-            justify-content: center;
-            align-items: center;
+            padding-left: 5%;
         }
 
         .text-media__col_first_text,
         .text-media__col--text {
             text-align: start;
             justify-content: flex-start;
+        }
+
+        .responsive-iframe {
+            width: 100%;
+            min-height: 90vh;
+            border: none;
+        }
+
+        .text_init {
+            padding: 6rem;
+            text-align: justify;
+        }
+
+        .text_init p {
+            text-align: center;
+        }
+
+        p {
+            font-size: 3rem !important;
         }
     }
 
@@ -281,10 +332,16 @@
         padding-left: 15px !important;
     }
 
-    /*.container{
-  padding-right: 0 !important;
-  padding-left: 0 !important;
-  }*/
+    .container {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        background-color: #182D4C;
+        color: white;
+    }
+
+    p {
+        font-size: larger;
+    }
 
     #go-top a i {
         color: white !important;
@@ -294,9 +351,9 @@
         width: 100%;
     }
 
-    /*.container {
-  max-width: 100%;
-  }*/
+    .container {
+        max-width: 100%;
+    }
 
     /*---------------------*/
 
@@ -306,7 +363,6 @@
 
     p {
         line-height: 1.6;
-        font-size: 2rem;
     }
 
     .text-media {
@@ -326,7 +382,7 @@
 
     .text-media__col_first {
         position: relative;
-        flex: 0 0 50%;
+        flex: 0 0 60%;
     }
 
     .text-media__col--text {
@@ -341,9 +397,10 @@
         aspect-ratio: 3/2;
     }
 
-    .text-media__img {
-        width: 65%;
-        /*height: 100%;*/
+    .text-media__img,
+    .text_init img {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
     }
 
@@ -379,81 +436,76 @@
     .text-media--no-img.text-media--no-bg {
         --py: 0;
     }
+
+    .text-img-title {
+        width: 100%;
+        height: 100%;
+    }
 </style>
-<img id="banner_como_vender" src="{{media url='wysiwyg/como_vender_en_y/c_mo-vender-en-yetox_banner.jpg'}}" alt=""><br>
+<img id="banner_como_vender" src="{{media url='wysiwyg/COTIEN/BannerCOTIEN-web.jpg'}}" alt=""><br>
 <!-- ******************************************* -->
-<section class="text-media first-card">
-    <div class="text-media__col_first text-media__col--media">
-        <div class="text-media__img-wrapper"><iframe class="text-media__img_iframe"
-                src="https://www.youtube.com/embed/opKH4wpKfI4?loop=1&amp;playlist=opKH4wpKfI4&amp;autoplay=1&amp;mute=1"
-                title="YouTube video como vender en yetox" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen="allowfullscreen"></iframe></div>
+<section class="text-media">
+    <div class="text-media__col text-media__col--media">
+        <div class="text-media__img-wrapper"><img class="text-media__img"
+                src="{{media url='wysiwyg/COTIEN/ImgCOTIEN4.png'}}" alt="" loading="lazy" width="540" height="450">
+        </div>
     </div>
-    <div class="text-media__col_first_text text-media__col--text">
-        <div class="text-media__content">
-            <h2>Vender productos para la industria puede ser algo complejo y seguramente estás de acuerdo con nosotros
-                en que es más fácil vender por internet una licuadora que un microscopio láser certificado
-                <strong>¿verdad?</strong>
-            </h2>
+    <div class="text-media__col text-media__col--text">
+        <div class="text-media__content"><img class="text-img-title"
+                src="{{media url='wysiwyg/COTIEN/comprayvende.png'}}" alt="" loading="lazy" width="1182" height="188">
+            <p>Somos un <em>marketplace</em> <strong>B2B</strong> de productos industriales con un alcance a nivel
+                nacional, trabajando codo a codo con más de 105 empresas, formando parte del Consorcio de Transformación
+                Industrial y Energético, contando con más de 100 mil visitas al año.</p>
         </div>
     </div>
 </section>
-<div class="text-alone">
-    <h2>Implementar tecnología digital e innovar</h2>
-    <br>
-    <p>Ha sido labor constante de todos aquellos que entienden la importancia de vender y comprar a través de internet.
-    </p>
-    <h3>Te presentamos una guía sobre cómo vender tus productos industriales y semi-industriales en Yetox® y todos
-        beneficios que obtendrías.</h3>
-</div>
+<section class="text-media">
+    <div class="text-media__col_first text-media__col--media">
+        <div class="text-media__img-wrapper"><img class="text-media__img"
+                src="{{media url='wysiwyg/COTIEN/ImgCOTIEN1.png'}}" alt=""></div>
+    </div>
+    <div class="text-media__col_first_text text-media__col--text">
+        <div class="text-media__content">
+            <h1>Descuentos Especiales en <span>Aeroméxico</span><strong>®</strong></h1>
+            <p>Es uno de los beneficios que obtienes al volverte <em>socio</em> de <strong>Yetox® </strong>(sin
+                anualidad ni mensualidad). Solamente te cobraremos una comisión del 12 al 15% por venta. Recuerda que
+                puedes subir todos tus productos.</p>
+        </div>
+    </div>
+</section>
 <!--Without background color-->
 <section class="text-media">
     <div class="text-media__col text-media__col--media">
         <div class="text-media__img-wrapper"><img class="text-media__img"
-                src="{{media url='wysiwyg/como_vender_en_y/Infographic1.png'}}" alt="Registrate en yetox"></div>
+                src="{{media url='wysiwyg/COTIEN/ImgCOTIEN2.png'}}" alt=""></div>
     </div>
     <div class="text-media__col text-media__col--text">
-        <div class="text-media__content">
-            <h2>Crea tu usuario y contraseña.</h2>
-            <p>Podrás crear un perfil de usuario, en el cuál deberás especificar la dirección desde donde envías tus
-                productos para que se pueda hacer el cálculo automático del envío.</p>
+        <div class="text-media__content"><img class="text-img-title"
+                src="{{media url='wysiwyg/COTIEN/Env_osYetox1.png'}}" alt="">
+            <p>Envía sin preocupaciones con nuestra red de logística; gestionamos tu ruta, embalamos tus productos de
+                manera adecuada y segura. Contamos con envíos a toda la República Mexicana.</p>
         </div>
     </div>
 </section>
 <!--Without background color and with narrower image-->
 <section class="text-media">
     <div class="text-media__col text-media__col--media">
-        <div class="text-media__img-wrapper"><img class="text-media__img img_right"
-                src="{{media url='wysiwyg/como_vender_en_y/Infographic2.png'}}" alt="Publica productos en yetox"></div>
-    </div>
-    <div class="text-media__col text-media__col--text">
-        <div class="text-media__content">
-            <h2>Publica tu producto.</h2>
-            <p>¡Perfecto! Ya tienes una cuenta, puedes crear una publicación; te recomendamos añadir toda la información
-                que solicitamos, además, agregar todos los elementos que consideres necesarios para que tus futuros
-                clientes tengan información técnica y comercial sobre tus productos.</p>
-        </div>
-    </div>
-</section>
-<!--With background color and narrow image-->
-<section class="text-media">
-    <div class="text-media__col text-media__col--media">
         <div class="text-media__img-wrapper"><img class="text-media__img"
-                src="{{media url='wysiwyg/como_vender_en_y/Infographic3.png'}}" alt="Compra en yetox"></div>
+                src="{{media url='wysiwyg/COTIEN/ImgCOTIEN3.png'}}" alt=""></div>
     </div>
     <div class="text-media__col text-media__col--text">
-        <div class="text-media__content">
-            <h2>Haz realizado una venta.</h2>
-            <p>¡Felicidades, ya vediste tu producto!<br>Recibirás una notificación y una guía de envío en tu
-                correo.<br>De igual manera, toda esta información la podrás obtener en tu <em>dashboard</em> de usuario
-                dentro de Yetox®.<br><br>Realiza el envío y cuando se acredite el proceso de compra exitosa, tu dinero
-                se enviará a la cuenta bancaria que hayas vinculado a tu perfil.</p>
+        <div class="text-media__content"><img class="text-img-title"
+                src="{{media url='wysiwyg/COTIEN/designfactory.png'}}" alt="" loading="lazy" width="1536" height="588">
+            <p>Puedes crear campañas publicitarias en colaboración con <strong>Yetox®</strong>, creamos tu página web y
+                App móvil. Nos encargamos de fabricar la publicidad digital e impresa que necesites para tu empresa.</p>
         </div>
     </div>
 </section>
 <div class="text-alone parrafo">
-    <h3 id="coment-final"><br>Si tienes más dudas o comentarios no dudes en escribirnos a <a
-            href="mailto: info@yetox.com">info@yetox.com</a> y con mucho gusto te ayudaremos.</h3>
+    <p id="coment-final">Si tienes más dudas o comentarios no dudes en escribirnos a <a
+            href="mailto: info@yetox.com">info@yetox.com</a> y con mucho gusto te ayudaremos.</p>
 </div>
 <!-- ******************************************* -->
+<!-- Formulario -->
+<div class="container-iframe"><iframe class="responsive-iframe"
+        src="https://forms.yetox.com/form/public/views/form_cotien.php"></iframe></div>
