@@ -1,0 +1,1601 @@
+<style>
+    ::-webkit-scrollbar {
+        display: none
+    }
+
+    :root {
+        --container-width: 1200px;
+        --image:url('{{media url=' wysiwyg/distribuciongenesis/BG_1.jpg'}}');
+        --light: hsl(0deg 0% 100%);
+        --primary: hsl(255, 30%, 55%);
+        --focus: hsl(210, 90%, 50%);
+        --focusbutton: hsl(210, 90%, 50%);
+        --border-color: hsla(0, 0%, 100%, .2);
+        --global-background: hsl(220, 25%, 10%);
+        --background: linear-gradient(to right, hsl(210, 30%, 20%), hsl(255, 30%, 25%));
+        --shadow-1: hsla(236, 50%, 50%, .3);
+        --shadow-2: hsla(236, 50%, 50%, .4)
+    }
+
+    body {
+        margin: 0 !important
+    }
+
+    a,
+    a:link {
+        font-family: inherit;
+        text-decoration: none
+    }
+
+    .container {
+        padding-right: 0 !important;
+        padding-left: 0 !important
+    }
+
+    .page-title-wrapper {
+        position: absolute
+    }
+
+    .img-base a {
+        display: contents
+    }
+
+    #go-top a i {
+        color: white !important
+    }
+
+    #img_video {
+        padding: 1rem
+    }
+
+    .oculta {
+        display: none !important
+    }
+
+    .content-header {
+        position: fixed;
+        transform: scale(0)
+    }
+
+    .content-header.top {
+        transition-duration: 0.5s, 1s;
+        transform: scale(1);
+        opacity: 1
+    }
+
+    .container-iframe {
+        position: relative;
+        width: 80%;
+        overflow: hidden;
+        padding-top: 100%;
+        margin-left: -110px;
+        margin-right: auto;
+        min-height: 100vh;
+        z-index: 2
+    }
+
+    .responsive-iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 60%;
+        height: 100%;
+        border: none
+    }
+
+    .hero-image {
+        margin-left: -91px;
+        margin-right: -88px;
+        min-height: 900vh;
+        background-color: black
+    }
+
+    .hero-image section {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        justify-content: space-evenly;
+        align-items: center
+    }
+
+    .section {
+        padding-top: 0;
+        padding-bottom: 4rem;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: var(--container-width);
+        min-height: 100vh
+    }
+
+    .scrollable-place {
+        height: 1000px
+    }
+
+    .remove-scrolling {
+        height: 100%;
+        overflow: hidden
+    }
+
+    img[data-scroll-animated],
+    img[data-scroll] {
+        transition: all 0.8s
+    }
+
+    .scroll-left {
+        position: fixed;
+        display: block;
+        width: 33px;
+        height: 33px;
+        border-bottom: 2px solid #fff;
+        border-right: 2px solid #fff;
+        z-index: 1;
+        left: 2%;
+        animation: fadeInLeft 2s ease-in-out infinite
+    }
+
+    .text-media__col_first {
+        position: relative;
+        flex: 0 0 80%
+    }
+
+    .text-media__img-wrapper {
+        height: 100%
+    }
+
+    .text-media__img_iframe {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 7/4
+    }
+
+    .disable_image {
+        opacity: 0.2
+    }
+
+    #text1-animated.top,
+    #text2-animated.top,
+    #text3-animated.top {
+        animation: zoominoutsinglefeatured 1s infinite
+    }
+
+    .slides img {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: -2
+    }
+
+    .slides img.top {
+        z-index: -1
+    }
+
+    .slides .front {
+        position: absolute;
+        right: 10px;
+        border-radius: 60px;
+        text-align: center;
+        background: white;
+        cursor: pointer;
+        font-size: 30px;
+        font-weight: bold;
+        width: 14%;
+        height: 10%;
+        opacity: 0.5
+    }
+
+    .slides .back {
+        position: absolute;
+        left: 10px;
+        border-radius: 60px;
+        text-align: center;
+        background: white;
+        cursor: pointer;
+        font-size: 30px;
+        font-weight: bold;
+        width: 14%;
+        height: 10%;
+        opacity: 0.5
+    }
+
+    .owl-nav {
+        position: absolute;
+        top: -100px;
+        right: 0
+    }
+
+    .owl-nav button {
+        background: #fff !important;
+        width: 45px;
+        height: 45px;
+        font-size: 25px !important;
+        box-shadow: 0px 0px 17px #00000005;
+        border-radius: 50%
+    }
+
+    .owl-nav button:nth-of-type(1) {
+        margin-right: 13px
+    }
+
+    .slides button {
+        background: #fff !important;
+        width: 45px;
+        height: 45px;
+        font-size: 25px !important;
+        box-shadow: 0px 0px 17px #00000005;
+        border-radius: 50%;
+        text-align-last: center
+    }
+
+    .slides button:nth-of-type(1) {
+        margin-right: 13px
+    }
+
+    .text-media__img-wrapper img {
+        width: 100%
+    }
+</style>
+<style>
+    .color_a,
+    .color_a:hover {
+        color: white
+    }
+
+    .modal-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background: var(--m-background)
+    }
+
+    .modal-container:target {
+        display: flex
+    }
+
+    .modal {
+        width: 60rem;
+        height: 100%;
+        padding: 4rem 2rem;
+        border-radius: 0.8rem;
+        color: var(--light);
+        box-shadow: var(--m-shadow, .4rem 4rem 10.2rem .2rem) var(--shadow-1);
+        position: relative;
+        overflow: hidden;
+        background-image: var(--image);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        border-width: 1px;
+        border-style: solid;
+        border-color: white;
+    }
+
+    .modal__title {
+        font-size: 3.2rem
+    }
+
+    .modal__text {
+        padding: 0 4rem;
+        margin-top: 4rem;
+        font-size: 1.6rem;
+        line-height: 2;
+        text-align: justify
+    }
+
+    .img__modal {
+        width: 100%;
+        height: auto
+    }
+
+    .modal__btn {
+        margin-top: 4rem;
+        padding: 1rem 1.6rem;
+        border: 1px solid var(--border-color);
+        border-radius: 100rem;
+        color: inherit;
+        background: transparent;
+        font-size: 1.4rem;
+        font-family: inherit;
+        letter-spacing: .2rem;
+        transition: .2s;
+        cursor: pointer
+    }
+
+    .modal__btn:nth-of-type(1) {
+        margin-right: 1rem
+    }
+
+    .modal__btn:hover,
+    .modal__btn:focus {
+        background: var(--focus);
+        border-color: var(--focus);
+        transform: translateY(-.2rem)
+    }
+
+    .link-2 {
+        width: 4rem;
+        height: 4rem;
+        border: 1px solid var(--border-color);
+        border-radius: 100rem;
+        color: inherit;
+        font-size: 2.2rem;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .2s
+    }
+
+    .link-2::before {
+        content: '×';
+        transform: translateY(-.1rem)
+    }
+
+    .link-2:hover,
+    .link-2:focus {
+        background: var(--focus);
+        border-color: var(--focus);
+        transform: translateY(-.2rem)
+    }
+</style>
+<style>
+    @media (max-width: 575.98px) {
+        .container {
+            max-width: 100%;
+        }
+
+        .hero-image {
+            margin-left: -163px;
+            margin-right: -120px;
+        }
+
+        .hero-image section {
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+
+        .hero-image #seccion5 {
+            flex-wrap: wrap-reverse;
+            flex-direction: row;
+        }
+
+        #static-animated,
+        img[data-scroll-static] {
+            position: absolute;
+            width: 100%;
+            transition: all 0.8s;
+        }
+
+        .container-iframe {
+            width: 100% !important;
+            padding-top: 0% !important;
+        }
+
+        #hero-image {
+            background-size: 186% 100%;
+        }
+
+        .hero-image section {
+            flex-wrap: wrap;
+        }
+
+        #sloganInicial {
+            top: 16%;
+            width: 90%;
+            height: 18%;
+        }
+
+        #text1-animated.disable_image,
+        #text2-animated.disable_image,
+        #text3-animated.disable_image {
+            transform: scale(0.5);
+        }
+
+        #text1-animated,
+        #text2-animated,
+        #text3-animated {
+            position: relative;
+            margin-top: 0%;
+            left: 0%;
+            /* padding: 1rem; */
+            width: auto;
+            height: 50vh;
+            margin-inline-start: 0;
+            background-color: transparent;
+        }
+
+        #text4-animated {
+            position: relative !important;
+            top: 20%;
+            right: 0%;
+            left: auto;
+            width: 50%;
+            height: auto;
+        }
+
+        .onClickTextOverImage {
+            cursor: pointer;
+        }
+
+        #text_firstcard,
+        #text_threecard {
+            width: 50%;
+            right: 0%;
+            margin-top: 30%;
+        }
+
+        #text_secondcard {
+            width: 50%;
+            left: -25%;
+            margin-top: 60%;
+        }
+
+        #logo-eneos {
+            width: 40%;
+            height: 15vh;
+        }
+
+        .imagen .text {
+            position: absolute;
+            color: #ffffff;
+            text-align: justify;
+            opacity: 0;
+            visibility: hidden;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(50%);
+        }
+
+        .imagen.show .text {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(0%);
+        }
+
+        .imagen .text_left {
+            position: absolute;
+            color: #ffffff;
+            text-align: justify;
+            opacity: 0;
+            visibility: hidden;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(0%);
+        }
+
+        .imagen.show .text_left {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(50%);
+        }
+
+        .responsive-iframe {
+            position: relative !important;
+            width: 100% !important;
+            height: 80vh !important;
+        }
+
+        .container-iframe {
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        .scroll-down {
+            position: fixed;
+            bottom: 80px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            z-index: 100;
+            text-decoration: none;
+            width: 30px;
+            height: 30px;
+            border-bottom: 2px solid #fff;
+            border-right: 2px solid #fff;
+            z-index: 1;
+            left: 45%;
+            animation: fade_move_down 1s ease-in-out infinite;
+        }
+
+        .text_down {
+            justify-content: center;
+            position: fixed;
+            bottom: 60px;
+            display: block;
+            text-align: center;
+            font-size: 15px;
+            z-index: 1;
+            /* left: 20%; */
+            color: white;
+            animation: fade_move_down_vertical 2s infinite;
+            width: 100%;
+        }
+
+        .marcas_base {
+            padding: 2rem;
+            width: 40%;
+            margin: 1rem;
+        }
+
+        .marcas_base:hover {
+            -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+        }
+
+        .img-base {
+            display: flex;
+            bottom: 20%;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+    }
+
+    @media (min-width: 576px) {
+        .container {
+            max-width: 100%;
+        }
+
+        .hero-image {
+            margin-left: -163px;
+            margin-right: -120px;
+        }
+
+        .hero-image section {
+            flex-direction: row;
+        }
+
+        .hero-image #seccion5 {
+            flex-wrap: inherit;
+        }
+
+        .hero-image section {
+            flex-wrap: wrap;
+        }
+
+        #static-animated,
+        img[data-scroll-static] {
+            position: absolute;
+            width: 100%;
+            transition: all 0.8s;
+        }
+
+        .responsive-iframe {
+            width: 100%;
+        }
+
+        .owl-nav {
+            top: -60px;
+        }
+
+        #hero-image {
+            background-size: 186% 100%;
+        }
+
+        #sloganInicial {
+            top: 15%;
+            width: 95%;
+            height: 25%;
+        }
+
+        #text1-animated,
+        #text2-animated,
+        #text3-animated {
+            position: relative;
+            margin-top: 0%;
+            left: 0%;
+            width: 50%;
+            margin-inline-start: 0;
+            background-color: transparent;
+        }
+
+        .container-iframe {
+            width: 100%;
+            padding-top: 0%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #text4-animated {
+            position: relative;
+            top: 20%;
+            right: 0%;
+            left: auto;
+            width: 50%;
+        }
+
+        #logo-eneos {
+            width: 30%;
+            height: 12vh;
+        }
+
+        .scroll-down {
+            position: fixed;
+            bottom: 80px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            z-index: 100;
+            text-decoration: none;
+            width: 31px;
+            height: 31px;
+            border-bottom: 2px solid #fff;
+            border-right: 2px solid #fff;
+            z-index: 1;
+            left: 48%;
+            animation: fade_move_down 1s ease-in-out infinite;
+        }
+
+        .text_down {
+            position: fixed;
+            bottom: 75px;
+            display: block;
+            text-align: center;
+            font-size: 20px;
+            z-index: 1;
+            /* left: 20%; */
+            color: white;
+            animation: fade_move_down_vertical 2s infinite;
+            width: 100%;
+        }
+
+        .marcas_base {
+            padding: 2rem;
+            width: 30%;
+            margin: 1rem;
+        }
+
+        .marcas_base:hover {
+            -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+        }
+
+        .img-base {
+            display: flex;
+            bottom: 20%;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            max-width: 100%;
+        }
+
+        .hero-image {
+            margin-left: -163px;
+            margin-right: -120px;
+        }
+
+        .hero-image section {
+            flex-direction: row;
+        }
+
+        .hero-image #seccion5 {
+            flex-wrap: wrap-reverse;
+        }
+
+        .responsive-iframe {
+            width: 56% !important;
+        }
+
+        .container-iframe {
+            margin-left: 0 !important;
+        }
+
+        #static-animated,
+        img[data-scroll-static] {
+            position: absolute;
+            width: 100%;
+            transition: all 0.8s;
+        }
+
+        .container-iframe {
+            width: 100% !important;
+        }
+
+        #hero-image {
+            background-size: 186% 100%;
+        }
+
+        #sloganInicial {
+            top: 10%;
+            width: 80%;
+            height: 20%;
+        }
+
+        #text1-animated.disable_image,
+        #text2-animated.disable_image,
+        #text3-animated.disable_image {
+            transform: scale(0.5);
+        }
+
+        #text1-animated,
+        #text2-animated,
+        #text3-animated {
+            position: relative;
+            margin-top: 0%;
+            left: 0%;
+            width: 40%;
+            margin-inline-start: 0;
+            background-color: transparent;
+        }
+
+        #text4-animated {
+            position: absolute;
+            top: 35%;
+            right: -1%;
+            left: auto;
+            width: 45%;
+        }
+
+        #text_firstcard,
+        #text_threecard {
+            width: 50%;
+            right: 0%;
+            margin-top: 30%;
+        }
+
+        #text_secondcard {
+            width: 50%;
+            left: -25%;
+            margin-top: 60%;
+        }
+
+        #logo-eneos {
+            width: 30%;
+            height: 16vh;
+        }
+
+        .imagen .text {
+            position: absolute;
+            color: #ffffff;
+            text-align: justify;
+            opacity: 0;
+            visibility: hidden;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(50%);
+        }
+
+        .imagen.show .text {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(0%);
+        }
+
+        .imagen .text_left {
+            position: absolute;
+            color: #ffffff;
+            text-align: justify;
+            opacity: 0;
+            visibility: hidden;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(0%);
+        }
+
+        .imagen.show .text_left {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(50%);
+        }
+
+        .scroll-down {
+            position: fixed;
+            bottom: 80px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            z-index: 100;
+            text-decoration: none;
+            width: 51px;
+            height: 51px;
+            border-bottom: 2px solid #fff;
+            border-right: 2px solid #fff;
+            z-index: 1;
+            left: 45%;
+            animation: fade_move_down 1s ease-in-out infinite;
+        }
+
+        .text_down {
+            position: fixed;
+            bottom: 80px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            z-index: 1;
+            /*left: 33%;*/
+            color: white;
+            animation: fade_move_down_vertical 2s infinite;
+            padding: 0px 33%;
+        }
+
+        .marcas_base {
+            padding: 2rem;
+            width: 30%;
+            margin: 1rem;
+        }
+
+        .marcas_base:hover {
+            -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+        }
+
+        .img-base {
+            display: flex;
+            bottom: 25%;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .container {
+            max-width: 100%;
+        }
+
+        .hero-image {
+            margin-left: -163px;
+            margin-right: -120px;
+        }
+
+        .hero-image section {
+            flex-direction: inherit !important;
+        }
+
+        #static-animated,
+        img[data-scroll-static] {
+            width: 75%;
+        }
+
+        .container-iframe {
+            width: 100% !important;
+            padding-top: 0% !important;
+        }
+
+        #hero-image {
+            background-size: 172% 170%;
+        }
+
+        #sloganInicial {
+            top: 10%;
+            width: 60%;
+            height: 20%;
+        }
+
+        #logo-eneos {
+            width: 20%;
+            height: 16vh;
+        }
+
+        #text1-animated,
+        #text2-animated,
+        #text3-animated {
+            position: relative;
+            margin-top: 1%;
+            left: 0%;
+            width: 30%;
+            margin-inline-start: 0;
+            background-color: transparent;
+        }
+
+        #text4-animated {
+            position: absolute;
+            top: 35%;
+            right: -1%;
+            left: auto;
+            width: 45%;
+        }
+
+        .marcas_base {
+            padding: 2rem;
+            width: 20%;
+            margin: 1rem;
+        }
+
+        .img-base {
+            display: flex;
+            bottom: 25%;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .text_down {
+            position: fixed;
+            bottom: 80px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            z-index: 1;
+            /*left: 33%;*/
+            color: white;
+            animation: fade_move_down_vertical 2s infinite;
+            padding: 0px 35%;
+        }
+    }
+
+    @media(min-width: 1200px) {
+        .container {
+            max-width: 100%;
+        }
+
+        .hero-image {
+            margin-left: -50% !important;
+            margin-right: -50% !important;
+        }
+
+        .hero-image section {
+            flex-direction: inherit !important;
+        }
+
+        .container-iframe {
+            padding-top: 0% !important;
+        }
+
+        #static-animated,
+        img[data-scroll-static] {
+            position: absolute;
+            width: 70%;
+            transition: all 0.8s;
+        }
+
+        img[data-scroll-animated],
+        img[data-scroll] {
+            width: 20%;
+            transition: all 0.8s;
+        }
+
+        #sloganInicial {
+            top: 3%;
+            width: 60%;
+            height: 40%;
+        }
+
+        #text1-animated.disable_image,
+        #text2-animated.disable_image,
+        #text3-animated.disable_image {
+            transform: scale(0.5);
+        }
+
+        #text1-animated,
+        #text2-animated,
+        #text3-animated {
+            position: relative;
+            margin-top: 1%;
+            left: 0%;
+            width: 30%;
+            margin-inline-start: 0;
+            background-color: transparent;
+        }
+
+        #text4-animated {
+            position: absolute;
+            top: 25%;
+            right: -1%;
+            left: auto;
+            width: 45%;
+        }
+
+        .hero-image section {
+            flex-wrap: nowrap;
+        }
+
+        .onClickTextOverImage {
+            cursor: pointer;
+        }
+
+        #text_firstcard {
+            width: 40%;
+            right: 20%;
+            margin-top: 5%;
+        }
+
+        #text_secondcard {
+            width: 40%;
+            left: -40%;
+            margin-top: 0;
+        }
+
+        #text_threecard {
+            width: 40%;
+            right: -10%;
+            margin-top: -5%;
+        }
+
+        #logo-eneos {
+            width: 10%;
+            height: 15vh;
+        }
+
+        .imagen .text {
+            position: absolute;
+            color: #ffffff;
+            text-align: justify;
+            opacity: 0;
+            visibility: hidden;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(50%);
+        }
+
+        .imagen.show .text {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(0%);
+            z-index: 1;
+        }
+
+        .imagen .text_left {
+            position: absolute;
+            color: #ffffff;
+            text-align: justify;
+            opacity: 0;
+            visibility: hidden;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(0%);
+        }
+
+        .imagen.show .text_left {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(50%);
+        }
+
+        .scroll-down {
+            position: fixed;
+            bottom: 50px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            z-index: 100;
+            text-decoration: none;
+            width: 51px;
+            height: 51px;
+            border-bottom: 2px solid #fff;
+            border-right: 2px solid #fff;
+            z-index: 1;
+            left: 48%;
+            animation: fade_move_down 1s ease-in-out infinite;
+        }
+
+        .text_down {
+            position: fixed;
+            bottom: 50px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            z-index: 1;
+            /*left: 40%;*/
+            color: white;
+            animation: fade_move_down_vertical 2s infinite;
+            padding: 0px 40%;
+        }
+
+        .marcas_base {
+            width: 15%;
+            padding: 2rem;
+        }
+
+        .marcas_base:hover {
+            -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+        }
+
+        .img-base {
+            display: flex;
+            bottom: 20%;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        .container {
+            max-width: 100%;
+        }
+
+        .hero-image {
+            margin-left: -50% !important;
+            margin-right: -50% !important;
+        }
+
+        .container-iframe {
+            padding-top: 0% !important;
+        }
+
+        .hero-image section {
+            flex-direction: inherit !important;
+        }
+
+        #static-animated,
+        img[data-scroll-static] {
+            position: absolute;
+            width: 70%;
+            transition: all 0.8s;
+        }
+
+        img[data-scroll-animated],
+        img[data-scroll] {
+            width: 20%;
+            transition: all 0.8s;
+        }
+
+        #sloganInicial {
+            top: 3%;
+            width: 65%;
+            height: 50%;
+        }
+
+        #text1-animated.disable_image,
+        #text2-animated.disable_image,
+        #text3-animated.disable_image {
+            transform: scale(0.5);
+        }
+
+        #text1-animated,
+        #text2-animated,
+        #text3-animated {
+            position: relative;
+            margin-top: 0%;
+            left: 0%;
+            width: 35%;
+        }
+
+        #text4-animated {
+            position: absolute;
+            top: 20%;
+            right: -5%;
+            left: auto;
+            width: 50%;
+        }
+
+        .hero-image section {
+            flex-wrap: nowrap;
+        }
+
+        .onClickTextOverImage {
+            cursor: pointer;
+        }
+
+        #text_firstcard {
+            width: 40%;
+            right: 20%;
+            margin-top: 5%;
+        }
+
+        #text_secondcard {
+            width: 40%;
+            left: -40%;
+        }
+
+        #text_threecard {
+            width: 40%;
+            right: -10%;
+            margin-top: -5%;
+        }
+
+        .imagen .text {
+            position: absolute;
+            color: #ffffff;
+            text-align: justify;
+            opacity: 0;
+            visibility: hidden;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(50%);
+        }
+
+        .imagen.show .text {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(0%);
+            z-index: 1;
+        }
+
+        .imagen .text_left {
+            position: absolute;
+            color: #ffffff;
+            text-align: justify;
+            opacity: 0;
+            visibility: hidden;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(0%);
+        }
+
+        .imagen.show .text_left {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            transition-duration: 0.5s, 1s;
+            transform: translateX(50%);
+        }
+
+        .scroll-down {
+            position: fixed;
+            bottom: 50px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            z-index: 100;
+            text-decoration: none;
+            width: 51px;
+            height: 51px;
+            border-bottom: 2px solid #fff;
+            border-right: 2px solid #fff;
+            z-index: 1;
+            left: 48%;
+            animation: fade_move_down 1s ease-in-out infinite;
+        }
+
+        .text_down {
+            position: fixed;
+            bottom: 50px;
+            display: block;
+            text-align: center;
+            font-size: 30px;
+            z-index: 1;
+            /*left: 43.5%;*/
+            color: white;
+            animation: fade_move_down_vertical 2s infinite;
+            padding: 0px 43%;
+        }
+
+        .marcas_base {
+            width: 15%;
+            padding: 2rem;
+        }
+
+        .marcas_base:hover {
+            -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+        }
+
+        .img-base {
+            display: flex;
+            bottom: 15%;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @-webkit-keyframes fade_move_down {
+        0% {
+            -webkit-transform: translate(0, -10px) rotate(45deg);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            -webkit-transform: translate(0, 10px) rotate(45deg);
+            opacity: 0;
+        }
+    }
+
+    @-moz-keyframes fade_move_down {
+        0% {
+            -moz-transform: translate(0, -10px) rotate(45deg);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            -moz-transform: translate(0, 10px) rotate(45deg);
+            opacity: 0;
+        }
+    }
+
+    @keyframes fade_move_down {
+        0% {
+            transform: translate(0, -10px) rotate(45deg);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translate(0, 10px) rotate(45deg);
+            opacity: 0;
+        }
+    }
+
+    @-moz-keyframes fade_move_down_vertical {
+        0% {
+            transform: translate(0, -50px);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translate(0, -20px);
+            opacity: 0;
+        }
+    }
+
+    @keyframes fade_move_down_vertical {
+        0% {
+            transform: translate(0, -50px);
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translate(0, -20px);
+            opacity: 0;
+        }
+    }
+
+    @keyframes clickEffect {
+        0% {
+            opacity: 1;
+            width: 0.5em;
+            height: 0.5em;
+            margin: -0.25em;
+            border-width: 0.5em;
+        }
+
+        100% {
+            opacity: 0.2;
+            width: 15em;
+            height: 15em;
+            margin: -7.5em;
+            border-width: 0.03em;
+        }
+    }
+
+    @keyframes zoominoutsinglefeatured {
+        0% {
+            transform: scale(1, 1);
+        }
+
+        50% {
+            transform: scale(1.025, 1.025);
+        }
+
+        100% {
+            transform: scale(1, 1);
+        }
+    }
+</style>
+<style>
+    .button-jittery a:nth-child(1) img {
+        animation: jittery 4.2s infinite;
+    }
+
+    .button-jittery a:nth-child(2) img {
+        animation: jittery 4.5s infinite;
+    }
+
+    .button-jittery a:nth-child(3) img {
+        animation: jittery 3.7s infinite;
+    }
+
+    .button-jittery a:nth-child(4) img {
+        animation: jittery 5s infinite;
+    }
+
+    .button-jittery a:nth-child(5) img {
+        animation: jittery 5.2s infinite;
+    }
+
+    .button-jittery a:nth-child(6) img {
+        animation: jittery 3.2s infinite;
+    }
+
+    .button-jittery img:hover {
+        animation: heartbeat 0.5s infinite;
+    }
+
+    @keyframes jittery {
+
+        5%,
+        50% {
+            transform: scale(1);
+        }
+
+        10% {
+            transform: scale(0.9);
+        }
+
+        15% {
+            transform: scale(1.15);
+        }
+
+        20% {
+            transform: scale(1.15) rotate(-5deg);
+        }
+
+        25% {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        30% {
+            transform: scale(1.15) rotate(-3deg);
+        }
+
+        35% {
+            transform: scale(1.15) rotate(2deg);
+        }
+
+        40% {
+            transform: scale(1.15) rotate(0);
+        }
+    }
+
+    @keyframes heartbeat {
+        50% {
+            transform: scale(1.1);
+        }
+    }
+</style>
+<p id="text_desliza" class="button_down_scroll text_down" lang="es">deslizar hacia abajo</p>
+<div id="scroll_down_animation" class="button_down_scroll scroll-down"></div>
+<section id="hero-image" class="hero-image">
+    <section id="seccion0" class="section" data-scroll-spy=""><img id="sloganInicial" class="content-header top"
+            src="{{media url='wysiwyg/distribuciongenesis/PrincipalDistribucion.png'}}" alt="distribuye el mejor aceite"
+            data-scroll-animated="">
+        <div class="img-base item button-jittery"><a href="#m1-o"> <img class="marcas_base"
+                    src="{{media url='wysiwyg/distribuciongenesis/logoEneos.png'}}" alt="distribucion de aceite eneos">
+            </a> <a href="#m2-o"><img class="marcas_base"
+                    src="{{media url='wysiwyg/distribuciongenesis/marcas/YexLub_O.png'}}"
+                    alt="distribucion de aceite yexlub"></a> <a href="#m3-o"><img class="marcas_base"
+                    src="{{media url='wysiwyg/distribuciongenesis/marcas/Logo_Luk_W.png'}}"
+                    alt="distribucion de aceite lukoil"></a> <a href="#m2-a"><img class="marcas_base"
+                    src="{{media url='wysiwyg/distribuciongenesis/marcas/logo_motor_oil_w.png'}}"
+                    alt="distribucion de aceite lukoil genesis"></a> <a href="#m4-a"><img class="marcas_base"
+                    src="{{media url='wysiwyg/distribuciongenesis/marcas/motul-logo-o.png'}}"
+                    alt="distribucion de aceite motul"></a> <a href="#m6-a"><img class="marcas_base"
+                    src="{{media url='wysiwyg/distribuciongenesis/syncron_oil.png'}}"
+                    alt="distribucion de aceite syncron"></a></div>
+        <div class="modal-container" id="m1-o" style="--m-background: hsla(0, 0%, 0%, .4);">
+            <div class="modal">
+                <h2 class="modal__title">Distribuye ENEOS</h2>
+                <p class="modal__text">Usan aditivos y aceites básicos de avanzada tecnología, resultado de la unión de
+                    la ingeniería y la investigación con todos los fabricantes de equipo original japoneses.</p>
+                <img class="img__modal" src="{{media url='wysiwyg/distribucionaceitesylubricantes/Eneos_Pop-up.jpg'}}"
+                    alt="productos eneos">
+                <!--<button class="modal__btn">Button →</button>--> <a href="#m1-c" class="link-2"></a>
+            </div>
+        </div>
+        <div class="modal-container" id="m2-o" style="--m-background: hsla(0, 0%, 0%, .4);">
+            <div class="modal">
+                <h2 class="modal__title">Distribuye YEXLUB</h2>
+                <p class="modal__text">Se usan las mejores tecnologías para obtener el mejor rendimiento para su
+                    vehículo automotor.</p>
+                <img class="img__modal" src="{{media url='wysiwyg/distribucionaceitesylubricantes/YexLub_Pop-up.png'}}"
+                    alt="productos yexlub">
+                <!--<button class="modal__btn">Button →</button>--> <a href="#m2-c" class="link-2"></a>
+            </div>
+        </div>
+        <div class="modal-container" id="m3-o" style="--m-background: hsla(0, 0%, 0%, .4);">
+            <div class="modal">
+                <h2 class="modal__title">Distribuye LUKOIL LUBRICANTS</h2>
+                <p class="modal__text">Es uno de los principales fabricantes de aceites, grasas y otros fluidos
+                    técnicos. La Compañía suministra sus productos a consumidores en más de 100 países.</p>
+                <img class="img__modal" src="{{media url='wysiwyg/distribucionaceitesylubricantes/Lukoil_Pop-up.jpg'}}"
+                    alt="productos lukoil"> <a class="color_a"
+                    href="https://yetox.com/automotriz/insumos-y-consumibles/aceites/lukoil-lubricants.html"
+                    target="_black"><button class="modal__btn">Ver Productos →</button></a> <a href="#m3-c"
+                    class="link-2"></a>
+            </div>
+        </div>
+        <div class="modal-container" id="m2-a" style="--m-background: hsla(0, 0%, 0%, .4);">
+            <div class="modal">
+                <h2 class="modal__title">Distribuye LUKOIL GENESIS</h2>
+                <p class="modal__text">Es un lubricante a base de tecnología sintética para motores a gasolina modernos,
+                    especialmente motores turboalimentados con inyección directa (TGDI) de la mayoría de los fabricantes
+                    automotrices de prestigio mundial.</p>
+                <img class="img__modal" src="{{media url='wysiwyg/distribucionaceitesylubricantes/Genesis_Pop-up.png'}}"
+                    alt="productos lukoil"> <a class="color_a"
+                    href="https://yetox.com/automotriz/insumos-y-consumibles/aceites/genesis.html"
+                    target="_black"><button class="modal__btn">Ver Productos →</button></a> <a href="#m4-c"
+                    class="link-2"></a>
+            </div>
+        </div>
+        <div class="modal-container" id="m4-a" style="--m-background: hsla(0, 0%, 0%, .4);">
+            <div class="modal">
+                <h2 class="modal__title">Distribuye MOTUL</h2>
+                <p class="modal__text">Desarrollado en colaboración con el Mundial de Superbikes, cuenta con tecnología
+                    ESTER Core® que aporta un rendimiento extra validado por los más destacados equipos de fábrica.</p>
+                <img class="img__modal" src="{{media url='wysiwyg/distribucionaceitesylubricantes/Motul_Pop-up.jpg'}}"
+                    alt="productos motul"> <a class="color_a"
+                    href="https://yetox.com/automotriz/insumos-y-consumibles/aceites/motocicletas.html"
+                    target="_black"><button class="modal__btn">Ver Productos →</button></a> <a href="#m5-c"
+                    class="link-2"></a>
+            </div>
+        </div>
+        <div class="modal-container" id="m6-a" style="--m-background: hsla(0, 0%, 0%, .4);">
+            <div class="modal">
+                <h2 class="modal__title">Distribuye SYNCRON</h2>
+                <p class="modal__text">Pruebas de campo y laboratorio garantizan que SYNCRON cuenta con aceites motor
+                    diesel de calidad mundial.</p>
+                <img class="img__modal" src="{{media url='wysiwyg/distribucionaceitesylubricantes/Syncron_Pop-up.jpg'}}"
+                    alt="productos syncron">
+                <!--<button class="modal__btn">Button →</button>--> <a href="#m6-c" class="link-2"></a>
+            </div>
+        </div>
+    </section>
+    <section id="seccion1" class="imagen section oculta" data-scroll-spy=""><img id="text1-animated"
+            class="onClickTextOverImage content-header mov"
+            src="{{media url='wysiwyg/distribucionaceitesylubricantes/BENEFICIOS1.jpg'}}"
+            alt="venta de aceites y lubricantes al mayoreo en méxico" data-scroll-animated=""> <img id="text2-animated"
+            class="onClickTextOverImage content-header mov"
+            src="{{media url='wysiwyg/distribucionaceitesylubricantes/BENEFICIOS2.jpg'}}"
+            alt="venta de aceites y lubricantes al mayoreo en méxico" data-scroll-animated=""></section>
+    <section id="seccion2" class="imagen section oculta" data-scroll-spy=""><img id="text2-animated"
+            class="onClickTextOverImage content-header mov"
+            src="{{media url='wysiwyg/distribucionaceitesylubricantes/BENEFICIOS3.jpg'}}"
+            alt="venta de aceites y lubricantes al mayoreo en méxico" data-scroll-animated=""> <img id="text3-animated"
+            class="onClickTextOverImage content-header mov"
+            src="{{media url='wysiwyg/distribucionaceitesylubricantes/BENEFICIOS4.jpg'}}"
+            alt="venta de aceites y lubricantes al mayoreo en méxico" data-scroll-animated=""></section>
+    <section id="seccion3" class="imagen section oculta" data-scroll-spy=""><img id="text1-animated"
+            class="onClickTextOverImage content-header mov"
+            src="{{media url='wysiwyg/distribucionaceitesylubricantes/BENEFICIOS5.jpg'}}"
+            alt="venta de aceites y lubricantes al mayoreo en méxico" data-scroll-animated=""> <img id="text3-animated"
+            class="onClickTextOverImage content-header mov"
+            src="{{media url='wysiwyg/distribucionaceitesylubricantes/BENEFICIOS6.jpg'}}"
+            alt="venta de aceites y lubricantes al mayoreo en méxico" data-scroll-animated=""></section>
+    <section id="seccion4" class="imagen section oculta" data-scroll-spy=""><img id="text3-animated"
+            class="onClickTextOverImage content-header mov"
+            src="{{media url='wysiwyg/distribucionaceitesylubricantes/BENEFICIOS7.jpg'}}"
+            alt="venta de aceites y lubricantes al mayoreo en méxico" data-scroll-animated=""></section>
+    <section id="seccion5" class="section oculta" data-scroll-spy="">
+        <div class="container-iframe"><iframe class="responsive-iframe"
+                src="https://forms.yetox.com/form/public/views/form_distribucion.php"></iframe></div>
+        <img id="text4-animated" class="content-header"
+            src="{{media url='wysiwyg/distribucionaceitesylubricantes/MapaFinal2.png'}}" alt="mapa distribucion"
+            data-scroll-animated="">
+    </section>
+</section>
+<script type="text/javascript">
+  const d=document,w=window,$sections=d.querySelectorAll("section[data-scroll-spy]"),down_scroll_button=d.querySelectorAll(".button_down_scroll");let oldValue=0,newValue=0,direccion=0,myScrollFunc=function(){var e=w.scrollY,l=tamanoPorSection(),o=w.pageYOffset;l[Object.keys(l).length-1];oldValue<o?direccion=0:oldValue>o&&(direccion=1);for(let o=0;o<Object.keys(l).length-1;o++)if(e>=l[o]&&e<=l[o+1]){let e=$sections[o],l=e.classList.contains("oculta");if("seccion5"==e.id?(d.getElementById("scroll_down_animation").style.display="none",d.getElementById("text_desliza").style.display="none"):(d.getElementById("scroll_down_animation").style.display="block",d.getElementById("text_desliza").style.display="block"),l){disableScroll(),setTimeout(()=>{enableScroll()},1e3),function(e,l){let o=d.getElementById(e),t=o.classList.contains(l);t&&o.classList.remove(l)}(e.id,"oculta");const t=Array.from(e.querySelectorAll(":scope > img[data-scroll]")),c=Array.from(e.querySelectorAll(":scope > img[data-scroll-animated]"));t.forEach(e=>{e.classList.toggle("top")}),direccion?c.forEach(e=>{e.classList.toggle("top")}):c.forEach(e=>{setTimeout(()=>{e.classList.toggle("top")},1)})}}else{let e=$sections[o],l=e.classList.contains("oculta");if(!l){!function(e,l){let o=d.getElementById(e),t=o.classList.contains(l);t||o.classList.add(l)}(e.id,"oculta");const s=Array.from(e.querySelectorAll(":scope > img.content-header"));s.forEach(e=>{setTimeout(()=>{e.classList.remove("top")},100)})}}oldValue=o};function tamanoPorSection(e=0){let l=d.getElementById("hero-image"),o=d.querySelectorAll("section[data-scroll-spy]").length,t=l.clientHeight,c=Math.round(t/o),s={};if(0<e)return c;for(let e=0;e<=o;e++)s[e]=(c-100)*e;return s}function disableScroll(){d.body.classList.add("remove-scrolling")}function enableScroll(){d.body.classList.remove("remove-scrolling")}function stopPropagation(e){e.stopPropagation()}down_scroll_button.forEach(e=>{e.addEventListener("click",function(e){console.log("box clicked",e);e=tamanoPorSection(1)/2+w.scrollY;d.body.scrollTop=e,d.documentElement.scrollTop=e,console.log(e)})}),w.addEventListener("scroll",myScrollFunc),disableScroll(),setTimeout(()=>{enableScroll()},1e3);
+</script>

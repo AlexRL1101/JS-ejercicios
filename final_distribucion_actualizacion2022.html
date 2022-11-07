@@ -1,0 +1,1667 @@
+<style>
+    .page-title-wrapper {
+        position: absolute;
+    }
+
+    @media (max-width: 575.98px) {
+        .distribucion_card {
+            width: 100%;
+        }
+
+        .imagen_ben img {
+            width: 30%;
+        }
+
+        strong {
+            font-weight: 800;
+            font-size: 2.5rem;
+        }
+
+        .home_page {
+            width: 100%;
+            height: auto;
+        }
+
+        #banner_distri {
+            width: 160%;
+            height: auto;
+        }
+
+        .slide_distribucion {
+            display: flex;
+            width: 100%;
+            height: auto;
+            background-color: var(--color_yex);
+            flex-direction: column;
+        }
+
+        .distribucion_izq,
+        .distribucion_der {
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .distribucion_up {
+            display: flex;
+            width: 100%;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+            padding: 15% 4% 0 4%;
+        }
+
+        .distribucion_down {
+            display: flex;
+            width: 100%;
+            height: auto;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            padding: 15% 0;
+        }
+
+        #productos_distribucion {
+            width: 100%;
+            height: auto;
+            padding: 0;
+            filter: none;
+        }
+
+        #marcas_nosotros {
+            font-family: 'Montserrat';
+            font-weight: 800;
+            font-size: xx-large;
+            text-align: center;
+        }
+
+        .distribucion_up_ben #marcas_nosotros:nth-child(1) {
+            font-family: 'Montserrat';
+            font-weight: 600;
+            font-size: xx-large;
+            text-align: start;
+        }
+
+        .distribucion_up_ben #marcas_nosotros:nth-child(2) {
+            font-family: 'Montserrat';
+            font-weight: 600;
+            font-size: xx-large;
+            text-align: start;
+        }
+
+        .slide_beneficios {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10%;
+            flex-wrap: wrap;
+            color: var(--color_yex);
+        }
+
+        .distribucion_uno,
+        .distribucion_dos,
+        .distribucion_tres {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+        }
+
+        .nuestras_marcas {
+            display: flex;
+            width: 50%;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nuestras_marcas img {
+            width: 100%;
+            height: auto;
+            filter: none;
+        }
+
+        .imagen_ben {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text_ben {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10%;
+            text-align: center;
+        }
+
+        .text_ben h3 {
+            font-family: 'Montserrat';
+            font-weight: 800;
+        }
+
+        .slide_ofrecemos {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .distribucion_up_ben {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            padding: 0 10%;
+        }
+
+        .distribucion_down_ben {
+            display: flex;
+            width: 100%;
+            height: 80%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: stretch;
+            padding: 5%;
+        }
+
+        .distribucion_card .imagen_ben img {
+            width: 90%;
+            height: auto;
+        }
+
+        .slide_final {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+        }
+
+        .distribucion_izq_footer {
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: var(--color_white);
+        }
+
+        .distribucion_der_footer {
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: space-around;
+            align-items: center;
+            background-color: var(--color_white);
+            flex-direction: column;
+            flex-wrap: wrap;
+            padding: 10% 0;
+        }
+
+        .aceites_puesto1,
+        .aceites_puesto2 {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            padding: 0 10% 10%;
+            text-align: center;
+        }
+
+        .logo_texto {
+            width: 25%;
+            height: auto;
+        }
+
+        #texto_logo_imagen {
+            width: 40%;
+        }
+
+        .distribucion_izq_footer .distribucion_up {
+            display: flex;
+            width: 100%;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+            padding: 10% 5% 0 5%;
+        }
+
+        .aceites_puesto3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 5%;
+        }
+
+        .distribucion_der_footer .aceites_puesto3 {
+            padding: 0 5%;
+        }
+
+        .aceites_puesto3 img {
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 576px) {
+        .distribucion_card {
+            width: 100%;
+        }
+
+        .imagen_ben img {
+            width: 30%;
+        }
+
+        strong {
+            font-weight: 800;
+            font-size: 2.5rem;
+        }
+
+        .home_page {
+            width: 100%;
+            height: auto;
+        }
+
+        #banner_distri {
+            width: 160%;
+            height: auto;
+        }
+
+        .slide_distribucion {
+            display: flex;
+            width: 100%;
+            height: auto;
+            background-color: var(--color_yex);
+            flex-direction: column;
+        }
+
+        .distribucion_izq,
+        .distribucion_der {
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .distribucion_up {
+            display: flex;
+            width: 100%;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+            padding: 15% 4% 0 4%;
+        }
+
+        .distribucion_down {
+            display: flex;
+            width: 100%;
+            height: auto;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            padding: 15% 0;
+        }
+
+        #productos_distribucion {
+            width: 100%;
+            height: auto;
+            padding: 0;
+            filter: none;
+        }
+
+        #marcas_nosotros {
+            font-family: 'Montserrat';
+            font-weight: 800;
+            font-size: xx-large;
+            text-align: center;
+        }
+
+        .distribucion_up_ben #marcas_nosotros:nth-child(1) {
+            font-family: 'Montserrat';
+            font-weight: 600;
+            font-size: xx-large;
+            text-align: start;
+        }
+
+        .distribucion_up_ben #marcas_nosotros:nth-child(2) {
+            font-family: 'Montserrat';
+            font-weight: 600;
+            font-size: xx-large;
+            text-align: start;
+        }
+
+        .slide_beneficios {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10%;
+            flex-wrap: wrap;
+            color: var(--color_yex);
+        }
+
+        .distribucion_uno,
+        .distribucion_dos,
+        .distribucion_tres {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+        }
+
+        .nuestras_marcas {
+            display: flex;
+            width: 50%;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nuestras_marcas img {
+            width: 100%;
+            height: auto;
+            filter: none;
+        }
+
+        .imagen_ben {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text_ben {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10%;
+            text-align: center;
+        }
+
+        .text_ben h3 {
+            font-family: 'Montserrat';
+            font-weight: 800;
+        }
+
+        .slide_ofrecemos {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .distribucion_up_ben {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            padding: 0 10%;
+        }
+
+        .distribucion_down_ben {
+            display: flex;
+            width: 100%;
+            height: 80%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: stretch;
+            padding: 5%;
+        }
+
+        .distribucion_card .imagen_ben img {
+            width: 90%;
+            height: auto;
+        }
+
+        .slide_final {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+        }
+
+        .distribucion_izq_footer {
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: var(--color_white);
+        }
+
+        .distribucion_der_footer {
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: space-around;
+            align-items: center;
+            background-color: var(--color_white);
+            flex-direction: column;
+            flex-wrap: wrap;
+            padding: 10% 0;
+        }
+
+        .aceites_puesto1,
+        .aceites_puesto2 {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            padding: 0 10% 10%;
+            text-align: center;
+        }
+
+        .logo_texto {
+            width: 25%;
+            height: auto;
+        }
+
+        #texto_logo_imagen {
+            width: 40%;
+        }
+
+        .distribucion_izq_footer .distribucion_up {
+            display: flex;
+            width: 100%;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+            padding: 10% 5% 0 5%;
+        }
+
+        .aceites_puesto3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 5%;
+        }
+
+        .distribucion_der_footer .aceites_puesto3 {
+            padding: 0 5%;
+        }
+
+        .aceites_puesto3 img {
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .distribucion_card {
+            width: 33%;
+        }
+
+        .imagen_ben img {
+            width: 30%;
+        }
+
+        strong {
+            font-weight: 800;
+            font-size: 2.5rem;
+        }
+
+        .home_page {
+            display: flex;
+            width: 100%;
+            height: auto;
+        }
+
+        #banner_distri {
+            width: 100%;
+            height: auto;
+            margin-top: -5%;
+        }
+
+        .slide_distribucion {
+            display: flex;
+            width: 100%;
+            height: auto;
+            background-color: var(--color_yex);
+        }
+
+        .slide_distribucion .distribucion_up {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: auto;
+            align-items: center;
+            padding: 10% 0 0 0;
+        }
+
+        #marcas_nosotros {
+            font-family: 'Montserrat';
+            font-weight: 800;
+            font-size: xx-large;
+        }
+
+        .distribucion_up_ben #marcas_nosotros:nth-child(1),
+        .distribucion_up_ben #marcas_nosotros:nth-child(2) {
+            font-family: 'Montserrat';
+            font-weight: 600;
+            font-size: xx-large;
+            text-align: start;
+        }
+
+        .distribucion_izq,
+        .distribucion_der {
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .distribucion_up {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 20%;
+            align-items: center;
+        }
+
+        .distribucion_down {
+            display: flex;
+            width: 100%;
+            height: 80%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: stretch;
+        }
+
+        #productos_distribucion {
+            width: 80%;
+            height: auto;
+            padding: 70px 10px;
+            filter: none;
+        }
+
+        .slide_beneficios {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: row;
+            align-items: center;
+            padding: 10%;
+            color: var(--color_yex);
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+
+        .distribucion_uno,
+        .distribucion_dos,
+        .distribucion_tres {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+        }
+
+        .nuestras_marcas {
+            display: flex;
+            width: 50%;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .imagen_ben img {
+            width: 80%
+        }
+
+        .nuestras_marcas img {
+            width: 80%;
+            height: auto;
+            filter: none;
+        }
+
+        .imagen_ben {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text_ben {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10%;
+            text-align: center;
+        }
+
+        .text_ben h3 {
+            font-family: 'Montserrat';
+            font-weight: 800;
+        }
+
+        .slide_ofrecemos {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .distribucion_up_ben {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            padding-left: 5%;
+        }
+
+        .distribucion_down_ben {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: stretch;
+            padding: 5%;
+        }
+
+        .distribucion_card .imagen_ben img {
+            width: 90%;
+            height: auto;
+        }
+
+        .slide_final {
+            display: flex;
+            width: 100%;
+            height: auto;
+        }
+
+        .distribucion_izq_footer {
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: var(--color_white);
+        }
+
+        .distribucion_der_footer {
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            background-color: var(--color_white);
+        }
+
+        .aceites_puesto1,
+        .aceites_puesto2 {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            padding: 0 10% 10%;
+        }
+
+        .logo_texto {
+            width: 25%;
+            height: auto;
+        }
+
+        #texto_logo_imagen {
+            width: 40%;
+        }
+
+        .aceites_puesto3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20%;
+        }
+
+        .distribucion_der_footer .aceites_puesto3 {
+            padding: 0 5%;
+        }
+
+        .aceites_puesto3 img {
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .distribucion_card {
+            width: 33%;
+        }
+
+        .imagen_ben img {
+            width: 50%;
+        }
+
+        strong {
+            font-weight: 800;
+            font-size: 2.5rem;
+        }
+
+        .home_page {
+            display: flex;
+            width: auto;
+            height: 100vh;
+        }
+
+        #banner_distri {
+            width: 100%;
+            height: auto;
+            margin-top: -5%;
+        }
+
+        .slide_distribucion {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--color_yex);
+            flex-direction: row;
+        }
+
+        #marcas_nosotros {
+            font-family: 'Montserrat';
+            font-weight: 800;
+            font-size: xx-large;
+        }
+
+        .distribucion_izq,
+        .distribucion_der {
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .distribucion_up {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 20%;
+            align-items: center;
+        }
+
+        .distribucion_down {
+            display: flex;
+            width: 100%;
+            height: 80%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: stretch;
+        }
+
+        #productos_distribucion {
+            width: 100%;
+            height: auto;
+            padding: 70px 10px;
+            filter: none;
+        }
+
+        .slide_beneficios {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 10%;
+            color: var(--color_yex);
+        }
+
+        .distribucion_uno,
+        .distribucion_dos,
+        .distribucion_tres {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+        }
+
+        .nuestras_marcas {
+            display: flex;
+            width: 50%;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nuestras_marcas img {
+            width: 80%;
+            height: auto;
+            filter: none;
+        }
+
+        .imagen_ben {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text_ben {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10%;
+            text-align: center;
+        }
+
+        .text_ben h3 {
+            font-family: 'Montserrat';
+            font-weight: 800;
+        }
+
+        .slide_ofrecemos {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .distribucion_up_ben {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            padding-left: 5%;
+        }
+
+        .distribucion_down_ben {
+            display: flex;
+            width: 100%;
+            height: 80%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: stretch;
+            padding: 5%;
+        }
+
+        .distribucion_card .imagen_ben img {
+            width: 90%;
+            height: auto;
+        }
+
+        .slide_final {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: row;
+        }
+
+        .distribucion_izq_footer {
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: var(--color_white);
+        }
+
+        .distribucion_der_footer {
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            background-color: var(--color_white);
+            flex-direction: row;
+        }
+
+        .aceites_puesto1,
+        .aceites_puesto2 {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            padding: 0 10% 10%;
+        }
+
+        .logo_texto {
+            width: 25%;
+            height: auto;
+        }
+
+        #texto_logo_imagen {
+            width: 40%;
+        }
+
+        .aceites_puesto3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20%;
+        }
+
+        .distribucion_der_footer .aceites_puesto3 {
+            padding: 0 5%;
+        }
+
+        .aceites_puesto3 img {
+            width: 100%;
+        }
+    }
+
+    @media(min-width: 1200px) {
+        .distribucion_card {
+            width: 33%;
+        }
+
+        .imagen_ben img {
+            width: 50%;
+        }
+
+        strong {
+            font-weight: 800;
+            font-size: 2.5rem;
+        }
+
+        .home_page {
+            display: flex;
+            width: auto;
+            height: 100vh;
+        }
+
+        #banner_distri {
+            width: 100%;
+            height: auto;
+            margin-top: -5%;
+        }
+
+        .slide_distribucion {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--color_yex);
+        }
+
+        #marcas_nosotros {
+            font-family: 'Montserrat';
+            font-weight: 800;
+            font-size: xx-large;
+        }
+
+        .distribucion_izq,
+        .distribucion_der {
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .distribucion_up {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 20%;
+            align-items: center;
+        }
+
+        .distribucion_down {
+            display: flex;
+            width: 100%;
+            height: 80%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: stretch;
+        }
+
+        #productos_distribucion {
+            width: 100%;
+            height: auto;
+            padding: 70px 10px;
+            filter: none;
+        }
+
+        .slide_beneficios {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 10%;
+            color: var(--color_yex);
+        }
+
+        .distribucion_uno,
+        .distribucion_dos,
+        .distribucion_tres {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+        }
+
+        .nuestras_marcas {
+            display: flex;
+            width: 50%;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nuestras_marcas img {
+            width: 80%;
+            height: auto;
+            filter: none;
+        }
+
+        .imagen_ben {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .text_ben {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10%;
+            text-align: center;
+        }
+
+        .text_ben h3 {
+            font-family: 'Montserrat';
+            font-weight: 800;
+        }
+
+        .slide_ofrecemos {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .distribucion_up_ben {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            padding-left: 5%;
+        }
+
+        .distribucion_down_ben {
+            display: flex;
+            width: 100%;
+            height: 80%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: stretch;
+            padding: 5%;
+        }
+
+        .distribucion_card .imagen_ben img {
+            width: 90%;
+            height: auto;
+        }
+
+        .slide_final {
+            display: flex;
+            width: 100%;
+            height: auto;
+        }
+
+        .distribucion_izq_footer {
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: var(--color_white);
+        }
+
+        .distribucion_der_footer {
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row;
+            background-color: var(--color_white);
+        }
+
+        .aceites_puesto1,
+        .aceites_puesto2 {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            padding: 0 10% 10%;
+        }
+
+        .logo_texto {
+            width: 25%;
+            height: auto;
+        }
+
+        #texto_logo_imagen {
+            width: 40%;
+        }
+
+        .aceites_puesto3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20%;
+        }
+
+        .distribucion_der_footer .aceites_puesto3 {
+            padding: 0 5%;
+        }
+
+        .aceites_puesto3 img {
+            width: 100%;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        .distribucion_card {
+            width: 33%;
+        }
+
+        .imagen_ben img {
+            width: 50%;
+        }
+
+        .home_page {
+            display: flex;
+            width: 100%;
+            height: auto;
+        }
+
+        #banner_distri {
+            width: 100%;
+            height: auto;
+            margin-top: -5%;
+        }
+
+        .slide_distribucion {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--color_yex);
+        }
+
+        .distribucion_izq,
+        .distribucion_der {
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .distribucion_up {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            height: 20%;
+            align-items: center;
+        }
+
+        .distribucion_down {
+            display: flex;
+            width: 100%;
+            height: 80%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: stretch;
+        }
+
+        #productos_distribucion {
+            width: 100%;
+            height: auto;
+            padding: 70px 10px;
+            filter: none;
+        }
+
+        .slide_beneficios {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            flex-direction: row;
+            justify-content: center;
+            padding: 10%;
+            color: var(--color_yex);
+            align-items: flex-start;
+        }
+
+        .distribucion_uno,
+        .distribucion_dos,
+        .distribucion_tres {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+        }
+
+        .nuestras_marcas {
+            display: flex;
+            width: 50%;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nuestras_marcas img {
+            width: 80%;
+            height: auto;
+            filter: none;
+        }
+
+        .imagen_ben {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .distribucion_up_ben #marcas_nosotros:nth-child(1),
+        .distribucion_up_ben #marcas_nosotros:nth-child(2),
+        #marcas_nosotros {
+            font-family: 'Montserrat';
+            font-weight: 800;
+            font-size: xxx-large;
+        }
+
+        .text_ben {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10%;
+            text-align: center;
+            font-size: 3rem;
+        }
+
+        .text_ben h3 {
+            font-family: 'Montserrat';
+            font-weight: 800;
+        }
+
+        .slide_ofrecemos {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .distribucion_up_ben {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            padding-left: 5%;
+        }
+
+        .distribucion_down_ben {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: stretch;
+            padding: 5%;
+        }
+
+        .distribucion_card .imagen_ben img {
+            width: 90%;
+            height: auto;
+        }
+
+        .slide_final {
+            display: flex;
+            width: 100%;
+            height: auto;
+        }
+
+        .distribucion_izq_footer {
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: var(--color_white);
+        }
+
+        .distribucion_der_footer {
+            display: flex;
+            width: 100%;
+            height: auto;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            background-color: var(--color_white);
+        }
+
+        .aceites_puesto1,
+        .aceites_puesto2 {
+            display: flex;
+            width: 100%;
+            height: auto;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+            padding: 0 10% 10%;
+            font-size: 3rem;
+        }
+
+        .logo_texto {
+            width: 25%;
+            height: auto;
+        }
+
+        #texto_logo_imagen {
+            width: 40%;
+        }
+
+        .aceites_puesto3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20%;
+        }
+
+        .aceites_puesto3 img {
+            width: 100%;
+        }
+
+        .imagen_ben img {
+            width: 100%
+        }
+
+        .slide_beneficios .imagen_ben img {
+            width: 40%
+        }
+
+        .distribucion_der_footer .aceites_puesto3 {
+            padding: 0 5%;
+        }
+
+        strong {
+            font-weight: 900;
+            font-size: 4.5rem;
+        }
+    }
+
+    :root {
+        --container-width: 1200px;
+        --color_black: #000;
+        --color_white: #fff;
+        --color_yex: #f97028;
+        --color_green: #266759;
+        --img-banner: url('https://yetox.com/media/wysiwyg/MOTUL/Banner2_Motul.jpg');
+        --img-prox: url('https://yetox.com/media/wysiwyg/MOTUL/BannerProximamenteLandingPage.jpg');
+        --img-text: url('https://yetox.com/media/wysiwyg/MOTUL/imgMotul.jpg');
+        --img-banner-movil: url('https://yetox.com/media/wysiwyg/MOTUL/Banner1_Motul.jpg');
+        --img-ala-left: url('https://yetox.com/media/wysiwyg/MOTUL/Forms-side1.png');
+        --img-ala-right: url('https://yetox.com/media/wysiwyg/MOTUL/Forms-side2.png');
+    }
+
+    body {
+        color: var(--color_white);
+    }
+
+    a {
+        color: var(--color_yex);
+    }
+
+    #go-top a i {
+        color: white !important;
+    }
+
+    .container {
+        max-width: 100%;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        background-color: var(--color_black);
+    }
+
+    #home_distribucion {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .distribucion_der_footer,
+    .distribucion_izq_footer {
+        color: var(--color_yex);
+    }
+
+    .imagen_ben img {
+        /*filter: drop-shadow(0 15px 10px rgba(255, 255, 255, 0.5));*/
+        filter: none;
+    }
+</style>
+<section id="home_distribucion">
+    <section class="home_page"><img id="banner_distri"
+            src="{{media url='wysiwyg/distribucionyetox/Banner_LandingDistAcetes.jpg'}}"
+            alt="distribucion de aceites y lubricantes"></section>
+    <section class="slide_distribucion">
+        <div class="distribucion_izq">
+            <div class="distribucion_up">
+                <h2 id="marcas_nosotros">CONOCE NUESTRAS MARCAS</h2>
+            </div>
+            <div class="distribucion_down">
+                <div class="nuestras_marcas"><img src="{{media url='wysiwyg/distribucionyetox/Yexlub-logo.png'}}"
+                        alt="distribucion de yexlub"></div>
+                <div class="nuestras_marcas"><img src="{{media url='wysiwyg/distribucionyetox/Motul-logo.png'}}"
+                        alt="distribucion de motul"></div>
+                <div class="nuestras_marcas"><img src="{{media url='wysiwyg/distribucionyetox/Genesis-logo.png'}}"
+                        alt="distribucion de genesis"></div>
+                <div class="nuestras_marcas"><img src="{{media url='wysiwyg/distribucionyetox/Lubricants-logo.png'}}"
+                        alt="distribucion de lukoil"></div>
+                <div class="nuestras_marcas"><img src="{{media url='wysiwyg/distribucionyetox/Syncrin-logo.png'}}"
+                        alt="distribucion de syncron"></div>
+            </div>
+        </div>
+        <div class="distribucion_der"><img id="productos_distribucion"
+                src="{{media url='wysiwyg/distribucionyetox/ProductoMix.png'}}"
+                alt="distribucion de aceites y lubricantes"></div>
+    </section>
+    <section class="slide_beneficios">
+        <div class="distribucion_uno">
+            <div class="imagen_ben"><img src="{{media url='wysiwyg/distribucionyetox/IconosEnviosGratis.png'}}"
+                    alt="distribucion con envio gratis"></div>
+            <div class="text_ben">
+                <h3>Envíos gratis a nivel nacional</h3>
+            </div>
+        </div>
+        <div class="distribucion_dos">
+            <div class="imagen_ben"><img src="{{media url='wysiwyg/distribucionyetox/PoPIcon.png'}}"
+                    alt="distribucion con promotoria"></div>
+            <div class="text_ben">
+                <h3>Apoyo en promotoría y material PoP para tu refaccionaria o taller</h3>
+            </div>
+        </div>
+        <div class="distribucion_tres">
+            <div class="imagen_ben"><img src="{{media url='wysiwyg/distribucionyetox/DiscountIcon.png'}}"
+                    alt="distribucion con descuentos"></div>
+            <div class="text_ben">
+                <h3>Distribución con descuentos accesibles</h3>
+            </div>
+        </div>
+    </section>
+    <section class="slide_ofrecemos">
+        <div class="distribucion_up_ben">
+            <h2 id="marcas_nosotros">TE OFRECEMOS UNA AMPLIA GAMA DE LUBRICANTES</h2>
+            <h2 id="marcas_nosotros">PARA EL TRANSPORTE Y LA INDUSTRIA.</h2>
+        </div>
+        <div class="distribucion_down_ben">
+            <div class="distribucion_card">
+                <div class="imagen_ben"><img src="{{media url='wysiwyg/distribucionyetox/Industria01.png'}}"
+                        alt="distribucion en automotriz"></div>
+                <div class="text_ben">
+                    <h3>AUTOMOTRIZ</h3>
+                </div>
+            </div>
+            <div class="distribucion_card">
+                <div class="imagen_ben"><img src="{{media url='wysiwyg/distribucionyetox/Industria02.png'}}"
+                        alt="distribucion en motociclismo"></div>
+                <div class="text_ben">
+                    <h3>MOTOCICLISMO</h3>
+                </div>
+            </div>
+            <div class="distribucion_card">
+                <div class="imagen_ben"><img src="{{media url='wysiwyg/distribucionyetox/Industria03.png'}}"
+                        alt="distribucion en agricultura"></div>
+                <div class="text_ben">
+                    <h3>AGRICULTURA</h3>
+                </div>
+            </div>
+            <div class="distribucion_card">
+                <div class="imagen_ben"><img src="{{media url='wysiwyg/distribucionyetox/Industria04.png'}}"
+                        alt="distribucion en transporte comercial"></div>
+                <div class="text_ben">
+                    <h3>TRANSPORTE COMERCIAL</h3>
+                </div>
+            </div>
+            <div class="distribucion_card">
+                <div class="imagen_ben"><img src="{{media url='wysiwyg/distribucionyetox/Industria05.png'}}"
+                        alt="distribucion en mineria"></div>
+                <div class="text_ben">
+                    <h3>MINERÍA</h3>
+                </div>
+            </div>
+            <div class="distribucion_card">
+                <div class="imagen_ben"><img src="{{media url='wysiwyg/distribucionyetox/Industria06.png'}}"
+                        alt="distribucion en energia eolica"></div>
+                <div class="text_ben">
+                    <h3>ENERGÍA EÓLICA</h3>
+                </div>
+            </div>
+            <div class="distribucion_card">
+                <div class="imagen_ben"><img src="{{media url='wysiwyg/distribucionyetox/Industria07.png'}}"
+                        alt="distribucion en ingenios azucareros"></div>
+                <div class="text_ben">
+                    <h3>INGENIOS AZUCAREROS</h3>
+                </div>
+            </div>
+            <div class="distribucion_card">
+                <div class="imagen_ben"><img src="{{media url='wysiwyg/distribucionyetox/Industria08.png'}}"
+                        alt="distribucion en industria general"></div>
+                <div class="text_ben">
+                    <h3>INDUSTRIA GENERAL</h3>
+                </div>
+            </div>
+            <div class="distribucion_card">
+                <div class="imagen_ben"><img src="{{media url='wysiwyg/distribucionyetox/Industria09.png'}}"
+                        alt="distribucion en marino"></div>
+                <div class="text_ben">
+                    <h3>MARINO</h3>
+                </div>
+            </div>
+            <div class="distribucion_card">
+                <div class="imagen_ben"><img src="{{media url='wysiwyg/distribucionyetox/Industria10.png'}}"
+                        alt="distribucion en construccion"></div>
+                <div class="text_ben">
+                    <h3>CONSTRUCCIÓN</h3>
+                </div>
+            </div>
+            <div class="distribucion_card">
+                <div class="imagen_ben"><img src="{{media url='wysiwyg/distribucionyetox/Industria11.png'}}"
+                        alt="distribucion en lubricante para metalmecanica"></div>
+                <div class="text_ben">
+                    <h3>LUBRICANTE PARA METALMECÁNICA</h3>
+                </div>
+            </div>
+            <div class="distribucion_card">
+                <div class="imagen_ben"><img src="{{media url='wysiwyg/distribucionyetox/Industria12.png'}}"
+                        alt="distribucion en industria alimenticia"></div>
+                <div class="text_ben">
+                    <h3>INDUSTRIA ALIMENTICIA</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide_final">
+        <div class="distribucion_izq_footer">
+            <div class="distribucion_down">
+                <div class="aceites_puesto1">
+                    <div class="texto_logo">
+                        <h2>Forma parte de la red de socios, disfruta de los beneficios. Además de obtener descuentos en
+                            productos exclusivos <strong>EN LÍNEA</strong>.</h2>
+                    </div>
+                </div>
+                <div class="aceites_puesto2">
+                    <h2>Surte tu negocio a un buen precio con <a href="https://yetox.com"
+                            target="_black"><strong>yetox.com®</strong></a></h2>
+                </div>
+                <div class="aceites_puesto2">
+                    <h2>Escribenos al <a href="https://wa.me/5219933924912" target="_black">Whatsapp</a> o a <a
+                            href="mailto: info@yetox.com">info@yetox.com</a></h2>
+                </div>
+                <br>
+                <div class="aceites_puesto3"><a href="https://wa.me/5219933924912" target="_black"><img
+                            src="{{media url='wysiwyg/distribucionyetox/wapp-botton.png'}}"
+                            alt="distribucion contacto"></a></div>
+            </div>
+        </div>
+        <div class="distribucion_der_footer">
+            <div class="aceites_puesto3"><img
+                    src="{{media url='wysiwyg/distribucionyetox/Mapa-3D-Terriotrio-Yetox_Final.png'}}"
+                    alt="distribucion yetox"></div>
+        </div>
+    </section>
+</section>
