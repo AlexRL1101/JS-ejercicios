@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cortar imagen con Cropper.js</title>
+    <link rel="stylesheet" href="https://unpkg.com/cropperjs/dist/cropper.min.css">
+</head>
+
+<body>
+    <h1>Cargar imagen</h1>
+    <br>
+    <input type="file" id="inputImage" accept=".png" />
+    <br>
+    <img id="preview" src="" alt="Imagen a cortar">
+    <br>
+    <button id="cropButton">Recortar</button>
+    <br>
+    <img id="croppedResult" src="" alt="Imagen recortada">
+
+    <script src="https://unpkg.com/cropperjs/dist/cropper.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const input = document.getElementById("inputImage");
+            const preview = document.getElementById("preview");
+            const cropButton = document.getElementById("cropButton");
+            const croppedResult = document.getElementById("croppedResult");
+            let cropper;
+
+            // Evento para cargar la imagen seleccionada
+            input.addEventListener("change", function (e) {
+                if (typeof cropper !== 'undefined')
+                    cropper.destroy();
+
+                const file = e.target.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function () {
+                    preview.src = reader.result;
+                    // Inicializar Cropper.js cuando la imagen se haya cargado
+                    cropper = new Cropper(preview, {
+                        dragMode: 'crop', // Inicialmente, permitir crear selecciones
+                        //aspectRatio: 1, // Relación de aspecto 1:1
+                        viewMode: 1, // Mostrar solo el recorte
+                        autoCropArea: 1, // Establecer automáticamente el área de recorte inicial
+                        cropBoxResizable: false, // Restringir el tamaño de la caja de recorte
+                        minCropBoxWidth: 10, // Establece el ancho mínimo del recuadro de recorte a 200 píxeles
+                        minCropBoxHeight: 10, // Establece la altura mínima del recuadro de recorte a 200 píxeles
+                        maxCropBoxWidth: 10, // Establece el ancho máximo del recuadro de recorte a 400 píxeles
+                        maxCropBoxHeight: 10, // Establece la altura máxima del recuadro de recorte a 400 píxeles
+                        minContainerWidth: 400,
+                        minContainerHeight: 300,
+                        maxContainerWidth: 400,
+                        maxContainerHeight: 300,
+                        ready: function () {
+                            // Cuando el recortador está listo, restringir la creación de nuevas selecciones
+                            cropper.setDragMode('none');
+                        },
+                        aspectRatio: 16 / 9, // Restringir a una relación de aspecto de 16:9
+                        background: false,
+                        guides: false,
+                        rotatable: false,
+                    });
+                };
+
+                if (file) {
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Evento para recortar la imagen
+            cropButton.addEventListener("click", function () {
+                const croppedCanvas = cropper.getCroppedCanvas();
+                // Convertir el resultado en una nueva imagen
+                croppedResult.src = croppedCanvas.toDataURL("image/png");
+            });
+        });
+
+    </script>
+</body>
+
+</html>
